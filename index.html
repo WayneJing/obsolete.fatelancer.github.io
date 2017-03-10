@@ -356,7 +356,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-03-10T16:47:33+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-03-10T16:48:57+08:00">
                 2017-03-10
               </time>
             
@@ -432,101 +432,17 @@
 
       
         
-          
-            <p><em>由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表</em></p>
+          <p><em>由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表</em></p>
 <h1 id="em算法估计混合copula参数">EM算法估计混合Copula参数</h1>
 <h2 id="em主体">EM主体</h2>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">U=GHK;</div><div class="line">V=BDQ;</div><div class="line"><span class="comment">% 初始化</span></div><div class="line">S=<span class="number">3</span>;</div><div class="line">th=<span class="number">0.01</span>;</div><div class="line">omega=[<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>];</div><div class="line">[a,nuhat]=copulafit(<span class="string">'t'</span>,[U,V]);</div><div class="line">a2=copulafit(<span class="string">'Gumbel'</span>,[U,V]);</div><div class="line">a3=copulafit(<span class="string">'Frank'</span>,[U,V]);</div><div class="line">theta=[a(<span class="number">1</span>,<span class="number">2</span>),a2,a3];</div><div class="line">[N,~]=<span class="built_in">size</span>(U);</div><div class="line">count=<span class="number">0</span>;</div><div class="line">tt=<span class="built_in">zeros</span>(N,<span class="number">2</span>);</div><div class="line">t=<span class="built_in">inf</span>;</div><div class="line">COPULA=<span class="built_in">zeros</span>(N,S);</div><div class="line">list1=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">list2=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">puz=<span class="built_in">zeros</span>(N,S);</div><div class="line">puz1=<span class="built_in">zeros</span>(N,S);</div><div class="line"><span class="keyword">while</span> t&gt;=th&amp;&amp;count&lt;=<span class="number">100</span>;</div><div class="line">    theta_old=theta;</div><div class="line">    omega_old=omega;</div><div class="line">    COPULA(:,<span class="number">1</span>)=copulapdf(<span class="string">'t'</span>,[U(:) V(:)],theta_old(<span class="number">1</span>),nuhat);</div><div class="line">    COPULA(:,<span class="number">2</span>)=copulapdf(<span class="string">'Gumbel'</span>,[U(:) V(:)],theta_old(<span class="number">2</span>));</div><div class="line">    COPULA(:,<span class="number">3</span>)=copulapdf(<span class="string">'Frank'</span>,[U(:) V(:)],theta_old(<span class="number">3</span>));</div><div class="line">    puz(:,<span class="number">1</span>)=COPULA(:,<span class="number">1</span>)*omega_old(<span class="number">1</span>);</div><div class="line">    puz(:,<span class="number">2</span>)=COPULA(:,<span class="number">2</span>)*omega_old(<span class="number">2</span>);</div><div class="line">    puz(:,<span class="number">3</span>)=COPULA(:,<span class="number">3</span>)*omega_old(<span class="number">3</span>);</div><div class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">1</span>)=puz(<span class="built_in">i</span>,<span class="number">1</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">2</span>)=puz(<span class="built_in">i</span>,<span class="number">2</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">3</span>)=puz(<span class="built_in">i</span>,<span class="number">3</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">    <span class="keyword">end</span></div><div class="line">    omega(<span class="number">1</span>)=sum(puz1(:,<span class="number">1</span>))/N;</div><div class="line">    omega(<span class="number">2</span>)=sum(puz1(:,<span class="number">2</span>))/N;</div><div class="line">    omega(<span class="number">3</span>)=sum(puz1(:,<span class="number">3</span>))/N;</div><div class="line">    omega</div><div class="line">    tt(:,<span class="number">1</span>)=tinv(U(:),nuhat);</div><div class="line">    tt(:,<span class="number">2</span>)=tinv(V(:),nuhat);</div><div class="line">    [turntheta,fval,exitflag,output,grad,hessian]=updatetheta(N,U,V,theta_old,puz1,tt,nuhat);</div><div class="line">    theta=turntheta;</div><div class="line">    theta</div><div class="line">    list1(:,count+<span class="number">1</span>)=theta;</div><div class="line">    list2(:,count+<span class="number">1</span>)=omega;</div><div class="line">    t=max([norm(theta_old(:)-theta(:));norm(omega_old(:)-omega(:))])</div><div class="line">    count=count+<span class="number">1</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="参数更新非线性优化bfgs">参数更新（非线性优化bfgs）</h2>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[turntheta,fval,exitflag,output,grad,hessian]</span>=<span class="title">updatetheta</span><span class="params">(N,U,V,theta,puz,t,nuhat)</span></span></div><div class="line">options=optimset(<span class="string">'Display'</span>,<span class="string">'iter-detailed'</span>,<span class="string">'TolFun'</span>,<span class="number">1e-10</span>,<span class="string">'TolX'</span>,<span class="number">1e-10</span>,<span class="string">'LargeScale'</span>,<span class="string">'off'</span>,<span class="string">'FinDiffType'</span>,<span class="string">'central'</span>,<span class="string">'HessUpdate'</span>,<span class="string">'bfgs'</span>);</div><div class="line">[turntheta,fval,exitflag,output,grad,hessian]=fminunc(@utheta,theta,options);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">utheta</span><span class="params">(theta)</span></span></div><div class="line"><span class="keyword">if</span> theta(<span class="number">3</span>)==<span class="number">0</span></div><div class="line">    theta(<span class="number">3</span>)=theta(<span class="number">3</span>)+<span class="number">0.0001</span>;  <span class="comment">%防止出现 Frank  Copula 的相依结构参数为 0</span></div><div class="line"><span class="keyword">end</span></div><div class="line">y=<span class="number">0</span>;</div><div class="line">th=<span class="built_in">eye</span>(<span class="number">2</span>);</div><div class="line">th(<span class="number">1</span>,<span class="number">2</span>)=theta(<span class="number">1</span>);</div><div class="line">th(<span class="number">2</span>,<span class="number">1</span>)=theta(<span class="number">1</span>);</div><div class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:N</div><div class="line"></div><div class="line">    y=y+<span class="built_in">log</span>(((det(th))^(<span class="number">-1</span>/<span class="number">2</span>))*<span class="built_in">gamma</span>((nuhat+<span class="number">2</span>)/<span class="number">2</span>)*<span class="built_in">gamma</span>(nuhat/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,:)*th^(<span class="number">-1</span>)*t(<span class="built_in">j</span>,:)'/nuhat)^(-(nuhat+<span class="number">2</span>)/<span class="number">2</span>)/((<span class="built_in">gamma</span>((nuhat+<span class="number">1</span>)/<span class="number">2</span>))^<span class="number">2</span>*((<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">1</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">2</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">1</span>)+...</div><div class="line">        <span class="built_in">log</span>(<span class="built_in">exp</span>(-((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^theta(<span class="number">2</span>)+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^theta(<span class="number">2</span>))^(<span class="number">1</span>/theta(<span class="number">2</span>)))*(<span class="built_in">log</span>(U(<span class="built_in">j</span>))*<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)<span class="number">-1</span>)*(((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">1</span>/theta(<span class="number">2</span>))+theta(<span class="number">2</span>)<span class="number">-1</span>)/(U(<span class="built_in">j</span>)*V(<span class="built_in">j</span>)*((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">2</span><span class="number">-1</span>/theta(<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">2</span>)+...</div><div class="line">        <span class="built_in">log</span>(theta(<span class="number">3</span>)*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))*<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*(U(<span class="built_in">j</span>)+V(<span class="built_in">j</span>)))/((<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))-(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*U(<span class="built_in">j</span>)))*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*V(<span class="built_in">j</span>))))^<span class="number">2</span>)*puz(<span class="built_in">j</span>,<span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">y=-y;</div><div class="line"><span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="结果">结果</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Copula函数</th>
-<th><span class="math inline">\(\theta\)</span></th>
-<th><span class="math inline">\(\omega\)</span></th>
-<th><span class="math inline">\(k\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>t-Copula</td>
-<td>0.1244</td>
-<td>0.0822</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>Gumbel-Copula</td>
-<td>4.1127</td>
-<td>0.7495</td>
-</tr>
-<tr class="odd">
-<td>Frank-Copula</td>
-<td>6.5931</td>
-<td>0.1683</td>
-</tr>
-</tbody>
-</table>
-<p>即 <span class="math display">\[C(u,v;a)=0.7495C_{Gumbel}(u,v;4.1127)+0.1683C_{Frank}(u,v;6.5931)+0.0822C_t(u,v;0.1244,3)\]</span></p>
-<h1 id="结果评价">结果评价</h1>
-<h2 id="q-q图">Q-Q图</h2>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg" alt="mixed-Copula"> 可以与之前单一Copula的仿真QQ图进行比较 <img src="http://oag5ozkgs.bkt.clouddn.com/im1.jpg" alt="qq图2"> <img src="http://oag5ozkgs.bkt.clouddn.com/im2.jpg" alt="qq图3"> 可以明显的看出拟合优度上混合Copula有很大的优势</p>
-<h2 id="k-s检验">K-S检验</h2>
-<table>
-<thead>
-<tr class="header">
-<th>风电场组合</th>
-<th><span class="math inline">\(k_N\)</span></th>
-<th><span class="math inline">\(k_t\)</span></th>
-<th><span class="math inline">\(k_G\)</span></th>
-<th><span class="math inline">\(k_C\)</span></th>
-<th><span class="math inline">\(k_F\)</span></th>
-<th><span class="math inline">\(K_M\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>北大桥，干河口</td>
-<td>0.0395</td>
-<td>0.0343</td>
-<td>0.0302</td>
-<td>0.0468</td>
-<td>0.0323</td>
-<td>0.0271</td>
-</tr>
-</tbody>
-</table>
-<p>可以看出就K-S统计值而言混合Copula也小于其他单一Copula</p>
-<h2 id="欧式距离">欧式距离</h2>
-<table>
-<thead>
-<tr class="header">
-<th>风电场组合</th>
-<th><span class="math inline">\(d_N\)</span></th>
-<th><span class="math inline">\(d_t\)</span></th>
-<th><span class="math inline">\(d_G\)</span></th>
-<th><span class="math inline">\(d_C\)</span></th>
-<th><span class="math inline">\(d_F\)</span></th>
-<th><span class="math inline">\(d_M\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>北大桥，干河口</td>
-<td>3.6952</td>
-<td>2.4590</td>
-<td>1.6097</td>
-<td>10.9923</td>
-<td>1.6888</td>
-<td>1.3220</td>
-</tr>
-</tbody>
-</table>
-<p>可以看出就欧式距离而言混合Copula也小于其他单一Copula</p>
-<p>PS：作为一个学电气的人一开始看到要使用一个从未见过的EM算法我几乎是拒绝的，要多谢CS的室友和我分享了有关这方面的知识并且和我一起探讨。这个程序跑起来确实让人奔溃，跑一次就要三个多小时，但是最后仿真出来的结果符合我推测确实让我很开心</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/10/混合Copula风速建模——代码实现与结果分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1834,183 +1750,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://fatelancer.top/2016/10/23/javaclass3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="晋文公じゃない">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="化天弹指间">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/23/javaclass3/" itemprop="url">
-                  Java第三次课
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-23T00:00:00+08:00">
-                2016-10-23
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-02-21T10:03:17+08:00">
-                2017-02-21
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/23/javaclass3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/23/javaclass3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/10/23/javaclass3/" class="leancloud_visitors" data-flag-title="Java第三次课">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="gui设计">GUI设计</h1>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/23/javaclass3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://fatelancer.top/2016/10/23/javaclass4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2146,6 +1885,183 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/10/23/javaclass4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://fatelancer.top/2016/10/23/javaclass3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晋文公じゃない">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="化天弹指间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/23/javaclass3/" itemprop="url">
+                  Java第三次课
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-23T00:00:00+08:00">
+                2016-10-23
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-02-21T10:03:17+08:00">
+                2017-02-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/23/javaclass3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/23/javaclass3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/10/23/javaclass3/" class="leancloud_visitors" data-flag-title="Java第三次课">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="gui设计">GUI设计</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/10/23/javaclass3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
