@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="可再生能源,Copula," />
+  <meta name="keywords" content="MATLAB,EM算法,混合Copula,bfgs," />
 
 
 
@@ -89,26 +89,29 @@
 
 
 
-<meta name="description" content="关于研究目的
-由于风电基地的多个风电场地理位置比较靠近，且基本处于同一风带，风速之间具有较强的相关性，使得多个风电场的总体特性不同于单个风电场的特性。
-通过Copula理论进行多个风电场风俗的联合概率分布研究。">
+<meta name="description" content="由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表
+EM算法估计混合Copula参数
+EM主体
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Copula理论的风电场间建模">
-<meta property="og:url" content="http://fatelancer.top/2017/02/21/基于Copula理论的风电场间建模/index.html">
+<meta property="og:title" content="混合Copula风速建模——代码实现与结果分析">
+<meta property="og:url" content="http://fatelancer.top/2017/03/10/混合Copula风速建模——代码实现与结果分析/index.html">
 <meta property="og:site_name" content="化天弹指间">
-<meta property="og:description" content="关于研究目的
-由于风电基地的多个风电场地理位置比较靠近，且基本处于同一风带，风速之间具有较强的相关性，使得多个风电场的总体特性不同于单个风电场的特性。
-通过Copula理论进行多个风电场风俗的联合概率分布研究。">
-<meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/02211106461%E8%80%A6%E5%90%88%28%E6%A6%82%E7%8E%87%29-%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6_1.Png">
-<meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/02211106461%E8%80%A6%E5%90%88%28%E6%A6%82%E7%8E%87%29-%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6_2.Png">
-<meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/02211106461%E8%80%A6%E5%90%88%28%E6%A6%82%E7%8E%87%29-%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6_3.Png">
-<meta property="og:updated_time" content="2017-02-28T09:44:57.464Z">
+<meta property="og:description" content="由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表
+EM算法估计混合Copula参数
+EM主体
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]">
+<meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg">
+<meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/im1.jpg">
+<meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/im2.jpg">
+<meta property="og:updated_time" content="2017-03-10T08:47:33.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于Copula理论的风电场间建模">
-<meta name="twitter:description" content="关于研究目的
-由于风电基地的多个风电场地理位置比较靠近，且基本处于同一风带，风速之间具有较强的相关性，使得多个风电场的总体特性不同于单个风电场的特性。
-通过Copula理论进行多个风电场风俗的联合概率分布研究。">
-<meta name="twitter:image" content="http://oag5ozkgs.bkt.clouddn.com/02211106461%E8%80%A6%E5%90%88%28%E6%A6%82%E7%8E%87%29-%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6_1.Png">
+<meta name="twitter:title" content="混合Copula风速建模——代码实现与结果分析">
+<meta name="twitter:description" content="由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表
+EM算法估计混合Copula参数
+EM主体
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]">
+<meta name="twitter:image" content="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg">
 
 
 
@@ -136,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://fatelancer.top/2017/02/21/基于Copula理论的风电场间建模/"/>
+  <link rel="canonical" href="http://fatelancer.top/2017/03/10/混合Copula风速建模——代码实现与结果分析/"/>
 
 
 
 
 
-  <title> 基于Copula理论的风电场间建模 | 化天弹指间 </title>
+  <title> 混合Copula风速建模——代码实现与结果分析 | 化天弹指间 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -313,7 +316,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://fatelancer.top/2017/02/21/基于Copula理论的风电场间建模/">
+    <link itemprop="mainEntityOfPage" href="http://fatelancer.top/2017/03/10/混合Copula风速建模——代码实现与结果分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="晋文公じゃない">
@@ -334,7 +337,7 @@
             
             
               
-                基于Copula理论的风电场间建模
+                混合Copula风速建模——代码实现与结果分析
               
             
           </h1>
@@ -349,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T10:22:19+08:00">
-                2017-02-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-10T16:05:37+08:00">
+                2017-03-10
               </time>
             
 
@@ -365,8 +368,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-02-28T17:44:57+08:00">
-                2017-02-28
+              <time title="更新于" itemprop="dateModified" datetime="2017-03-10T16:47:33+08:00">
+                2017-03-10
               </time>
             
           </span>
@@ -402,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/21/基于Copula理论的风电场间建模/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/基于Copula理论的风电场间建模/" itemprop="commentCount"></span>
+                <a href="/2017/03/10/混合Copula风速建模——代码实现与结果分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/10/混合Copula风速建模——代码实现与结果分析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -411,7 +414,7 @@
 
           
           
-             <span id="/2017/02/21/基于Copula理论的风电场间建模/" class="leancloud_visitors" data-flag-title="基于Copula理论的风电场间建模">
+             <span id="/2017/03/10/混合Copula风速建模——代码实现与结果分析/" class="leancloud_visitors" data-flag-title="混合Copula风速建模——代码实现与结果分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,28 +443,98 @@
       
 
       
-        <h1 id="关于研究目的">关于研究目的</h1>
-<p>由于风电基地的多个风电场地理位置比较靠近，且基本处于同一风带，风速之间具有较强的相关性，使得多个风电场的总体特性不同于单个风电场的特性。</p>
-<p>通过Copula理论进行多个风电场风俗的联合概率分布研究。 <a id="more"></a></p>
-<h1 id="copula理论">Copula理论</h1>
-<h2 id="关于copula函数">关于Copula函数</h2>
-<p>Copula函数在网络中所能检索到的信息</p>
-<blockquote>
-<strong><a href="http://baike.baidu.com/link?url=qvRvG5X9bS0pqQzhZ7WtPKjmalr9UxgsV8kHdMbNFxPePq4CemrnaHF3c6-9g8Ihdw_9RyfSHJtHnw0uyLeGKCZv2In40VEqDCbmQrvQ5Zk4sbjreZggZCwwgpedrK8j" target="_blank" rel="external">Copula函数</a>百度</strong> Copula函数描述的是变量间的相关性，实际上是一类将联合分布函数与它们各自的边缘分布函数连接在一起的函数，因此也有人将它称为连接函数。相关理论的提出可以追溯到1959年，SKlar通过定理形式将多元分布与Copula函数联系起来。<br>
-20世纪90年代后期相关理论和方法在国外开始得到迅速发展并应用到金融，保险等领域的相关分析，投资组合分析和风险管理等多个方面。<br>
-定义:(Nelsen.2006) N 元Copula函数是指具有以下性质的函数（下记为C）：<br>
-（1）定义域为[0,1]×[0,1]×。。。×[0,1] （共为N个域相乘）；<br>
-（2）C具有零基面（grounded）且是N维递增的；<br>
-（3）C的边缘分布Cn，n=1,2,,,,N,满足Cn(xn)=C(1,…,1,xn,1,,,1)=xn，其中xn∈[0,1],n=1,2,,,N<br>
-
-</blockquote>
-<blockquote>
-<p>CopulaWIKI</p>
-</blockquote>
-<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="http://oag5ozkgs.bkt.clouddn.com/02211106461%E8%80%A6%E5%90%88%28%E6%A6%82%E7%8E%87%29-%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6_1.Png" class="full-image"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="http://oag5ozkgs.bkt.clouddn.com/02211106461%E8%80%A6%E5%90%88%28%E6%A6%82%E7%8E%87%29-%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6_2.Png" class="full-image"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="http://oag5ozkgs.bkt.clouddn.com/02211106461%E8%80%A6%E5%90%88%28%E6%A6%82%E7%8E%87%29-%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%EF%BC%8C%E8%87%AA%E7%94%B1%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6_3.Png" class="full-image"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p><strong>要点：</strong> - 边缘分布与联合分布的概念 - 关于风速的概率分布问题</p>
+        <p><em>由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表</em></p>
+<h1 id="em算法估计混合copula参数">EM算法估计混合Copula参数</h1>
+<h2 id="em主体">EM主体</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">U=GHK;</div><div class="line">V=BDQ;</div><div class="line"><span class="comment">% 初始化</span></div><div class="line">S=<span class="number">3</span>;</div><div class="line">th=<span class="number">0.01</span>;</div><div class="line">omega=[<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>];</div><div class="line">[a,nuhat]=copulafit(<span class="string">'t'</span>,[U,V]);</div><div class="line">a2=copulafit(<span class="string">'Gumbel'</span>,[U,V]);</div><div class="line">a3=copulafit(<span class="string">'Frank'</span>,[U,V]);</div><div class="line">theta=[a(<span class="number">1</span>,<span class="number">2</span>),a2,a3];</div><div class="line">[N,~]=<span class="built_in">size</span>(U);</div><div class="line">count=<span class="number">0</span>;</div><div class="line">tt=<span class="built_in">zeros</span>(N,<span class="number">2</span>);</div><div class="line">t=<span class="built_in">inf</span>;</div><div class="line">COPULA=<span class="built_in">zeros</span>(N,S);</div><div class="line">list1=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">list2=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">puz=<span class="built_in">zeros</span>(N,S);</div><div class="line">puz1=<span class="built_in">zeros</span>(N,S);</div><div class="line"><span class="keyword">while</span> t&gt;=th&amp;&amp;count&lt;=<span class="number">100</span>;</div><div class="line">    theta_old=theta;</div><div class="line">    omega_old=omega;</div><div class="line">    COPULA(:,<span class="number">1</span>)=copulapdf(<span class="string">'t'</span>,[U(:) V(:)],theta_old(<span class="number">1</span>),nuhat);</div><div class="line">    COPULA(:,<span class="number">2</span>)=copulapdf(<span class="string">'Gumbel'</span>,[U(:) V(:)],theta_old(<span class="number">2</span>));</div><div class="line">    COPULA(:,<span class="number">3</span>)=copulapdf(<span class="string">'Frank'</span>,[U(:) V(:)],theta_old(<span class="number">3</span>));</div><div class="line">    puz(:,<span class="number">1</span>)=COPULA(:,<span class="number">1</span>)*omega_old(<span class="number">1</span>);</div><div class="line">    puz(:,<span class="number">2</span>)=COPULA(:,<span class="number">2</span>)*omega_old(<span class="number">2</span>);</div><div class="line">    puz(:,<span class="number">3</span>)=COPULA(:,<span class="number">3</span>)*omega_old(<span class="number">3</span>);</div><div class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">1</span>)=puz(<span class="built_in">i</span>,<span class="number">1</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">2</span>)=puz(<span class="built_in">i</span>,<span class="number">2</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">3</span>)=puz(<span class="built_in">i</span>,<span class="number">3</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">    <span class="keyword">end</span></div><div class="line">    omega(<span class="number">1</span>)=sum(puz1(:,<span class="number">1</span>))/N;</div><div class="line">    omega(<span class="number">2</span>)=sum(puz1(:,<span class="number">2</span>))/N;</div><div class="line">    omega(<span class="number">3</span>)=sum(puz1(:,<span class="number">3</span>))/N;</div><div class="line">    omega</div><div class="line">    tt(:,<span class="number">1</span>)=tinv(U(:),nuhat);</div><div class="line">    tt(:,<span class="number">2</span>)=tinv(V(:),nuhat);</div><div class="line">    [turntheta,fval,exitflag,output,grad,hessian]=updatetheta(N,U,V,theta_old,puz1,tt,nuhat);</div><div class="line">    theta=turntheta;</div><div class="line">    theta</div><div class="line">    list1(:,count+<span class="number">1</span>)=theta;</div><div class="line">    list2(:,count+<span class="number">1</span>)=omega;</div><div class="line">    t=max([norm(theta_old(:)-theta(:));norm(omega_old(:)-omega(:))])</div><div class="line">    count=count+<span class="number">1</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="参数更新非线性优化bfgs">参数更新（非线性优化bfgs）</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[turntheta,fval,exitflag,output,grad,hessian]</span>=<span class="title">updatetheta</span><span class="params">(N,U,V,theta,puz,t,nuhat)</span></span></div><div class="line">options=optimset(<span class="string">'Display'</span>,<span class="string">'iter-detailed'</span>,<span class="string">'TolFun'</span>,<span class="number">1e-10</span>,<span class="string">'TolX'</span>,<span class="number">1e-10</span>,<span class="string">'LargeScale'</span>,<span class="string">'off'</span>,<span class="string">'FinDiffType'</span>,<span class="string">'central'</span>,<span class="string">'HessUpdate'</span>,<span class="string">'bfgs'</span>);</div><div class="line">[turntheta,fval,exitflag,output,grad,hessian]=fminunc(@utheta,theta,options);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">utheta</span><span class="params">(theta)</span></span></div><div class="line"><span class="keyword">if</span> theta(<span class="number">3</span>)==<span class="number">0</span></div><div class="line">    theta(<span class="number">3</span>)=theta(<span class="number">3</span>)+<span class="number">0.0001</span>;  <span class="comment">%防止出现 Frank  Copula 的相依结构参数为 0</span></div><div class="line"><span class="keyword">end</span></div><div class="line">y=<span class="number">0</span>;</div><div class="line">th=<span class="built_in">eye</span>(<span class="number">2</span>);</div><div class="line">th(<span class="number">1</span>,<span class="number">2</span>)=theta(<span class="number">1</span>);</div><div class="line">th(<span class="number">2</span>,<span class="number">1</span>)=theta(<span class="number">1</span>);</div><div class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:N</div><div class="line"></div><div class="line">    y=y+<span class="built_in">log</span>(((det(th))^(<span class="number">-1</span>/<span class="number">2</span>))*<span class="built_in">gamma</span>((nuhat+<span class="number">2</span>)/<span class="number">2</span>)*<span class="built_in">gamma</span>(nuhat/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,:)*th^(<span class="number">-1</span>)*t(<span class="built_in">j</span>,:)'/nuhat)^(-(nuhat+<span class="number">2</span>)/<span class="number">2</span>)/((<span class="built_in">gamma</span>((nuhat+<span class="number">1</span>)/<span class="number">2</span>))^<span class="number">2</span>*((<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">1</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">2</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">1</span>)+...</div><div class="line">        <span class="built_in">log</span>(<span class="built_in">exp</span>(-((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^theta(<span class="number">2</span>)+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^theta(<span class="number">2</span>))^(<span class="number">1</span>/theta(<span class="number">2</span>)))*(<span class="built_in">log</span>(U(<span class="built_in">j</span>))*<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)<span class="number">-1</span>)*(((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">1</span>/theta(<span class="number">2</span>))+theta(<span class="number">2</span>)<span class="number">-1</span>)/(U(<span class="built_in">j</span>)*V(<span class="built_in">j</span>)*((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">2</span><span class="number">-1</span>/theta(<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">2</span>)+...</div><div class="line">        <span class="built_in">log</span>(theta(<span class="number">3</span>)*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))*<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*(U(<span class="built_in">j</span>)+V(<span class="built_in">j</span>)))/((<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))-(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*U(<span class="built_in">j</span>)))*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*V(<span class="built_in">j</span>))))^<span class="number">2</span>)*puz(<span class="built_in">j</span>,<span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">y=-y;</div><div class="line"><span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="结果">结果</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Copula函数</th>
+<th><span class="math inline">\(\theta\)</span></th>
+<th><span class="math inline">\(\omega\)</span></th>
+<th><span class="math inline">\(k\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t-Copula</td>
+<td>0.1244</td>
+<td>0.0822</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Gumbel-Copula</td>
+<td>4.1127</td>
+<td>0.7495</td>
+</tr>
+<tr class="odd">
+<td>Frank-Copula</td>
+<td>6.5931</td>
+<td>0.1683</td>
+</tr>
+</tbody>
+</table>
+<p>即 <span class="math display">\[C(u,v;a)=0.7495C_{Gumbel}(u,v;4.1127)+0.1683C_{Frank}(u,v;6.5931)+0.0822C_t(u,v;0.1244,3)\]</span></p>
+<h1 id="结果评价">结果评价</h1>
+<h2 id="q-q图">Q-Q图</h2>
+<p><img src="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg" alt="mixed-Copula"> 可以与之前单一Copula的仿真QQ图进行比较 <img src="http://oag5ozkgs.bkt.clouddn.com/im1.jpg" alt="qq图2"> <img src="http://oag5ozkgs.bkt.clouddn.com/im2.jpg" alt="qq图3"> 可以明显的看出拟合优度上混合Copula有很大的优势</p>
+<h2 id="k-s检验">K-S检验</h2>
+<table>
+<thead>
+<tr class="header">
+<th>风电场组合</th>
+<th><span class="math inline">\(k_N\)</span></th>
+<th><span class="math inline">\(k_t\)</span></th>
+<th><span class="math inline">\(k_G\)</span></th>
+<th><span class="math inline">\(k_C\)</span></th>
+<th><span class="math inline">\(k_F\)</span></th>
+<th><span class="math inline">\(K_M\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>北大桥，干河口</td>
+<td>0.0395</td>
+<td>0.0343</td>
+<td>0.0302</td>
+<td>0.0468</td>
+<td>0.0323</td>
+<td>0.0271</td>
+</tr>
+</tbody>
+</table>
+<p>可以看出就K-S统计值而言混合Copula也小于其他单一Copula</p>
+<h2 id="欧式距离">欧式距离</h2>
+<table>
+<thead>
+<tr class="header">
+<th>风电场组合</th>
+<th><span class="math inline">\(d_N\)</span></th>
+<th><span class="math inline">\(d_t\)</span></th>
+<th><span class="math inline">\(d_G\)</span></th>
+<th><span class="math inline">\(d_C\)</span></th>
+<th><span class="math inline">\(d_F\)</span></th>
+<th><span class="math inline">\(d_M\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>北大桥，干河口</td>
+<td>3.6952</td>
+<td>2.4590</td>
+<td>1.6097</td>
+<td>10.9923</td>
+<td>1.6888</td>
+<td>1.3220</td>
+</tr>
+</tbody>
+</table>
+<p>可以看出就欧式距离而言混合Copula也小于其他单一Copula</p>
+<p>PS：作为一个学电气的人一开始看到要使用一个从未见过的EM算法我几乎是拒绝的，要多谢CS的室友和我分享了有关这方面的知识并且和我一起探讨。这个程序跑起来确实让人奔溃，跑一次就要三个多小时，但是最后仿真出来的结果符合我推测确实让我很开心</p>
 
       
     </div>
@@ -485,9 +558,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/可再生能源/" rel="tag"># 可再生能源</a>
+            <a href="/tags/MATLAB/" rel="tag"># MATLAB</a>
           
-            <a href="/tags/Copula/" rel="tag"># Copula</a>
+            <a href="/tags/EM算法/" rel="tag"># EM算法</a>
+          
+            <a href="/tags/混合Copula/" rel="tag"># 混合Copula</a>
+          
+            <a href="/tags/bfgs/" rel="tag"># bfgs</a>
           
         </div>
       
@@ -500,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/23/javaclass3/" rel="next" title="Java第三次课">
-                <i class="fa fa-chevron-left"></i> Java第三次课
+              <a href="/2017/03/06/混合Copula函数风速建模/" rel="next" title="混合Copula函数风速建模——EM算法">
+                <i class="fa fa-chevron-left"></i> 混合Copula函数风速建模——EM算法
               </a>
             
           </div>
@@ -509,10 +586,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/27/Copula风速建模相关（1）/" rel="prev" title="Copula风速建模相关（1）——相关参数">
-                Copula风速建模相关（1）——相关参数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,10 +600,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/21/基于Copula理论的风电场间建模/"
-     data-title="基于Copula理论的风电场间建模"
+        <div class="ds-share flat" data-thread-key="2017/03/10/混合Copula风速建模——代码实现与结果分析/"
+     data-title="混合Copula风速建模——代码实现与结果分析"
      data-content=""
-     data-url="http://fatelancer.top/2017/02/21/基于Copula理论的风电场间建模/">
+     data-url="http://fatelancer.top/2017/03/10/混合Copula风速建模——代码实现与结果分析/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -557,8 +630,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/21/基于Copula理论的风电场间建模/"
-           data-title="基于Copula理论的风电场间建模" data-url="http://fatelancer.top/2017/02/21/基于Copula理论的风电场间建模/">
+      <div class="ds-thread" data-thread-key="2017/03/10/混合Copula风速建模——代码实现与结果分析/"
+           data-title="混合Copula风速建模——代码实现与结果分析" data-url="http://fatelancer.top/2017/03/10/混合Copula风速建模——代码实现与结果分析/">
       </div>
     
   </div>
@@ -678,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于研究目的"><span class="nav-number">1.</span> <span class="nav-text">关于研究目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#copula理论"><span class="nav-number">2.</span> <span class="nav-text">Copula理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于copula函数"><span class="nav-number">2.1.</span> <span class="nav-text">关于Copula函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#em算法估计混合copula参数"><span class="nav-number">1.</span> <span class="nav-text">EM算法估计混合Copula参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#em主体"><span class="nav-number">1.1.</span> <span class="nav-text">EM主体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数更新非线性优化bfgs"><span class="nav-number">1.2.</span> <span class="nav-text">参数更新（非线性优化bfgs）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">1.3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结果评价"><span class="nav-number">2.</span> <span class="nav-text">结果评价</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#q-q图"><span class="nav-number">2.1.</span> <span class="nav-text">Q-Q图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-s检验"><span class="nav-number">2.2.</span> <span class="nav-text">K-S检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧式距离"><span class="nav-number">2.3.</span> <span class="nav-text">欧式距离</span></a></li></ol></li></ol></div>
             
 
           </div>
