@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fatelancer.top/"/>
-  <updated>2017-03-17T06:32:12.524Z</updated>
+  <updated>2017-03-17T07:03:38.791Z</updated>
   <id>http://fatelancer.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://fatelancer.top/2017/03/17/%E5%85%89%E4%BC%8F%E5%BB%BA%E6%A8%A1%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1%E5%AE%9E%E7%8E%B0/"/>
     <id>http://fatelancer.top/2017/03/17/光伏建模（2）——核密度估计实现/</id>
     <published>2017-03-17T05:33:01.000Z</published>
-    <updated>2017-03-17T06:32:12.524Z</updated>
+    <updated>2017-03-17T07:03:38.791Z</updated>
     
     <content type="html"><![CDATA[<h1 id="数据录入">数据录入</h1>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\一月\太阳能测光数据_2010-01-01 - 2010-02-01.xls'</span>);</div><div class="line">solardata=solar(:,<span class="number">2</span>);</div><div class="line">SData=cell(<span class="number">1</span>,<span class="number">7</span>);</div><div class="line">SData(<span class="number">1</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\二月\太阳能测光数据_2010-02.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">2</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\三月\太阳能测光数据_2010-03-01 - 2010-04-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">3</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\四月\太阳能测光数据_2010-04-01 - 2010-05-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">4</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\五月\太阳能测光数据_2010-05-01 - 2010-06-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">5</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\六月\太阳能测光数据_2010-06-01 - 2010-07-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">6</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\七月\太阳能测光数据2010-7-1-2010-8-1.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">3</span>)]</div><div class="line">SData(<span class="number">7</span>)=&#123;solar&#125;;</div></pre></td></tr></table></figure>
@@ -34,6 +34,8 @@
 <p class="caption">频率分布</p>
 </div>
 <p>可以看到在长时间尺度上（上例为半年）核密度估计的拟合程度很高，但是在稍短的时间尺度上（一个月）则效果较差，如下图 <img src="http://oag5ozkgs.bkt.clouddn.com/1_2.jpg" alt="1"></p>
+<p>该种情况可以通过[调整窗的宽度来提高拟合优度][1]，如下图为窗宽度为2.5时重新拟合一个月的光伏强度结果 <img src="http://oag5ozkgs.bkt.clouddn.com/1_3.jpg" alt="width=2.5时拟合结果"></p>
+<p>[1]：http://blog.csdn.net/matlab_matlab/article/details/56286868</p>
 ]]></content>
     
     <summary type="html">
@@ -57,7 +59,7 @@
     <link href="http://fatelancer.top/2017/03/15/%E5%85%89%E4%BC%8F%E5%BB%BA%E6%A8%A1/"/>
     <id>http://fatelancer.top/2017/03/15/光伏建模/</id>
     <published>2017-03-15T02:44:56.000Z</published>
-    <updated>2017-03-17T05:31:27.885Z</updated>
+    <updated>2017-03-17T06:47:48.282Z</updated>
     
     <content type="html"><![CDATA[<h1 id="光伏建模与风速建模的不同">光伏建模与风速建模的不同</h1>
 <ul>
@@ -67,6 +69,13 @@
 <p>此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数据核密度估计</p>
 <a id="more"></a>
 <h1 id="非参数核密度估计">非参数核密度估计</h1>
+<dl>
+<dt>定义</dt>
+<dd>设<span class="math inline">\(x_1,x_2,...,x_n\)</span>为随机变量<span class="math inline">\(x\)</span>的样本，令随机变量<span class="math inline">\(x\)</span>的概率密度函数为<span class="math inline">\(f(x)\)</span>，则 <span class="math inline">\(f(x)\)</span> 的核密度估计为：
+</dd>
+</dl>
+<p><span class="math display">\[f_h(x)={1 \over nh}{\displaystyle \sum_{j=1}^n{K({x-x_j \over h})}}={1 \over n}{\displaystyle \sum_{j=1}^n{K_h(x-x_j)}}\]</span></p>
+<p>其中<span class="math inline">\(n\)</span>为样本容量，<span class="math inline">\(h\)</span> 为平滑系数，<span class="math inline">\(K(·)\)</span> 为核函数</p>
 <iframe src="http://www.cnblogs.com/wt869054461/p/5935992.html" width="100%" height="700px" frameborder="0" scrolling="auto">
 </iframe>
 ]]></content>
