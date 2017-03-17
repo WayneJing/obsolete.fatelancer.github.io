@@ -99,7 +99,7 @@
 12345678910111213141516171819202122232425262728solar=xlsread(&apos;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\一月\太阳能测光数据_2010-01-01 - 2010-02-01.xls&apos;);solardata=solar(:,2);SData=cell(1,7);SData(1)">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/1.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/1_2.jpg">
-<meta property="og:updated_time" content="2017-03-17T06:29:43.505Z">
+<meta property="og:updated_time" content="2017-03-17T06:32:12.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="光伏建模（2）——核密度估计实现">
 <meta name="twitter:description" content="数据录入
@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-03-17T14:29:43+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-03-17T14:32:12+08:00">
                 2017-03-17
               </time>
             
@@ -438,6 +438,7 @@
       
         <h1 id="数据录入">数据录入</h1>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\一月\太阳能测光数据_2010-01-01 - 2010-02-01.xls'</span>);</div><div class="line">solardata=solar(:,<span class="number">2</span>);</div><div class="line">SData=cell(<span class="number">1</span>,<span class="number">7</span>);</div><div class="line">SData(<span class="number">1</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\二月\太阳能测光数据_2010-02.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">2</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\三月\太阳能测光数据_2010-03-01 - 2010-04-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">3</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\四月\太阳能测光数据_2010-04-01 - 2010-05-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">4</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\五月\太阳能测光数据_2010-05-01 - 2010-06-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">5</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\六月\太阳能测光数据_2010-06-01 - 2010-07-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">6</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\七月\太阳能测光数据2010-7-1-2010-8-1.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">3</span>)]</div><div class="line">SData(<span class="number">7</span>)=&#123;solar&#125;;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="使用核密度估计对长时间内的光伏强度进行估计">使用核密度估计对长时间内的光伏强度进行估计</h1>
 <h2 id="代码实现">代码实现</h2>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[fsd,sdc]=ecdf(solardata);</div><div class="line">[fks,ksc]=ksdensity(solardata,[<span class="number">-100</span>:<span class="number">1</span>:<span class="number">1200</span>]);</div><div class="line">figure;</div><div class="line">ecdfhist(fsd,sdc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(ksc,fks,<span class="string">'-r'</span>)</div></pre></td></tr></table></figure>

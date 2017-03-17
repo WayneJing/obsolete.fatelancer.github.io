@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fatelancer.top/"/>
-  <updated>2017-03-17T06:29:43.505Z</updated>
+  <updated>2017-03-17T06:32:12.524Z</updated>
   <id>http://fatelancer.top/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://fatelancer.top/2017/03/17/%E5%85%89%E4%BC%8F%E5%BB%BA%E6%A8%A1%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1%E5%AE%9E%E7%8E%B0/"/>
     <id>http://fatelancer.top/2017/03/17/光伏建模（2）——核密度估计实现/</id>
     <published>2017-03-17T05:33:01.000Z</published>
-    <updated>2017-03-17T06:29:43.505Z</updated>
+    <updated>2017-03-17T06:32:12.524Z</updated>
     
     <content type="html"><![CDATA[<h1 id="数据录入">数据录入</h1>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\一月\太阳能测光数据_2010-01-01 - 2010-02-01.xls'</span>);</div><div class="line">solardata=solar(:,<span class="number">2</span>);</div><div class="line">SData=cell(<span class="number">1</span>,<span class="number">7</span>);</div><div class="line">SData(<span class="number">1</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\二月\太阳能测光数据_2010-02.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">2</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\三月\太阳能测光数据_2010-03-01 - 2010-04-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">3</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\四月\太阳能测光数据_2010-04-01 - 2010-05-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">4</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\五月\太阳能测光数据_2010-05-01 - 2010-06-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">5</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\六月\太阳能测光数据_2010-06-01 - 2010-07-01.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">2</span>)]</div><div class="line">SData(<span class="number">6</span>)=&#123;solar&#125;;</div><div class="line"></div><div class="line">solar=xlsread(<span class="string">'E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\七月\太阳能测光数据2010-7-1-2010-8-1.xls'</span>);</div><div class="line">solardata=[solardata; solar(:,<span class="number">3</span>)]</div><div class="line">SData(<span class="number">7</span>)=&#123;solar&#125;;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="使用核密度估计对长时间内的光伏强度进行估计">使用核密度估计对长时间内的光伏强度进行估计</h1>
 <h2 id="代码实现">代码实现</h2>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[fsd,sdc]=ecdf(solardata);</div><div class="line">[fks,ksc]=ksdensity(solardata,[<span class="number">-100</span>:<span class="number">1</span>:<span class="number">1200</span>]);</div><div class="line">figure;</div><div class="line">ecdfhist(fsd,sdc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(ksc,fks,<span class="string">'-r'</span>)</div></pre></td></tr></table></figure>
@@ -38,7 +39,7 @@
     <summary type="html">
     
       &lt;h1 id=&quot;数据录入&quot;&gt;数据录入&lt;/h1&gt;
-&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/d
+&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;solar=xlsread(&lt;span class=&quot;string&quot;&gt;&#39;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\一月\太阳能测光数据_2010-01-01 - 2010-02-01.xls&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solardata=solar(:,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData=cell(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)=&amp;#123;solar&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solar=xlsread(&lt;span class=&quot;string&quot;&gt;&#39;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\二月\太阳能测光数据_2010-02.xls&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solardata=[solardata; solar(:,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)=&amp;#123;solar&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solar=xlsread(&lt;span class=&quot;string&quot;&gt;&#39;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\三月\太阳能测光数据_2010-03-01 - 2010-04-01.xls&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solardata=[solardata; solar(:,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)=&amp;#123;solar&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solar=xlsread(&lt;span class=&quot;string&quot;&gt;&#39;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\四月\太阳能测光数据_2010-04-01 - 2010-05-01.xls&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solardata=[solardata; solar(:,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)=&amp;#123;solar&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solar=xlsread(&lt;span class=&quot;string&quot;&gt;&#39;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\五月\太阳能测光数据_2010-05-01 - 2010-06-01.xls&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solardata=[solardata; solar(:,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData(&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)=&amp;#123;solar&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solar=xlsread(&lt;span class=&quot;string&quot;&gt;&#39;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\六月\太阳能测光数据_2010-06-01 - 2010-07-01.xls&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solardata=[solardata; solar(:,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData(&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;)=&amp;#123;solar&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solar=xlsread(&lt;span class=&quot;string&quot;&gt;&#39;E:\学习\毕设\数据资料\数据资料\windfarm data\敦煌太阳能测光数据1-7\七月\太阳能测光数据2010-7-1-2010-8-1.xls&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;solardata=[solardata; solar(:,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SData(&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;)=&amp;#123;solar&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -206,9 +207,9 @@
     
       <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
     
-      <category term="混合Copula" scheme="http://fatelancer.top/tags/%E6%B7%B7%E5%90%88Copula/"/>
-    
       <category term="EM算法" scheme="http://fatelancer.top/tags/EM%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="混合Copula" scheme="http://fatelancer.top/tags/%E6%B7%B7%E5%90%88Copula/"/>
     
       <category term="bfgs" scheme="http://fatelancer.top/tags/bfgs/"/>
     
@@ -1232,13 +1233,13 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
       <category term="电气工程" scheme="http://fatelancer.top/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="柔性建模" scheme="http://fatelancer.top/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
-    
       <category term="deferrable load" scheme="http://fatelancer.top/tags/deferrable-load/"/>
     
       <category term="需求响应" scheme="http://fatelancer.top/tags/%E9%9C%80%E6%B1%82%E5%93%8D%E5%BA%94/"/>
     
       <category term="可再生能源" scheme="http://fatelancer.top/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
+    
+      <category term="柔性建模" scheme="http://fatelancer.top/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
     
       <category term="real-time" scheme="http://fatelancer.top/tags/real-time/"/>
     
@@ -1408,9 +1409,9 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
       <category term="电气工程" scheme="http://fatelancer.top/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="柔性建模" scheme="http://fatelancer.top/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
-    
       <category term="可再生能源" scheme="http://fatelancer.top/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
+    
+      <category term="柔性建模" scheme="http://fatelancer.top/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
     
       <category term="deferrable" scheme="http://fatelancer.top/tags/deferrable/"/>
     
