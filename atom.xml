@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fatelancer.top/"/>
-  <updated>2017-03-17T07:24:55.316Z</updated>
+  <updated>2017-03-25T09:26:36.983Z</updated>
   <id>http://fatelancer.top/</id>
   
   <author>
@@ -14,6 +14,163 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>混合Copula建模修正——更多Copula函数的加入</title>
+    <link href="http://fatelancer.top/2017/03/23/%E6%B7%B7%E5%90%88Copula%E5%BB%BA%E6%A8%A1%E4%BF%AE%E6%AD%A3/"/>
+    <id>http://fatelancer.top/2017/03/23/混合Copula建模修正/</id>
+    <published>2017-03-23T05:46:07.000Z</published>
+    <updated>2017-03-25T09:26:36.983Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="修正的原因">修正的原因</h1>
+<p>由于Copula函数并非线性函数，简单的通过单个Copula函数拟合效果来选择使用哪几个Copula函数来进行混合可能不够准确，可能会存在两个单一表现并不好的Copula函数混合后结果却比较好的情况。</p>
+<p>因此，将原来的混合Copula模型拓展至五个常用Copula进行混合建模。</p>
+<h1 id="修正后的代码">修正后的代码</h1>
+<h2 id="em算法主体部分">EM算法主体部分</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">U=GHKC;</div><div class="line">V=BDQC;</div><div class="line"><span class="comment">% 初始化</span></div><div class="line">S=<span class="number">5</span>;</div><div class="line">th=<span class="number">0.01</span>;</div><div class="line">omega=[<span class="number">1</span>/<span class="number">5</span>,<span class="number">1</span>/<span class="number">5</span>,<span class="number">1</span>/<span class="number">5</span>,<span class="number">1</span>/<span class="number">5</span>,<span class="number">1</span>/<span class="number">5</span>];</div><div class="line">[a,nuhat]=copulafit(<span class="string">'t'</span>,[U,V]);</div><div class="line">a2=copulafit(<span class="string">'Gumbel'</span>,[U,V]);</div><div class="line">a3=copulafit(<span class="string">'Frank'</span>,[U,V]);</div><div class="line">a4=copulafit(<span class="string">'Gaussian'</span>,[U,V]);</div><div class="line">a5=copulafit(<span class="string">'Clayton'</span>,[U,V]);</div><div class="line">theta=[a(<span class="number">1</span>,<span class="number">2</span>),a2,a3,a4(<span class="number">1</span>,<span class="number">2</span>),a5];</div><div class="line">[N,~]=<span class="built_in">size</span>(U);</div><div class="line">count=<span class="number">0</span>;</div><div class="line">tt=<span class="built_in">zeros</span>(N,<span class="number">2</span>);</div><div class="line">nn=<span class="built_in">zeros</span>(N,<span class="number">2</span>);</div><div class="line">tt(:,<span class="number">1</span>)=tinv(U(:),nuhat);</div><div class="line">tt(:,<span class="number">2</span>)=tinv(V(:),nuhat);</div><div class="line">nn(:,<span class="number">1</span>)=norminv(U(:));</div><div class="line">nn(:,<span class="number">2</span>)=norminv(V(:));</div><div class="line">t=<span class="built_in">inf</span>;</div><div class="line">COPULA=<span class="built_in">zeros</span>(N,S);</div><div class="line">list1=<span class="built_in">zeros</span>(<span class="number">5</span>,<span class="number">101</span>);</div><div class="line">list2=<span class="built_in">zeros</span>(<span class="number">5</span>,<span class="number">101</span>);</div><div class="line">puz=<span class="built_in">zeros</span>(N,S);</div><div class="line">puz1=<span class="built_in">zeros</span>(N,S);</div><div class="line">turntheta_old=<span class="built_in">zeros</span>(<span class="number">1</span>,S);</div><div class="line">tic</div><div class="line"><span class="keyword">while</span> t&gt;=th&amp;&amp;count&lt;=<span class="number">50</span>;</div><div class="line">    theta_old=theta;</div><div class="line">    omega_old=omega;</div><div class="line">    <span class="comment">%转化为无约束限制的参数</span></div><div class="line">    turntheta_old(<span class="number">1</span>)=<span class="built_in">tan</span>(<span class="built_in">pi</span>*theta_old(<span class="number">1</span>)/<span class="number">2</span>);</div><div class="line">    turntheta_old(<span class="number">2</span>)=<span class="built_in">log</span>(theta_old(<span class="number">2</span>)<span class="number">-1</span>);</div><div class="line">    turntheta_old(<span class="number">4</span>)=<span class="built_in">tan</span>(<span class="built_in">pi</span>*theta_old(<span class="number">4</span>)/<span class="number">2</span>);</div><div class="line">    turntheta_old(<span class="number">5</span>)=<span class="built_in">log</span>(theta_old(<span class="number">5</span>));</div><div class="line">    COPULA(:,<span class="number">1</span>)=copulapdf(<span class="string">'t'</span>,[U(:) V(:)],theta_old(<span class="number">1</span>),nuhat);</div><div class="line">    COPULA(:,<span class="number">2</span>)=copulapdf(<span class="string">'Gumbel'</span>,[U(:) V(:)],theta_old(<span class="number">2</span>));</div><div class="line">    COPULA(:,<span class="number">3</span>)=copulapdf(<span class="string">'Frank'</span>,[U(:) V(:)],theta_old(<span class="number">3</span>));</div><div class="line">    COPULA(:,<span class="number">4</span>)=copulapdf(<span class="string">'Gaussian'</span>,[U(:) V(:)],theta_old(<span class="number">4</span>));</div><div class="line">    COPULA(:,<span class="number">5</span>)=copulapdf(<span class="string">'Clayton'</span>,[U(:) V(:)],theta_old(<span class="number">5</span>));</div><div class="line">    puz(:,<span class="number">1</span>)=COPULA(:,<span class="number">1</span>)*omega_old(<span class="number">1</span>);</div><div class="line">    puz(:,<span class="number">2</span>)=COPULA(:,<span class="number">2</span>)*omega_old(<span class="number">2</span>);</div><div class="line">    puz(:,<span class="number">3</span>)=COPULA(:,<span class="number">3</span>)*omega_old(<span class="number">3</span>);</div><div class="line">    puz(:,<span class="number">4</span>)=COPULA(:,<span class="number">4</span>)*omega_old(<span class="number">4</span>);</div><div class="line">    puz(:,<span class="number">5</span>)=COPULA(:,<span class="number">5</span>)*omega_old(<span class="number">5</span>);</div><div class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">1</span>)=puz(<span class="built_in">i</span>,<span class="number">1</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">2</span>)=puz(<span class="built_in">i</span>,<span class="number">2</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">3</span>)=puz(<span class="built_in">i</span>,<span class="number">3</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">4</span>)=puz(<span class="built_in">i</span>,<span class="number">4</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">5</span>)=puz(<span class="built_in">i</span>,<span class="number">5</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">    <span class="keyword">end</span></div><div class="line">    omega(<span class="number">1</span>)=sum(puz1(:,<span class="number">1</span>))/N;</div><div class="line">    omega(<span class="number">2</span>)=sum(puz1(:,<span class="number">2</span>))/N;</div><div class="line">    omega(<span class="number">3</span>)=sum(puz1(:,<span class="number">3</span>))/N;</div><div class="line">    omega(<span class="number">4</span>)=sum(puz1(:,<span class="number">4</span>))/N;</div><div class="line">    omega(<span class="number">5</span>)=sum(puz1(:,<span class="number">5</span>))/N;</div><div class="line">    omega</div><div class="line">    tic</div><div class="line">    [turntheta,fval,exitflag,output,grad,hessian]=updatetheta(N,U,V,turntheta_old,puz1,tt,nn,nuhat);</div><div class="line">    toc</div><div class="line">    theta(<span class="number">1</span>)=<span class="built_in">atan</span>(turntheta(<span class="number">1</span>))*<span class="number">2</span>/<span class="built_in">pi</span>;</div><div class="line">    theta(<span class="number">2</span>)=<span class="built_in">exp</span>(turntheta(<span class="number">2</span>))+<span class="number">1</span>;</div><div class="line">    theta(<span class="number">4</span>)=<span class="built_in">atan</span>(turntheta(<span class="number">4</span>))*<span class="number">2</span>/<span class="built_in">pi</span>;</div><div class="line">    theta(<span class="number">5</span>)=<span class="built_in">exp</span>(turntheta(<span class="number">5</span>));</div><div class="line">    theta</div><div class="line">    list1(:,count+<span class="number">1</span>)=theta;</div><div class="line">    list2(:,count+<span class="number">1</span>)=omega;</div><div class="line">    t=max([norm(theta_old(:)-theta(:));norm(omega_old(:)-omega(:))])</div><div class="line">    count=count+<span class="number">1</span></div><div class="line"><span class="keyword">end</span></div><div class="line">toc</div><div class="line">beep</div></pre></td></tr></table></figure>
+<p>代码中涉及对参数进行数学变换将其参数从各自有限定义域转为<span class="math inline">\((-\infty,+ \infty)\)</span></p>
+<p>其中:</p>
+<ul>
+<li>t-Copula与正态Copula参数定义域为<span class="math inline">\((-1,1)\)</span></li>
+<li>Gumbel-Copula参数定义域为<span class="math inline">\((1,+\infty)\)</span></li>
+<li>Clayton-Copula参数定义域为<span class="math inline">\((0,+\infty)\)</span></li>
+<li>Frank-Copula参数定义域为<span class="math inline">\((-\infty,+\infty)\)</span></li>
+</ul>
+<h2 id="参数更新部分">参数更新部分</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[turntheta,fval,exitflag,output,grad,hessian]</span>=<span class="title">updatetheta</span><span class="params">(N,U,V,theta,puz,t,n,nuhat)</span></span></div><div class="line">options=optimset(<span class="string">'Display'</span>,<span class="string">'iter-detailed'</span>,<span class="string">'MaxFunEvals'</span>,<span class="number">1000</span>,<span class="string">'TolFun'</span>,<span class="number">1e-6</span>,<span class="string">'TolX'</span>,<span class="number">1e-10</span>,<span class="string">'LargeScale'</span>,<span class="string">'on'</span>,<span class="string">'FinDiffType'</span>,<span class="string">'central'</span>,<span class="string">'HessUpdate'</span>,<span class="string">'bfgs'</span>);</div><div class="line">[turntheta,fval,exitflag,output,grad,hessian]=fminunc(@utheta,theta,options);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">utheta</span><span class="params">(theta)</span></span></div><div class="line"><span class="keyword">if</span> theta(<span class="number">3</span>)==<span class="number">0</span></div><div class="line">    theta(<span class="number">3</span>)=theta(<span class="number">3</span>)+<span class="number">0.0001</span>;  <span class="comment">%防止出现 Frank  Copula 的相依结构参数为 0</span></div><div class="line"><span class="keyword">end</span></div><div class="line">y=<span class="number">0</span>;</div><div class="line">th=<span class="built_in">eye</span>(<span class="number">2</span>);</div><div class="line">th1=<span class="built_in">eye</span>(<span class="number">2</span>);</div><div class="line">th(<span class="number">1</span>,<span class="number">2</span>)=<span class="built_in">atan</span>(theta(<span class="number">1</span>))*<span class="number">2</span>/<span class="built_in">pi</span>;</div><div class="line">th(<span class="number">2</span>,<span class="number">1</span>)=<span class="built_in">atan</span>(theta(<span class="number">1</span>))*<span class="number">2</span>/<span class="built_in">pi</span>;</div><div class="line">th1(<span class="number">1</span>,<span class="number">2</span>)=<span class="built_in">atan</span>(theta(<span class="number">4</span>))*<span class="number">2</span>/<span class="built_in">pi</span>;</div><div class="line">th1(<span class="number">2</span>,<span class="number">1</span>)=<span class="built_in">atan</span>(theta(<span class="number">4</span>))*<span class="number">2</span>/<span class="built_in">pi</span>;</div><div class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:N</div><div class="line"></div><div class="line">    y=y+<span class="built_in">log</span>(((det(th))^(<span class="number">-1</span>/<span class="number">2</span>))*<span class="built_in">gamma</span>((nuhat+<span class="number">2</span>)/<span class="number">2</span>)*<span class="built_in">gamma</span>(nuhat/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,:)*th^(<span class="number">-1</span>)*t(<span class="built_in">j</span>,:)'/nuhat)^(-(nuhat+<span class="number">2</span>)/<span class="number">2</span>)/((<span class="built_in">gamma</span>((nuhat+<span class="number">1</span>)/<span class="number">2</span>))^<span class="number">2</span>*((<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">1</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">2</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">1</span>)+...</div><div class="line">        <span class="built_in">log</span>(<span class="built_in">exp</span>(-((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>)+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>))^(<span class="number">1</span>/(<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>)))*(<span class="built_in">log</span>(U(<span class="built_in">j</span>))*<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^((<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>)<span class="number">-1</span>)*(((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^((<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^((<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>)))^(<span class="number">1</span>/(<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>))+(<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>)<span class="number">-1</span>)/(U(<span class="built_in">j</span>)*V(<span class="built_in">j</span>)*((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^((<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^((<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>)))^(<span class="number">2</span><span class="number">-1</span>/(<span class="built_in">exp</span>(theta(<span class="number">2</span>))+<span class="number">1</span>))))*puz(<span class="built_in">j</span>,<span class="number">2</span>)+...</div><div class="line">        <span class="built_in">log</span>(theta(<span class="number">3</span>)*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))*<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*(U(<span class="built_in">j</span>)+V(<span class="built_in">j</span>)))/((<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))-(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*U(<span class="built_in">j</span>)))*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*V(<span class="built_in">j</span>))))^<span class="number">2</span>)*puz(<span class="built_in">j</span>,<span class="number">3</span>)+...</div><div class="line">        <span class="built_in">log</span>((det(th1))^(<span class="number">-1</span>/<span class="number">2</span>)*<span class="built_in">exp</span>(<span class="number">-1</span>/<span class="number">2</span>*n(<span class="built_in">j</span>,:)*(th1^(<span class="number">-1</span>)-<span class="built_in">eye</span>(<span class="number">2</span>))*n(<span class="built_in">j</span>,:)'))*puz(<span class="built_in">j</span>,<span class="number">4</span>)+...</div><div class="line">        <span class="built_in">log</span>((<span class="number">1</span>+<span class="built_in">exp</span>(theta(<span class="number">5</span>)))*(U(<span class="built_in">j</span>)*V(<span class="built_in">j</span>))^(-<span class="built_in">exp</span>(theta(<span class="number">5</span>))<span class="number">-1</span>)*(U(<span class="built_in">j</span>)^(-<span class="built_in">exp</span>(theta(<span class="number">5</span>)))+V(<span class="built_in">j</span>)^(-<span class="built_in">exp</span>(theta(<span class="number">5</span>)))<span class="number">-1</span>)^(<span class="number">-2</span><span class="number">-1</span>/<span class="built_in">exp</span>(theta(<span class="number">5</span>))))*puz(<span class="built_in">j</span>,<span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">y=-y;</div><div class="line"><span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h1 id="结果分析">结果分析</h1>
+<h2 id="参数">参数</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Copula函数</th>
+<th><span class="math inline">\(\theta\)</span></th>
+<th><span class="math inline">\(\omega\)</span></th>
+<th><span class="math inline">\(k\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t-Copula</td>
+<td>0.9678</td>
+<td>0.1075</td>
+<td>2.7192</td>
+</tr>
+<tr class="even">
+<td>Gumbel-Copula</td>
+<td>3.7781</td>
+<td>0.5502</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Frank-Copula</td>
+<td>9.8959</td>
+<td>0.1946</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Norm-Copula</td>
+<td>0.9250</td>
+<td>0.0613</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Clayton-Copula</td>
+<td>0.0049</td>
+<td>0.0864</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="q-q图">Q-Q图</h2>
+<p>与3个Copula函数混合时的模型相比：</p>
+<div class="figure">
+<img src="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg" alt="3个Copula函数混合Q-Q图">
+<p class="caption">3个Copula函数混合Q-Q图</p>
+</div>
+<div class="figure">
+<img src="http://oag5ozkgs.bkt.clouddn.com/mcopula_new.jpg" alt="5个Copula函数混合Q-Q图">
+<p class="caption">5个Copula函数混合Q-Q图</p>
+</div>
+<p>由于不是定量分析，对比效果不明显，以下采用定量分析</p>
+<h2 id="ks检验">KS检验</h2>
+<table>
+<thead>
+<tr class="header">
+<th>风电场组合</th>
+<th><span class="math inline">\(k_N\)</span></th>
+<th><span class="math inline">\(k_t\)</span></th>
+<th><span class="math inline">\(k_G\)</span></th>
+<th><span class="math inline">\(k_C\)</span></th>
+<th><span class="math inline">\(k_F\)</span></th>
+<th><span class="math inline">\(K_{3M}\)</span></th>
+<th><span class="math inline">\(K_{5M}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>北大桥，干河口</td>
+<td>0.0395</td>
+<td>0.0343</td>
+<td>0.0302</td>
+<td>0.0468</td>
+<td>0.0323</td>
+<td>0.0271</td>
+<td>0.0260</td>
+</tr>
+</tbody>
+</table>
+<p>可以看出5个Copula混合时的模型较3个Copula混合时的效果更好</p>
+<h2 id="欧式距离">欧式距离</h2>
+<table>
+<thead>
+<tr class="header">
+<th>风电场组合</th>
+<th><span class="math inline">\(d_N\)</span></th>
+<th><span class="math inline">\(d_t\)</span></th>
+<th><span class="math inline">\(d_G\)</span></th>
+<th><span class="math inline">\(d_C\)</span></th>
+<th><span class="math inline">\(d_F\)</span></th>
+<th><span class="math inline">\(d_{3M}\)</span></th>
+<th><span class="math inline">\(d_{5M}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>北大桥，干河口</td>
+<td>3.6952</td>
+<td>2.4590</td>
+<td>1.6097</td>
+<td>10.9923</td>
+<td>1.6888</td>
+<td>1.3220</td>
+<td>1.2730</td>
+</tr>
+</tbody>
+</table>
+<p>从欧氏距离上也能够得到与KS检验中同样的结果</p>
+<h1 id="结论">结论</h1>
+<p>综上，可以将混合Copula模型更新为如下形式</p>
+<p><span class="math display">\[C(u,v;a)=0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)+0.5502C_{Gumbel}(u,v;3.7781)+0.1946C_{Frank}(u,v;9.8959)+0.0864C_{Clayton}(u,v;0.0049)\]</span></p>
+<p>PS:以上程序跑了9个小时，由于本人电脑运算处理速度问题，暂且限制在该精度下，但是结果仍可更加精确，后面会使用工作站进行进一步的精确计算</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;修正的原因&quot;&gt;修正的原因&lt;/h1&gt;
+&lt;p&gt;由于Copula函数并非线性函数，简单的通过单个Copula函数拟合效果来选择使用哪几个Copula函数来进行混合可能不够准确，可能会存在两个单一表现并不好的Copula函数混合后结果却比较好的情况。&lt;/p&gt;
+&lt;p&gt;因
+    
+    </summary>
+    
+      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+    
+      <category term="混合Copula" scheme="http://fatelancer.top/tags/%E6%B7%B7%E5%90%88Copula/"/>
+    
+  </entry>
   
   <entry>
     <title>光伏建模（2）——核密度估计实现</title>
@@ -1054,35 +1211,6 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
   </entry>
   
   <entry>
-    <title>Java第四次课</title>
-    <link href="http://fatelancer.top/2016/10/23/javaclass4/"/>
-    <id>http://fatelancer.top/2016/10/23/javaclass4/</id>
-    <published>2016-10-22T16:00:00.000Z</published>
-    <updated>2017-02-21T02:03:14.208Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="基础面板搭建">1. 基础面板搭建</h2>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> mygame;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.swing.*;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by fatel on 2016/5/28.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartoonApp</span> <span class="keyword">extends</span> <span class="title">JFrame</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CartoonApp</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</div><div class="line">        CartoonApp ca = <span class="keyword">new</span> CartoonApp();</div><div class="line">        ca.setTitle(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">        ca.setBounds(<span class="number">300</span>,<span class="number">200</span>,<span class="number">400</span>,<span class="number">450</span>);</div><div class="line">        ca.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line">        ca.setVisible(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="变量定义">2. 变量定义</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">JPanel [] pnl = &#123;<span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout())&#125;;</div><div class="line">    String [] str = &#123;<span class="string">"North"</span>, <span class="string">"Center"</span>, <span class="string">"South"</span>&#125;;</div><div class="line">    JLabel lblTitle = <span class="keyword">new</span> JLabel(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">    JButton [] btn = &#123;<span class="keyword">new</span> JButton(<span class="string">"start"</span>), <span class="keyword">new</span> JButton(<span class="string">"pause"</span>),</div><div class="line">                        <span class="keyword">new</span> JButton(<span class="string">"resume"</span>), <span class="keyword">new</span> JButton(<span class="string">"exit"</span>)&#125;;</div><div class="line">    <span class="keyword">int</span> x,y,z;</div><div class="line">    Random rnd = <span class="keyword">new</span> Random();</div><div class="line">    Color [] c = &#123;Color.red, Color.green, Color.blue,Color.pink, Color.yellow&#125;;</div><div class="line">    CartoonPaint cp = <span class="keyword">new</span> CartoonPaint();</div></pre></td></tr></table></figure>
-<h2 id="基本图形绘制">3.基本图形绘制</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paintComponent</span><span class="params">(Graphics g)</span></span>&#123;</div><div class="line">            g.setColor(c[<span class="number">0</span>]);</div><div class="line">            g.drawOval(<span class="number">10</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillOval(<span class="number">120</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.drawRect(<span class="number">230</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillRect(<span class="number">340</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            <span class="keyword">int</span> [] x1 = &#123;<span class="number">100</span>, <span class="number">50</span>,<span class="number">150</span>&#125;;</div><div class="line">            <span class="keyword">int</span> [] y1 = &#123;<span class="number">50</span>,<span class="number">150</span>, <span class="number">150</span>&#125;;</div><div class="line">            g.drawPolygon(<span class="keyword">new</span> Polygon(x1,y1,x1.length));</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h2 id="异常">4. 异常</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent ae)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">0</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">1</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">2</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">3</span>])&#123;</div><div class="line">            System.exit(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">        JOptionPane.showMessageDialog(<span class="keyword">null</span>,ex.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;基础面板搭建&quot;&gt;1. 基础面板搭建&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://fatelancer.top/categories/Java/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Java第三次课</title>
     <link href="http://fatelancer.top/2016/10/23/javaclass3/"/>
     <id>http://fatelancer.top/2016/10/23/javaclass3/</id>
@@ -1115,6 +1243,35 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     <summary type="html">
     
       &lt;h1 id=&quot;gui设计&quot;&gt;GUI设计&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://fatelancer.top/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java第四次课</title>
+    <link href="http://fatelancer.top/2016/10/23/javaclass4/"/>
+    <id>http://fatelancer.top/2016/10/23/javaclass4/</id>
+    <published>2016-10-22T16:00:00.000Z</published>
+    <updated>2017-02-21T02:03:14.208Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基础面板搭建">1. 基础面板搭建</h2>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> mygame;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.swing.*;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by fatel on 2016/5/28.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartoonApp</span> <span class="keyword">extends</span> <span class="title">JFrame</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CartoonApp</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</div><div class="line">        CartoonApp ca = <span class="keyword">new</span> CartoonApp();</div><div class="line">        ca.setTitle(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">        ca.setBounds(<span class="number">300</span>,<span class="number">200</span>,<span class="number">400</span>,<span class="number">450</span>);</div><div class="line">        ca.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line">        ca.setVisible(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="变量定义">2. 变量定义</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">JPanel [] pnl = &#123;<span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout())&#125;;</div><div class="line">    String [] str = &#123;<span class="string">"North"</span>, <span class="string">"Center"</span>, <span class="string">"South"</span>&#125;;</div><div class="line">    JLabel lblTitle = <span class="keyword">new</span> JLabel(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">    JButton [] btn = &#123;<span class="keyword">new</span> JButton(<span class="string">"start"</span>), <span class="keyword">new</span> JButton(<span class="string">"pause"</span>),</div><div class="line">                        <span class="keyword">new</span> JButton(<span class="string">"resume"</span>), <span class="keyword">new</span> JButton(<span class="string">"exit"</span>)&#125;;</div><div class="line">    <span class="keyword">int</span> x,y,z;</div><div class="line">    Random rnd = <span class="keyword">new</span> Random();</div><div class="line">    Color [] c = &#123;Color.red, Color.green, Color.blue,Color.pink, Color.yellow&#125;;</div><div class="line">    CartoonPaint cp = <span class="keyword">new</span> CartoonPaint();</div></pre></td></tr></table></figure>
+<h2 id="基本图形绘制">3.基本图形绘制</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paintComponent</span><span class="params">(Graphics g)</span></span>&#123;</div><div class="line">            g.setColor(c[<span class="number">0</span>]);</div><div class="line">            g.drawOval(<span class="number">10</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillOval(<span class="number">120</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.drawRect(<span class="number">230</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillRect(<span class="number">340</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            <span class="keyword">int</span> [] x1 = &#123;<span class="number">100</span>, <span class="number">50</span>,<span class="number">150</span>&#125;;</div><div class="line">            <span class="keyword">int</span> [] y1 = &#123;<span class="number">50</span>,<span class="number">150</span>, <span class="number">150</span>&#125;;</div><div class="line">            g.drawPolygon(<span class="keyword">new</span> Polygon(x1,y1,x1.length));</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="异常">4. 异常</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent ae)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">0</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">1</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">2</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">3</span>])&#123;</div><div class="line">            System.exit(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">        JOptionPane.showMessageDialog(<span class="keyword">null</span>,ex.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基础面板搭建&quot;&gt;1. 基础面板搭建&lt;/h2&gt;
     
     </summary>
     
