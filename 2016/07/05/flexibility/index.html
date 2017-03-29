@@ -160,7 +160,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,7 +264,7 @@
   
     <div class="site-search">
       
-  <div class="popup local-search-popup">
+  <div class="popup search-popup local-search-popup">
   <div class="local-search-header clearfix">
     <span class="search-icon">
       <i class="fa fa-search"></i>
@@ -273,7 +273,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -348,19 +350,7 @@
             
 
             
-              <span class="post-meta-divider">|</span>
-            
 
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2016-07-05T16:27:59+08:00">
-                2016-07-05
-              </time>
             
           </span>
 
@@ -453,6 +443,27 @@
       
     </div>
 
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      晋文公じゃない
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://fatelancer.top/2016/07/05/flexibility/" title="关于柔性建模">http://fatelancer.top/2016/07/05/flexibility/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -505,7 +516,7 @@
     </div>
   </div>
 
-          
+
           </div>
           
 
@@ -557,7 +568,7 @@
           
         </div>
         <nav class="site-state motion-element">
-        
+
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
@@ -568,8 +579,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -577,8 +590,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -687,7 +702,7 @@
         
       </div>
     
-    
+
   </div>
 
   
@@ -712,6 +727,11 @@
 
 
   
+  
+
+
+
+  
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
@@ -728,6 +748,12 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
 
 
   
@@ -756,7 +782,6 @@
 
 
   
-
 
 
   
@@ -789,8 +814,11 @@
 
 
 
+
+
+
   
-  
+
   <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
@@ -803,7 +831,9 @@
     // monitor main search box;
 
     function proceedsearch() {
-      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
       $('.popup').toggle();
     }
     // search function;
@@ -916,28 +946,7 @@
   </script>
 
 
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
 
 
   
@@ -1052,7 +1061,6 @@
   
 
   
-
 
   
 
