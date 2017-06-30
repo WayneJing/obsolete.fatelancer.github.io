@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fatelancer.github.io/photos/index.html</loc>
+    <loc>http://fatelancer.github.io/photos/ins.js</loc>
     
-    <lastmod>2017-06-30T17:16:47.084Z</lastmod>
+    <lastmod>2017-06-30T17:20:28.841Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://fatelancer.github.io/photos/ins.js</loc>
+    <loc>http://fatelancer.github.io/photos/index.html</loc>
     
-    <lastmod>2017-06-30T17:09:05.038Z</lastmod>
+    <lastmod>2017-06-30T17:19:36.602Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fatelancer.github.io/photos/ins.css</loc>
+    
+    <lastmod>2017-06-30T17:18:39.038Z</lastmod>
     
   </url>
   
@@ -145,13 +152,6 @@
     <loc>http://fatelancer.github.io/2016/10/23/javaclass4/</loc>
     
     <lastmod>2017-02-21T02:03:14.208Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fatelancer.github.io/photos/ins.css</loc>
-    
-    <lastmod>2016-12-31T14:16:28.000Z</lastmod>
     
   </url>
   
