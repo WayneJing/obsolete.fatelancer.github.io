@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fatelancer.github.io/photos/index.html</loc>
+    
+    <lastmod>2017-06-30T05:09:47.151Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://fatelancer.github.io/2017/02/21/%E5%9F%BA%E4%BA%8ECopula%E7%90%86%E8%AE%BA%E7%9A%84%E9%A3%8E%E7%94%B5%E5%9C%BA%E9%97%B4%E5%BB%BA%E6%A8%A1/</loc>
     
     <lastmod>2017-06-30T04:30:45.475Z</lastmod>
@@ -128,20 +135,6 @@
   </url>
   
   <url>
-    <loc>http://fatelancer.github.io/photos/index.html</loc>
-    
-    <lastmod>2016-12-31T14:16:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fatelancer.github.io/photos/ins.js</loc>
-    
-    <lastmod>2016-12-31T14:16:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://fatelancer.github.io/photos/ins.css</loc>
     
     <lastmod>2016-12-31T14:16:28.000Z</lastmod>
@@ -150,6 +143,13 @@
   
   <url>
     <loc>http://fatelancer.github.io/photos/lazyload.min.js</loc>
+    
+    <lastmod>2016-12-31T14:16:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fatelancer.github.io/photos/ins.js</loc>
     
     <lastmod>2016-12-31T14:16:28.000Z</lastmod>
     
