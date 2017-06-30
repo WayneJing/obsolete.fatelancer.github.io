@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://fatelancer.top/"/>
+  <link href="http://fatelancer.github.io/"/>
   <updated>2017-04-14T08:27:38.737Z</updated>
-  <id>http://fatelancer.top/</id>
+  <id>http://fatelancer.github.io/</id>
   
   <author>
     <name>晋文公じゃない</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>多维混合Copula的风速建模</title>
-    <link href="http://fatelancer.top/2017/04/13/%E5%A4%9A%E7%BB%B4%E6%B7%B7%E5%90%88Copula%E7%9A%84%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
-    <id>http://fatelancer.top/2017/04/13/多维混合Copula的风速建模/</id>
+    <link href="http://fatelancer.github.io/2017/04/13/%E5%A4%9A%E7%BB%B4%E6%B7%B7%E5%90%88Copula%E7%9A%84%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
+    <id>http://fatelancer.github.io/2017/04/13/多维混合Copula的风速建模/</id>
     <published>2017-04-13T08:12:39.000Z</published>
     <updated>2017-04-14T08:27:38.737Z</updated>
     
@@ -51,19 +51,19 @@
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="EM算法" scheme="http://fatelancer.top/tags/EM%E7%AE%97%E6%B3%95/"/>
+      <category term="EM算法" scheme="http://fatelancer.github.io/tags/EM%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>多维形式的Copula函数推导及建模</title>
-    <link href="http://fatelancer.top/2017/04/06/%E5%A4%9A%E7%BB%B4%E5%BD%A2%E5%BC%8F%E7%9A%84Copula%E5%87%BD%E6%95%B0%E6%8E%A8%E5%AF%BC%E5%8F%8A%E5%BB%BA%E6%A8%A1/"/>
-    <id>http://fatelancer.top/2017/04/06/多维形式的Copula函数推导及建模/</id>
+    <link href="http://fatelancer.github.io/2017/04/06/%E5%A4%9A%E7%BB%B4%E5%BD%A2%E5%BC%8F%E7%9A%84Copula%E5%87%BD%E6%95%B0%E6%8E%A8%E5%AF%BC%E5%8F%8A%E5%BB%BA%E6%A8%A1/"/>
+    <id>http://fatelancer.github.io/2017/04/06/多维形式的Copula函数推导及建模/</id>
     <published>2017-04-06T06:57:33.000Z</published>
     <updated>2017-04-13T07:29:33.593Z</updated>
     
@@ -127,19 +127,19 @@
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="多维Copula" scheme="http://fatelancer.top/tags/%E5%A4%9A%E7%BB%B4Copula/"/>
+      <category term="多维Copula" scheme="http://fatelancer.github.io/tags/%E5%A4%9A%E7%BB%B4Copula/"/>
     
   </entry>
   
   <entry>
     <title>阶段性总结</title>
-    <link href="http://fatelancer.top/2017/03/29/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/"/>
-    <id>http://fatelancer.top/2017/03/29/阶段性总结/</id>
+    <link href="http://fatelancer.github.io/2017/03/29/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/"/>
+    <id>http://fatelancer.github.io/2017/03/29/阶段性总结/</id>
     <published>2017-03-29T07:54:58.000Z</published>
     <updated>2017-03-29T09:43:27.114Z</updated>
     
@@ -244,7 +244,7 @@
 <p>与根据风速数据建立的经验Copula函数进行对比</p>
 <p>使用Q-Q图进行校验（非定量分析）</p>
 <p><img src="http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg" alt="qq图2"> <img src="http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg" alt="qq图3"></p>
-<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比">Q-Q图的判定原则</a>可知，各类Copula函数差别很明显，其 中Gumbel-Copula，Frank-Copula，t-Copula函数曲线均较为接近45°曲线，拟合效果相对较好。以下采用统计法</p>
+<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比" target="_blank" rel="external">Q-Q图的判定原则</a>可知，各类Copula函数差别很明显，其 中Gumbel-Copula，Frank-Copula，t-Copula函数曲线均较为接近45°曲线，拟合效果相对较好。以下采用统计法</p>
 <p>使用K-S校验进行定量分析</p>
 <table>
 <thead>
@@ -308,7 +308,7 @@
 </tr>
 </tbody>
 </table>
-<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比">K-S检验法的判定原则</a>可知，在六种不同的风电场组合中，Gumbel-Copula，Frank-Copula，t-Copula这三种Copula函数的 <span class="math inline">\(KS\)</span> 统计值相对较小，而Normal-Copula，Clayton-Copula的统计值相对较大</p>
+<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比" target="_blank" rel="external">K-S检验法的判定原则</a>可知，在六种不同的风电场组合中，Gumbel-Copula，Frank-Copula，t-Copula这三种Copula函数的 <span class="math inline">\(KS\)</span> 统计值相对较小，而Normal-Copula，Clayton-Copula的统计值相对较大</p>
 <p>秩相关性测度</p>
 <table>
 <thead>
@@ -642,19 +642,19 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
-      <category term="风速建模" scheme="http://fatelancer.top/tags/%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
+      <category term="风速建模" scheme="http://fatelancer.github.io/tags/%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
     
   </entry>
   
   <entry>
     <title>混合Copula建模修正——更多Copula函数的加入</title>
-    <link href="http://fatelancer.top/2017/03/23/%E6%B7%B7%E5%90%88Copula%E5%BB%BA%E6%A8%A1%E4%BF%AE%E6%AD%A3/"/>
-    <id>http://fatelancer.top/2017/03/23/混合Copula建模修正/</id>
+    <link href="http://fatelancer.github.io/2017/03/23/%E6%B7%B7%E5%90%88Copula%E5%BB%BA%E6%A8%A1%E4%BF%AE%E6%AD%A3/"/>
+    <id>http://fatelancer.github.io/2017/03/23/混合Copula建模修正/</id>
     <published>2017-03-23T05:46:07.000Z</published>
     <updated>2017-03-25T09:34:49.903Z</updated>
     
@@ -817,19 +817,19 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="混合Copula" scheme="http://fatelancer.top/tags/%E6%B7%B7%E5%90%88Copula/"/>
+      <category term="混合Copula" scheme="http://fatelancer.github.io/tags/%E6%B7%B7%E5%90%88Copula/"/>
     
   </entry>
   
   <entry>
     <title>光伏建模（2）——核密度估计实现</title>
-    <link href="http://fatelancer.top/2017/03/17/%E5%85%89%E4%BC%8F%E5%BB%BA%E6%A8%A1%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://fatelancer.top/2017/03/17/光伏建模（2）——核密度估计实现/</id>
+    <link href="http://fatelancer.github.io/2017/03/17/%E5%85%89%E4%BC%8F%E5%BB%BA%E6%A8%A1%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://fatelancer.github.io/2017/03/17/光伏建模（2）——核密度估计实现/</id>
     <published>2017-03-17T05:33:01.000Z</published>
     <updated>2017-03-17T07:24:55.316Z</updated>
     
@@ -864,19 +864,19 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="核密度估计" scheme="http://fatelancer.top/tags/%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1/"/>
+      <category term="核密度估计" scheme="http://fatelancer.github.io/tags/%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>光伏建模——核密度估计而非Beta分布</title>
-    <link href="http://fatelancer.top/2017/03/15/%E5%85%89%E4%BC%8F%E5%BB%BA%E6%A8%A1/"/>
-    <id>http://fatelancer.top/2017/03/15/光伏建模/</id>
+    <link href="http://fatelancer.github.io/2017/03/15/%E5%85%89%E4%BC%8F%E5%BB%BA%E6%A8%A1/"/>
+    <id>http://fatelancer.github.io/2017/03/15/光伏建模/</id>
     <published>2017-03-15T02:44:56.000Z</published>
     <updated>2017-03-17T06:47:48.282Z</updated>
     
@@ -910,17 +910,17 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="核密度估计" scheme="http://fatelancer.top/tags/%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1/"/>
+      <category term="核密度估计" scheme="http://fatelancer.github.io/tags/%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>混合Copula风速建模——代码实现与结果分析</title>
-    <link href="http://fatelancer.top/2017/03/10/%E6%B7%B7%E5%90%88Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E2%80%94%E2%80%94%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E4%B8%8E%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/"/>
-    <id>http://fatelancer.top/2017/03/10/混合Copula风速建模——代码实现与结果分析/</id>
+    <link href="http://fatelancer.github.io/2017/03/10/%E6%B7%B7%E5%90%88Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E2%80%94%E2%80%94%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E4%B8%8E%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/"/>
+    <id>http://fatelancer.github.io/2017/03/10/混合Copula风速建模——代码实现与结果分析/</id>
     <published>2017-03-10T08:05:37.000Z</published>
     <updated>2017-03-10T08:50:28.000Z</updated>
     
@@ -1030,23 +1030,23 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="混合Copula" scheme="http://fatelancer.top/tags/%E6%B7%B7%E5%90%88Copula/"/>
+      <category term="EM算法" scheme="http://fatelancer.github.io/tags/EM%E7%AE%97%E6%B3%95/"/>
     
-      <category term="EM算法" scheme="http://fatelancer.top/tags/EM%E7%AE%97%E6%B3%95/"/>
+      <category term="混合Copula" scheme="http://fatelancer.github.io/tags/%E6%B7%B7%E5%90%88Copula/"/>
     
-      <category term="bfgs" scheme="http://fatelancer.top/tags/bfgs/"/>
+      <category term="bfgs" scheme="http://fatelancer.github.io/tags/bfgs/"/>
     
   </entry>
   
   <entry>
     <title>混合Copula函数风速建模——EM算法</title>
-    <link href="http://fatelancer.top/2017/03/06/%E6%B7%B7%E5%90%88Copula%E5%87%BD%E6%95%B0%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
-    <id>http://fatelancer.top/2017/03/06/混合Copula函数风速建模/</id>
+    <link href="http://fatelancer.github.io/2017/03/06/%E6%B7%B7%E5%90%88Copula%E5%87%BD%E6%95%B0%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
+    <id>http://fatelancer.github.io/2017/03/06/混合Copula函数风速建模/</id>
     <published>2017-03-06T01:24:08.000Z</published>
     <updated>2017-03-06T11:11:51.728Z</updated>
     
@@ -1059,27 +1059,27 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
-      <category term="EM算法" scheme="http://fatelancer.top/tags/EM%E7%AE%97%E6%B3%95/"/>
+      <category term="风速建模" scheme="http://fatelancer.github.io/tags/%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
     
-      <category term="风速建模" scheme="http://fatelancer.top/tags/%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
+      <category term="EM算法" scheme="http://fatelancer.github.io/tags/EM%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>Copula风速建模相关（5）——结果分析</title>
-    <link href="http://fatelancer.top/2017/03/03/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%885%EF%BC%89/"/>
-    <id>http://fatelancer.top/2017/03/03/Copula风速建模相关（5）/</id>
+    <link href="http://fatelancer.github.io/2017/03/03/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%885%EF%BC%89/"/>
+    <id>http://fatelancer.github.io/2017/03/03/Copula风速建模相关（5）/</id>
     <published>2017-03-03T05:38:20.000Z</published>
     <updated>2017-03-03T07:38:31.627Z</updated>
     
     <content type="html"><![CDATA[<h1 id="q-q图分析">Q-Q图分析</h1>
 <p><img src="http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg" alt="qq图2"> <img src="http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg" alt="qq图3"></p>
-<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比">Q-Q图的判定原则</a>可知，各类Copula函数差别不 很 明 显，其 中Gumbel-Copula，Frank-Copula，t-Copula函数曲线均较为接近45°曲线，拟合效果相对较好。以下采用统计法</p>
+<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比" target="_blank" rel="external">Q-Q图的判定原则</a>可知，各类Copula函数差别不 很 明 显，其 中Gumbel-Copula，Frank-Copula，t-Copula函数曲线均较为接近45°曲线，拟合效果相对较好。以下采用统计法</p>
 <a id="more"></a>
 <h1 id="k-s检验法">K-S检验法</h1>
 <table>
@@ -1144,7 +1144,7 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
 </tr>
 </tbody>
 </table>
-<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比">K-S检验法的判定原则</a>可知，在六种不同的风电场组合中，Gumbel-Copula，Frank-Copula，t-Copula这三种Copula函数的 <span class="math inline">\(KS\)</span> 统计值相对较小，而Normal-Copula，Clayton-Copula的统计值相对较大</p>
+<p>通过<a href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比" target="_blank" rel="external">K-S检验法的判定原则</a>可知，在六种不同的风电场组合中，Gumbel-Copula，Frank-Copula，t-Copula这三种Copula函数的 <span class="math inline">\(KS\)</span> 统计值相对较小，而Normal-Copula，Clayton-Copula的统计值相对较大</p>
 <h1 id="秩相关性测度">秩相关性测度</h1>
 <table>
 <thead>
@@ -1265,19 +1265,19 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
-      <category term="风速建模" scheme="http://fatelancer.top/tags/%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
+      <category term="风速建模" scheme="http://fatelancer.github.io/tags/%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1/"/>
     
   </entry>
   
   <entry>
     <title>Copula风速建模相关(4)——Copula模型评价</title>
-    <link href="http://fatelancer.top/2017/03/02/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%884%EF%BC%89/"/>
-    <id>http://fatelancer.top/2017/03/02/Copula风速建模相关（4）/</id>
+    <link href="http://fatelancer.github.io/2017/03/02/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%884%EF%BC%89/"/>
+    <id>http://fatelancer.github.io/2017/03/02/Copula风速建模相关（4）/</id>
     <published>2017-03-02T07:30:23.000Z</published>
     <updated>2017-03-03T07:38:45.477Z</updated>
     
@@ -1477,23 +1477,23 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
-      <category term="Q-Q图" scheme="http://fatelancer.top/tags/Q-Q%E5%9B%BE/"/>
+      <category term="Q-Q图" scheme="http://fatelancer.github.io/tags/Q-Q%E5%9B%BE/"/>
     
-      <category term="K-S检验" scheme="http://fatelancer.top/tags/K-S%E6%A3%80%E9%AA%8C/"/>
+      <category term="K-S检验" scheme="http://fatelancer.github.io/tags/K-S%E6%A3%80%E9%AA%8C/"/>
     
-      <category term="欧氏距离" scheme="http://fatelancer.top/tags/%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB/"/>
+      <category term="欧氏距离" scheme="http://fatelancer.github.io/tags/%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB/"/>
     
   </entry>
   
   <entry>
     <title>Copula风速建模相关（3）——代码实现</title>
-    <link href="http://fatelancer.top/2017/03/01/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%883%EF%BC%89/"/>
-    <id>http://fatelancer.top/2017/03/01/Copula风速建模相关（3）/</id>
+    <link href="http://fatelancer.github.io/2017/03/01/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%883%EF%BC%89/"/>
+    <id>http://fatelancer.github.io/2017/03/01/Copula风速建模相关（3）/</id>
     <published>2017-03-01T01:55:37.000Z</published>
     <updated>2017-03-14T09:50:25.526Z</updated>
     
@@ -1638,21 +1638,21 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
-      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="风力发电" scheme="http://fatelancer.top/tags/%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5/"/>
+      <category term="风力发电" scheme="http://fatelancer.github.io/tags/%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5/"/>
     
   </entry>
   
   <entry>
     <title>Copula风速建模相关（2）——函数性质以及常用代码</title>
-    <link href="http://fatelancer.top/2017/02/28/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%882%EF%BC%89/"/>
-    <id>http://fatelancer.top/2017/02/28/Copula风速建模相关（2）/</id>
+    <link href="http://fatelancer.github.io/2017/02/28/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%882%EF%BC%89/"/>
+    <id>http://fatelancer.github.io/2017/02/28/Copula风速建模相关（2）/</id>
     <published>2017-02-28T01:33:07.000Z</published>
     <updated>2017-03-01T08:47:38.469Z</updated>
     
@@ -1733,19 +1733,19 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
-      <category term="MATLAB" scheme="http://fatelancer.top/tags/MATLAB/"/>
+      <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
   </entry>
   
   <entry>
     <title>Copula风速建模相关（1）——相关参数</title>
-    <link href="http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/"/>
-    <id>http://fatelancer.top/2017/02/27/Copula风速建模相关（1）/</id>
+    <link href="http://fatelancer.github.io/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/"/>
+    <id>http://fatelancer.github.io/2017/02/27/Copula风速建模相关（1）/</id>
     <published>2017-02-27T05:57:21.000Z</published>
     <updated>2017-03-01T08:47:55.165Z</updated>
     
@@ -1805,21 +1805,21 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="可再生能源" scheme="http://fatelancer.top/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
+      <category term="可再生能源" scheme="http://fatelancer.github.io/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
-      <category term="双参数威布尔函数" scheme="http://fatelancer.top/tags/%E5%8F%8C%E5%8F%82%E6%95%B0%E5%A8%81%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0/"/>
+      <category term="双参数威布尔函数" scheme="http://fatelancer.github.io/tags/%E5%8F%8C%E5%8F%82%E6%95%B0%E5%A8%81%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>基于Copula理论的风电场间建模</title>
-    <link href="http://fatelancer.top/2017/02/21/%E5%9F%BA%E4%BA%8ECopula%E7%90%86%E8%AE%BA%E7%9A%84%E9%A3%8E%E7%94%B5%E5%9C%BA%E9%97%B4%E5%BB%BA%E6%A8%A1/"/>
-    <id>http://fatelancer.top/2017/02/21/基于Copula理论的风电场间建模/</id>
+    <link href="http://fatelancer.github.io/2017/02/21/%E5%9F%BA%E4%BA%8ECopula%E7%90%86%E8%AE%BA%E7%9A%84%E9%A3%8E%E7%94%B5%E5%9C%BA%E9%97%B4%E5%BB%BA%E6%A8%A1/"/>
+    <id>http://fatelancer.github.io/2017/02/21/基于Copula理论的风电场间建模/</id>
     <published>2017-02-21T02:22:19.000Z</published>
     <updated>2017-02-28T09:44:57.464Z</updated>
     
@@ -1855,19 +1855,19 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     </summary>
     
-      <category term="毕业设计" scheme="http://fatelancer.top/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+      <category term="毕业设计" scheme="http://fatelancer.github.io/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="可再生能源" scheme="http://fatelancer.top/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
+      <category term="可再生能源" scheme="http://fatelancer.github.io/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
     
-      <category term="Copula" scheme="http://fatelancer.top/tags/Copula/"/>
+      <category term="Copula" scheme="http://fatelancer.github.io/tags/Copula/"/>
     
   </entry>
   
   <entry>
     <title>Java 第二次课</title>
-    <link href="http://fatelancer.top/2016/10/23/javaclass2/"/>
-    <id>http://fatelancer.top/2016/10/23/javaclass2/</id>
+    <link href="http://fatelancer.github.io/2016/10/23/javaclass2/"/>
+    <id>http://fatelancer.github.io/2016/10/23/javaclass2/</id>
     <published>2016-10-22T16:00:00.000Z</published>
     <updated>2016-10-22T16:17:51.452Z</updated>
     
@@ -1918,44 +1918,15 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     </summary>
     
-      <category term="Java" scheme="http://fatelancer.top/categories/Java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java第四次课</title>
-    <link href="http://fatelancer.top/2016/10/23/javaclass4/"/>
-    <id>http://fatelancer.top/2016/10/23/javaclass4/</id>
-    <published>2016-10-22T16:00:00.000Z</published>
-    <updated>2017-02-21T02:03:14.208Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="基础面板搭建">1. 基础面板搭建</h2>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> mygame;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.swing.*;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by fatel on 2016/5/28.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartoonApp</span> <span class="keyword">extends</span> <span class="title">JFrame</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CartoonApp</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</div><div class="line">        CartoonApp ca = <span class="keyword">new</span> CartoonApp();</div><div class="line">        ca.setTitle(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">        ca.setBounds(<span class="number">300</span>,<span class="number">200</span>,<span class="number">400</span>,<span class="number">450</span>);</div><div class="line">        ca.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line">        ca.setVisible(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="变量定义">2. 变量定义</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">JPanel [] pnl = &#123;<span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout())&#125;;</div><div class="line">    String [] str = &#123;<span class="string">"North"</span>, <span class="string">"Center"</span>, <span class="string">"South"</span>&#125;;</div><div class="line">    JLabel lblTitle = <span class="keyword">new</span> JLabel(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">    JButton [] btn = &#123;<span class="keyword">new</span> JButton(<span class="string">"start"</span>), <span class="keyword">new</span> JButton(<span class="string">"pause"</span>),</div><div class="line">                        <span class="keyword">new</span> JButton(<span class="string">"resume"</span>), <span class="keyword">new</span> JButton(<span class="string">"exit"</span>)&#125;;</div><div class="line">    <span class="keyword">int</span> x,y,z;</div><div class="line">    Random rnd = <span class="keyword">new</span> Random();</div><div class="line">    Color [] c = &#123;Color.red, Color.green, Color.blue,Color.pink, Color.yellow&#125;;</div><div class="line">    CartoonPaint cp = <span class="keyword">new</span> CartoonPaint();</div></pre></td></tr></table></figure>
-<h2 id="基本图形绘制">3.基本图形绘制</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paintComponent</span><span class="params">(Graphics g)</span></span>&#123;</div><div class="line">            g.setColor(c[<span class="number">0</span>]);</div><div class="line">            g.drawOval(<span class="number">10</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillOval(<span class="number">120</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.drawRect(<span class="number">230</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillRect(<span class="number">340</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            <span class="keyword">int</span> [] x1 = &#123;<span class="number">100</span>, <span class="number">50</span>,<span class="number">150</span>&#125;;</div><div class="line">            <span class="keyword">int</span> [] y1 = &#123;<span class="number">50</span>,<span class="number">150</span>, <span class="number">150</span>&#125;;</div><div class="line">            g.drawPolygon(<span class="keyword">new</span> Polygon(x1,y1,x1.length));</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h2 id="异常">4. 异常</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent ae)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">0</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">1</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">2</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">3</span>])&#123;</div><div class="line">            System.exit(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">        JOptionPane.showMessageDialog(<span class="keyword">null</span>,ex.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;基础面板搭建&quot;&gt;1. 基础面板搭建&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://fatelancer.top/categories/Java/"/>
+      <category term="Java" scheme="http://fatelancer.github.io/categories/Java/"/>
     
     
   </entry>
   
   <entry>
     <title>Java第三次课</title>
-    <link href="http://fatelancer.top/2016/10/23/javaclass3/"/>
-    <id>http://fatelancer.top/2016/10/23/javaclass3/</id>
+    <link href="http://fatelancer.github.io/2016/10/23/javaclass3/"/>
+    <id>http://fatelancer.github.io/2016/10/23/javaclass3/</id>
     <published>2016-10-22T16:00:00.000Z</published>
     <updated>2017-02-21T02:03:17.069Z</updated>
     
@@ -1988,15 +1959,44 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     </summary>
     
-      <category term="Java" scheme="http://fatelancer.top/categories/Java/"/>
+      <category term="Java" scheme="http://fatelancer.github.io/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java第四次课</title>
+    <link href="http://fatelancer.github.io/2016/10/23/javaclass4/"/>
+    <id>http://fatelancer.github.io/2016/10/23/javaclass4/</id>
+    <published>2016-10-22T16:00:00.000Z</published>
+    <updated>2017-02-21T02:03:14.208Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基础面板搭建">1. 基础面板搭建</h2>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> mygame;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.swing.*;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by fatel on 2016/5/28.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartoonApp</span> <span class="keyword">extends</span> <span class="title">JFrame</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CartoonApp</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</div><div class="line">        CartoonApp ca = <span class="keyword">new</span> CartoonApp();</div><div class="line">        ca.setTitle(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">        ca.setBounds(<span class="number">300</span>,<span class="number">200</span>,<span class="number">400</span>,<span class="number">450</span>);</div><div class="line">        ca.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line">        ca.setVisible(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="变量定义">2. 变量定义</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">JPanel [] pnl = &#123;<span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout())&#125;;</div><div class="line">    String [] str = &#123;<span class="string">"North"</span>, <span class="string">"Center"</span>, <span class="string">"South"</span>&#125;;</div><div class="line">    JLabel lblTitle = <span class="keyword">new</span> JLabel(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">    JButton [] btn = &#123;<span class="keyword">new</span> JButton(<span class="string">"start"</span>), <span class="keyword">new</span> JButton(<span class="string">"pause"</span>),</div><div class="line">                        <span class="keyword">new</span> JButton(<span class="string">"resume"</span>), <span class="keyword">new</span> JButton(<span class="string">"exit"</span>)&#125;;</div><div class="line">    <span class="keyword">int</span> x,y,z;</div><div class="line">    Random rnd = <span class="keyword">new</span> Random();</div><div class="line">    Color [] c = &#123;Color.red, Color.green, Color.blue,Color.pink, Color.yellow&#125;;</div><div class="line">    CartoonPaint cp = <span class="keyword">new</span> CartoonPaint();</div></pre></td></tr></table></figure>
+<h2 id="基本图形绘制">3.基本图形绘制</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paintComponent</span><span class="params">(Graphics g)</span></span>&#123;</div><div class="line">            g.setColor(c[<span class="number">0</span>]);</div><div class="line">            g.drawOval(<span class="number">10</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillOval(<span class="number">120</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.drawRect(<span class="number">230</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillRect(<span class="number">340</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            <span class="keyword">int</span> [] x1 = &#123;<span class="number">100</span>, <span class="number">50</span>,<span class="number">150</span>&#125;;</div><div class="line">            <span class="keyword">int</span> [] y1 = &#123;<span class="number">50</span>,<span class="number">150</span>, <span class="number">150</span>&#125;;</div><div class="line">            g.drawPolygon(<span class="keyword">new</span> Polygon(x1,y1,x1.length));</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="异常">4. 异常</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent ae)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">0</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">1</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">2</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">3</span>])&#123;</div><div class="line">            System.exit(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">        JOptionPane.showMessageDialog(<span class="keyword">null</span>,ex.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基础面板搭建&quot;&gt;1. 基础面板搭建&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://fatelancer.github.io/categories/Java/"/>
     
     
   </entry>
   
   <entry>
     <title>关于星球全景图的拍摄</title>
-    <link href="http://fatelancer.top/2016/07/17/%E5%85%B3%E4%BA%8E%E6%98%9F%E7%90%83%E5%85%A8%E6%99%AF%E5%9B%BE%E7%9A%84%E6%8B%8D%E6%91%84/"/>
-    <id>http://fatelancer.top/2016/07/17/关于星球全景图的拍摄/</id>
+    <link href="http://fatelancer.github.io/2016/07/17/%E5%85%B3%E4%BA%8E%E6%98%9F%E7%90%83%E5%85%A8%E6%99%AF%E5%9B%BE%E7%9A%84%E6%8B%8D%E6%91%84/"/>
+    <id>http://fatelancer.github.io/2016/07/17/关于星球全景图的拍摄/</id>
     <published>2016-07-17T07:40:34.000Z</published>
     <updated>2016-07-17T09:25:17.944Z</updated>
     
@@ -2010,21 +2010,21 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     </summary>
     
-      <category term="摄影" scheme="http://fatelancer.top/categories/%E6%91%84%E5%BD%B1/"/>
+      <category term="摄影" scheme="http://fatelancer.github.io/categories/%E6%91%84%E5%BD%B1/"/>
     
     
-      <category term="黑科技" scheme="http://fatelancer.top/tags/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
+      <category term="黑科技" scheme="http://fatelancer.github.io/tags/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
     
-      <category term="全景图" scheme="http://fatelancer.top/tags/%E5%85%A8%E6%99%AF%E5%9B%BE/"/>
+      <category term="全景图" scheme="http://fatelancer.github.io/tags/%E5%85%A8%E6%99%AF%E5%9B%BE/"/>
     
-      <category term="星球" scheme="http://fatelancer.top/tags/%E6%98%9F%E7%90%83/"/>
+      <category term="星球" scheme="http://fatelancer.github.io/tags/%E6%98%9F%E7%90%83/"/>
     
   </entry>
   
   <entry>
     <title>可延迟负荷控制</title>
-    <link href="http://fatelancer.top/2016/07/06/%E5%8F%AF%E5%BB%B6%E8%BF%9F%E8%B4%9F%E8%8D%B7%E6%8E%A7%E5%88%B6/"/>
-    <id>http://fatelancer.top/2016/07/06/可延迟负荷控制/</id>
+    <link href="http://fatelancer.github.io/2016/07/06/%E5%8F%AF%E5%BB%B6%E8%BF%9F%E8%B4%9F%E8%8D%B7%E6%8E%A7%E5%88%B6/"/>
+    <id>http://fatelancer.github.io/2016/07/06/可延迟负荷控制/</id>
     <published>2016-07-06T01:27:57.000Z</published>
     <updated>2016-07-17T05:36:22.127Z</updated>
     
@@ -2034,7 +2034,7 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
 <li>趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代</li>
 <li>可再生能源的不规律、不可预测性给控制带来了很多麻烦</li>
 <li>需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影响</li>
-<li><a href="http://fatelancer.top/2016/07/05/flexibility/#more">deferrable load</a>：可以推迟一段时间再执行，可以通过推迟负荷时间来与可再生能源的供给匹配</li>
+<li><a href="http://fatelancer.top/2016/07/05/flexibility/#more" target="_blank" rel="external">deferrable load</a>：可以推迟一段时间再执行，可以通过推迟负荷时间来与可再生能源的供给匹配</li>
 <li>要点：分散式直接负荷控制 <a id="more"></a> ## 总结</li>
 </ul>
 <p>提供了一个考虑未来时间段的负载与可再生能源状态预测的实时分布式可延迟负载控制算法</p>
@@ -2058,25 +2058,25 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     </summary>
     
-      <category term="电气工程" scheme="http://fatelancer.top/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
+      <category term="电气工程" scheme="http://fatelancer.github.io/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="deferrable load" scheme="http://fatelancer.top/tags/deferrable-load/"/>
+      <category term="柔性建模" scheme="http://fatelancer.github.io/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
     
-      <category term="需求响应" scheme="http://fatelancer.top/tags/%E9%9C%80%E6%B1%82%E5%93%8D%E5%BA%94/"/>
+      <category term="deferrable load" scheme="http://fatelancer.github.io/tags/deferrable-load/"/>
     
-      <category term="可再生能源" scheme="http://fatelancer.top/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
+      <category term="需求响应" scheme="http://fatelancer.github.io/tags/%E9%9C%80%E6%B1%82%E5%93%8D%E5%BA%94/"/>
     
-      <category term="柔性建模" scheme="http://fatelancer.top/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
+      <category term="可再生能源" scheme="http://fatelancer.github.io/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
     
-      <category term="real-time" scheme="http://fatelancer.top/tags/real-time/"/>
+      <category term="real-time" scheme="http://fatelancer.github.io/tags/real-time/"/>
     
   </entry>
   
   <entry>
     <title>关于柔性建模</title>
-    <link href="http://fatelancer.top/2016/07/05/flexibility/"/>
-    <id>http://fatelancer.top/2016/07/05/flexibility/</id>
+    <link href="http://fatelancer.github.io/2016/07/05/flexibility/"/>
+    <id>http://fatelancer.github.io/2016/07/05/flexibility/</id>
     <published>2016-07-05T08:21:41.000Z</published>
     <updated>2016-07-05T08:27:59.490Z</updated>
     
@@ -2091,14 +2091,14 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     </summary>
     
-      <category term="电气工程" scheme="http://fatelancer.top/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
+      <category term="电气工程" scheme="http://fatelancer.github.io/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="柔性建模" scheme="http://fatelancer.top/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
+      <category term="柔性建模" scheme="http://fatelancer.github.io/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
     
-      <category term="配电网" scheme="http://fatelancer.top/tags/%E9%85%8D%E7%94%B5%E7%BD%91/"/>
+      <category term="配电网" scheme="http://fatelancer.github.io/tags/%E9%85%8D%E7%94%B5%E7%BD%91/"/>
     
-      <category term="优化" scheme="http://fatelancer.top/tags/%E4%BC%98%E5%8C%96/"/>
+      <category term="优化" scheme="http://fatelancer.github.io/tags/%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
