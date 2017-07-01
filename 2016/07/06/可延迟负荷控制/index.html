@@ -8,31 +8,25 @@
   <link rel="dns-prefetch" href="http://fatelancer.github.io">
   <title>可延迟负荷控制 | 化天弹指间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation
-简介
-
+  <meta name="description" content="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation简介
 趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代
 可再生能源的不规律、不可预测性给控制带来了很多麻烦
-需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不">
+需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影">
 <meta property="og:type" content="article">
 <meta property="og:title" content="可延迟负荷控制">
 <meta property="og:url" content="http://fatelancer.github.io/2016/07/06/可延迟负荷控制/index.html">
 <meta property="og:site_name" content="化天弹指间">
-<meta property="og:description" content="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation
-简介
-
+<meta property="og:description" content="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation简介
 趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代
 可再生能源的不规律、不可预测性给控制带来了很多麻烦
-需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不">
+需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影">
 <meta property="og:updated_time" content="2016-07-17T05:36:22.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="可延迟负荷控制">
-<meta name="twitter:description" content="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation
-简介
-
+<meta name="twitter:description" content="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation简介
 趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代
 可再生能源的不规律、不可预测性给控制带来了很多麻烦
-需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不">
+需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影">
   
     <link rel="alternative" href="/atom.xml" title="化天弹指间" type="application/atom+xml">
   
@@ -188,21 +182,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="notes-of-real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation">Notes of <a href="http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf" target="_blank" rel="external">Real-time deferrable load control: handling the uncertainties of renewable generation</a></h1>
-<h1 id="简介">简介</h1>
-<ul>
+        <h1 id="Notes-of-Real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation"><a href="#Notes-of-Real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation" class="headerlink" title="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation"></a>Notes of <a href="http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf" target="_blank" rel="external">Real-time deferrable load control: handling the uncertainties of renewable generation</a></h1><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
 <li>趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代</li>
 <li>可再生能源的不规律、不可预测性给控制带来了很多麻烦</li>
 <li>需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影响</li>
 <li><a href="http://fatelancer.top/2016/07/05/flexibility/#more" target="_blank" rel="external">deferrable load</a>：可以推迟一段时间再执行，可以通过推迟负荷时间来与可再生能源的供给匹配</li>
-<li>要点：分散式直接负荷控制 <a id="more"></a> ## 总结</li>
+<li>要点：分散式直接负荷控制<a id="more"></a>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
 </ul>
 <p>提供了一个考虑未来时间段的负载与可再生能源状态预测的实时分布式可延迟负载控制算法</p>
-<h1 id="建模">建模</h1>
-<p>给可延迟负载排了时间表</p>
+<h1 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h1><p>给可延迟负载排了时间表</p>
 <p>一个有限时间域里的离散时间模型（一天，十分钟为间隔）</p>
-<h2 id="可再生能源与非可延迟负载">可再生能源与非可延迟负载</h2>
-<p>非可延时负载在低聚程度上很难有效预测 将可再生能源发电机与非可延时类负载聚合到一个进程——基础负载 是非可延迟负载与可再生能源之间的误差 <strong>滤波器？</strong></p>
+<h2 id="可再生能源与非可延迟负载"><a href="#可再生能源与非可延迟负载" class="headerlink" title="可再生能源与非可延迟负载"></a>可再生能源与非可延迟负载</h2><p>非可延时负载在低聚程度上很难有效预测<br>将可再生能源发电机与非可延时类负载聚合到一个进程——基础负载<br>是非可延迟负载与可再生能源之间的误差<br><strong>滤波器？</strong></p>
 
       
 
@@ -339,11 +330,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/10/23/javaclass3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/10/23/javaclass2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java第三次课
+          Java 第二次课
         
       </div>
     </a>
@@ -534,6 +525,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">EM算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
               </li>
              
@@ -547,18 +550,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">EM算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
               </li>
              
               <li class="article-tag-list-item">
