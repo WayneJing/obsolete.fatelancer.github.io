@@ -171,8 +171,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h1><p><strong>使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据</strong></p>
-<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="读入数据"><a href="#读入数据" class="headerlink" title="读入数据"></a>读入数据</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%从文件中读取数据</span></div><div class="line">load(<span class="string">'data.mat'</span>);</div><div class="line">qw=data(:,<span class="number">1</span>);<span class="comment">%桥湾</span></div><div class="line">bdq=data(:,<span class="number">4</span>);<span class="comment">%北大桥</span></div><div class="line">ghk=data(:,<span class="number">7</span>);<span class="comment">%干河口</span></div><div class="line">cm=data(:,<span class="number">10</span>);<span class="comment">%昌马</span></div></pre></td></tr></table></figure>
+        <h1 id="数据来源">数据来源</h1>
+<p><strong>使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据</strong></p>
+<h1 id="数据处理">数据处理</h1>
+<h2 id="读入数据">读入数据</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%从文件中读取数据</span></div><div class="line">load(<span class="string">'data.mat'</span>);</div><div class="line">qw=data(:,<span class="number">1</span>);<span class="comment">%桥湾</span></div><div class="line">bdq=data(:,<span class="number">4</span>);<span class="comment">%北大桥</span></div><div class="line">ghk=data(:,<span class="number">7</span>);<span class="comment">%干河口</span></div><div class="line">cm=data(:,<span class="number">10</span>);<span class="comment">%昌马</span></div></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2017/03/01/Copula风速建模相关（3）/#more">more >></a>
         
@@ -253,12 +256,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://xueshu.baidu.com/s?wd=paperuri%3A%28a48beacab57eaa1da8adc7ac58931c9a%29&amp;filter=sc_long_sign&amp;tn=SE_xueshusource_2kduw22v&amp;sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-204143270.html%3Fref%3D360%26ref%3D360%26ref%3D360&amp;ie=utf-8&amp;sc_us=15886197312218780659">1</a></p>
-<h1 id="二元Copula函数的定义以及性质"><a href="#二元Copula函数的定义以及性质" class="headerlink" title="二元Copula函数的定义以及性质"></a>二元Copula函数的定义以及性质</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a><strong>定义:</strong></h2><blockquote>
-<p>二元Copula函数是指满足以下性质的函数$C(u,v)$:</p>
+<h1 id="二元copula函数的定义以及性质">二元Copula函数的定义以及性质</h1>
+<h2 id="定义"><strong>定义:</strong></h2>
+<blockquote>
+<p>二元Copula函数是指满足以下性质的函数<span class="math inline">\(C(u,v)\)</span>:</p>
 <ul>
-<li>$C(u,v)$ 的定义域为[0,1]x[0,1]；</li>
-<li>$C(u,v)$ 有零基面，并且是二维递增的；</li>
-<li>对任意$u,v\in [0,1]$，满足$C(u,1)=u，C(1,v)=v$。<br>所谓的有零基面是：至少存在一个$u_0\in[0,1]$ 和一个$v_0\in[0,1]$，使得$C(u_0,v)=0=C(u,v_0)$。<br>二维递增是指：对任意$0\le u_1\le u_2\le1$和$0\le v_1\le v_2\le1$，有<br>$$C(u_2,v_2)-C(u_2,v_1)-C(u_1,v_2)+C(u_1,v_1)\ge 0$$</li>
+<li><span class="math inline">\(C(u,v)\)</span> 的定义域为[0,1]x[0,1]；</li>
+<li><span class="math inline">\(C(u,v)\)</span> 有零基面，并且是二维递增的；</li>
+<li>对任意<span class="math inline">\(u,v\in [0,1]\)</span>，满足<span class="math inline">\(C(u,1)=u，C(1,v)=v\)</span>。 所谓的有零基面是：至少存在一个<span class="math inline">\(u_0\in[0,1]\)</span> 和一个<span class="math inline">\(v_0\in[0,1]\)</span>，使得<span class="math inline">\(C(u_0,v)=0=C(u,v_0)\)</span>。 二维递增是指：对任意<span class="math inline">\(0\le u_1\le u_2\le1\)</span>和<span class="math inline">\(0\le v_1\le v_2\le1\)</span>，有 <span class="math display">\[C(u_2,v_2)-C(u_2,v_1)-C(u_1,v_2)+C(u_1,v_1)\ge 0\]</span></li>
 </ul>
 </blockquote>
         
@@ -336,8 +341,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Copula函数的拟合优度校验——与经验Copula函数对比"><a href="#Copula函数的拟合优度校验——与经验Copula函数对比" class="headerlink" title="Copula函数的拟合优度校验——与经验Copula函数对比"></a>Copula函数的拟合优度校验——与经验Copula函数对比</h1><blockquote>
-<p><strong>QQ图（Q-QNorm）</strong><br>把数据的分位数与已知分布相比较，从而来判断数据的分布情况。把已知分布的分位数标在纵轴上，样本分位数标在横轴上，从图形上可以了解到分布的信息。图形是直线说明是正态分布。图形中有一段是直线，在两端存在弧度，说明峰度的情况。</p>
+        <h1 id="copula函数的拟合优度校验与经验copula函数对比">Copula函数的拟合优度校验——与经验Copula函数对比</h1>
+<blockquote>
+<p><strong>QQ图（Q-QNorm）</strong> 把数据的分位数与已知分布相比较，从而来判断数据的分布情况。把已知分布的分位数标在纵轴上，样本分位数标在横轴上，从图形上可以了解到分布的信息。图形是直线说明是正态分布。图形中有一段是直线，在两端存在弧度，说明峰度的情况。</p>
 <ul>
 <li>图形是曲线图，说明不对称。</li>
 <li>如果Q-Q图是直线，当该直线成45度角并穿过原点时，说明分布与给定的正态分布完全一样。</li>
@@ -423,8 +429,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关于研究目的"><a href="#关于研究目的" class="headerlink" title="关于研究目的"></a>关于研究目的</h1><p>由于风电基地的多个风电场地理位置比较靠近，且基本处于同一风带，风速之间具有较强的相关性，使得多个风电场的总体特性不同于单个风电场的特性。</p>
-<p>通过Copula理论进行多个风电场风俗的联合概率分布研究。<br>
+        <h1 id="关于研究目的">关于研究目的</h1>
+<p>由于风电基地的多个风电场地理位置比较靠近，且基本处于同一风带，风速之间具有较强的相关性，使得多个风电场的总体特性不同于单个风电场的特性。</p>
+<p>通过Copula理论进行多个风电场风俗的联合概率分布研究。
         
           <a class="article-more-a" href="/2017/02/21/基于Copula理论的风电场间建模/#more">more >></a>
         
@@ -480,6 +487,67 @@
 
 
   
+    <article id="post-javaclass2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/23/javaclass2/">Java 第二次课</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/23/javaclass2/" class="archive-article-date">
+  	<time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="封装继承多态">封装继承多态</h1>
+        
+          <a class="article-more-a" href="/2016/10/23/javaclass2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java/" class="article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/23/javaclass2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-javaclass4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -500,7 +568,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-基础面板搭建"><a href="#1-基础面板搭建" class="headerlink" title="1. 基础面板搭建"></a>1. 基础面板搭建</h2>
+        <h2 id="基础面板搭建">1. 基础面板搭建</h2>
         
           <a class="article-more-a" href="/2016/10/23/javaclass4/#more">more >></a>
         
@@ -561,7 +629,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="GUI设计"><a href="#GUI设计" class="headerlink" title="GUI设计"></a>GUI设计</h1>
+        <h1 id="gui设计">GUI设计</h1>
         
           <a class="article-more-a" href="/2016/10/23/javaclass3/#more">more >></a>
         
@@ -602,67 +670,6 @@
 
 
   
-    <article id="post-javaclass2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/23/javaclass2/">Java 第二次课</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/23/javaclass2/" class="archive-article-date">
-  	<time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="封装继承多态"><a href="#封装继承多态" class="headerlink" title="封装继承多态"></a>封装继承多态</h1>
-        
-          <a class="article-more-a" href="/2016/10/23/javaclass2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/23/javaclass2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="[post]-可延迟负荷控制" class="article article-type-[post]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -683,7 +690,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Notes-of-Real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation"><a href="#Notes-of-Real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation" class="headerlink" title="Notes of Real-time deferrable load control: handling the uncertainties of renewable generation"></a>Notes of <a href="http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf">Real-time deferrable load control: handling the uncertainties of renewable generation</a></h1><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
+        <h1 id="notes-of-real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation">Notes of <a href="http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf">Real-time deferrable load control: handling the uncertainties of renewable generation</a></h1>
+<h1 id="简介">简介</h1>
+<ul>
 <li>趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代</li>
 <li>可再生能源的不规律、不可预测性给控制带来了很多麻烦</li>
 <li>需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影响</li>
@@ -704,10 +713,6 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">柔性建模</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">deferrable load</a>
         		</li>
       		 
@@ -717,6 +722,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">可再生能源</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">柔性建模</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -776,7 +785,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="智能电网柔性成分运行建模方法研究"><a href="#智能电网柔性成分运行建模方法研究" class="headerlink" title="智能电网柔性成分运行建模方法研究"></a>智能电网柔性成分运行建模方法研究</h1><p>研究可调负荷和储能的运行特性，并建立其运行模型；研究柔性成分与可再生能源联合运行方式；仿真模拟可调负荷和储能运行的减排效果，验证所建模型有效性。<br>
+        <h1 id="智能电网柔性成分运行建模方法研究">智能电网柔性成分运行建模方法研究</h1>
+<p>研究可调负荷和储能的运行特性，并建立其运行模型；研究柔性成分与可再生能源联合运行方式；仿真模拟可调负荷和储能运行的减排效果，验证所建模型有效性。
         
           <a class="article-more-a" href="/2016/07/05/flexibility/#more">more >></a>
         
@@ -856,32 +866,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> Notes about <a href="http://ieor.berkeley.edu/~oren/pubs/No113.pdf">Large-scale integration of deferrable demand and renewable energy sources</a></p>
-<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><blockquote>
+        <p>Notes about <a href="http://ieor.berkeley.edu/~oren/pubs/No113.pdf">Large-scale integration of deferrable demand and renewable energy sources</a></p>
+<h1 id="abstract">ABSTRACT</h1>
+<blockquote>
 <ul>
-<li><a href="http://s3.amazonaws.com/academia.edu.documents/42998787/A_Stochastic_Unit-commitment_Model_for_t20160223-1673-5tjopb.pdf?AWSAccessKeyId=AKIAJ56TQJRTWSMTNPEA&amp;Expires=1467280071&amp;Signature=12zFdv9seJSAEfV1OBP2emAFj9I%3D&amp;response-content-disposition=inline%3B%20filename%3DA_stochastic_unit-commitment_model_for_t.pdf">stochastic unit commitment model</a> 随机机组组合模型  <strong>？</strong></li>
+<li><a href="http://s3.amazonaws.com/academia.edu.documents/42998787/A_Stochastic_Unit-commitment_Model_for_t20160223-1673-5tjopb.pdf?AWSAccessKeyId=AKIAJ56TQJRTWSMTNPEA&amp;Expires=1467280071&amp;Signature=12zFdv9seJSAEfV1OBP2emAFj9I%3D&amp;response-content-disposition=inline%3B%20filename%3DA_stochastic_unit-commitment_model_for_t.pdf">stochastic unit commitment model</a> 随机机组组合模型 <strong>？</strong></li>
 <li>[ ]deferrable demand in power system 电力系统中的可暂缓需求<strong>（可调性需求？）</strong></li>
 <li>[x]reserve requirements 储能需求</li>
 <li>[ ]the benefits of demand flexibility 需求弹性收益 <strong>？</strong></li>
-<li><p>[x]three demand response paradigms 三个需求响应的样例</p>
-<blockquote>
-<ul>
-<li>[ ]the centralized co-optimization of generation 发电的集中联合优化 <strong>？</strong></li>
-<li>[x]demand by the system operator, demand bids 来自于系统操作人员和订单的需求</li>
-<li>[ ]the coupling of renewable resources with deferrable loads 可再生能源与可调性负载的耦合 <strong>？</strong></li>
-</ul>
-</blockquote>
-</li>
-<li><p>[ ]motivate coupling as an alternative for overcoming the drawbacks of the two alternative demand response options 将耦合作为克服另外两个需求响应缺点的替代选项</p>
-</li>
+<li><p>[x]three demand response paradigms 三个需求响应的样例 &gt; - [ ]the centralized co-optimization of generation 发电的集中联合优化 <strong>？</strong> &gt; - [x]demand by the system operator, demand bids 来自于系统操作人员和订单的需求 &gt; - [ ]the coupling of renewable resources with deferrable loads 可再生能源与可调性负载的耦合 <strong>？</strong></p></li>
+<li>[ ]motivate coupling as an alternative for overcoming the drawbacks of the two alternative demand response options 将耦合作为克服另外两个需求响应缺点的替代选项</li>
 <li>[x]a dynamic programming algorithm for coordinating deferrable demand with renewable supply 一个用于协调可调性需求与可再生能源供给的动态算法</li>
 <li>[ ]simulation results for a model of the <a href="https://www.wecc.biz/Pages/home.aspx">Western Electricity Coordinating Council</a> 关于<a href="https://en.wikipedia.org/wiki/Western_Electricity_Coordinating_Council">西部电力协调理事会</a>的模型仿真结果</li>
 <li>[ ]load management 负载管理</li>
 <li>[ ]power generation scheduling 电力发电规划</li>
-<li>[ ]wind power generation 风力发电</li>
+<li><p>[ ]wind power generation 风力发电</p></li>
 </ul>
 </blockquote>
-<hr>
+<hr />
         
           <a class="article-more-a" href="/2016/07/05/notes/#more">more >></a>
         
@@ -897,11 +899,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">柔性建模</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">可再生能源</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">可再生能源</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">柔性建模</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1062,18 +1064,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">deferrable load</a>
               </li>
              
@@ -1086,7 +1076,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">real-time</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1106,18 +1108,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">EM算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
               </li>
              
@@ -1131,6 +1121,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">EM算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
               </li>
              
               <li class="article-tag-list-item">
