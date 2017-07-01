@@ -9,13 +9,17 @@
   <title>混合Copula风速建模——代码实现与结果分析 | 化天弹指间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表
-EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]=copu">
+EM算法估计混合Copula参数
+EM主体
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="混合Copula风速建模——代码实现与结果分析">
 <meta property="og:url" content="http://fatelancer.github.io/2017/03/10/混合Copula风速建模——代码实现与结果分析/index.html">
 <meta property="og:site_name" content="化天弹指间">
 <meta property="og:description" content="由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表
-EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]=copu">
+EM算法估计混合Copula参数
+EM主体
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/im1.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/im2.jpg">
@@ -23,7 +27,9 @@ EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="混合Copula风速建模——代码实现与结果分析">
 <meta name="twitter:description" content="由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表
-EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]=copu">
+EM算法估计混合Copula参数
+EM主体
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647U=GHK;V=BDQ;% 初始化S=3;th=0.01;omega=[1/3,1/3,1/3];[a,nuhat]">
 <meta name="twitter:image" content="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg">
   
     <link rel="alternative" href="/atom.xml" title="化天弹指间" type="application/atom+xml">
@@ -181,32 +187,36 @@ EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242
     <div class="article-entry" itemprop="articleBody">
       
         <p><em>由于仿真一次所耗时间较长，因此选择北大桥与干河口风电场作为代表</em></p>
-<h1 id="EM算法估计混合Copula参数"><a href="#EM算法估计混合Copula参数" class="headerlink" title="EM算法估计混合Copula参数"></a>EM算法估计混合Copula参数</h1><h2 id="EM主体"><a href="#EM主体" class="headerlink" title="EM主体"></a>EM主体</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">U=GHK;</div><div class="line">V=BDQ;</div><div class="line"><span class="comment">% 初始化</span></div><div class="line">S=<span class="number">3</span>;</div><div class="line">th=<span class="number">0.01</span>;</div><div class="line">omega=[<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>];</div><div class="line">[a,nuhat]=copulafit(<span class="string">'t'</span>,[U,V]);</div><div class="line">a2=copulafit(<span class="string">'Gumbel'</span>,[U,V]);</div><div class="line">a3=copulafit(<span class="string">'Frank'</span>,[U,V]);</div><div class="line">theta=[a(<span class="number">1</span>,<span class="number">2</span>),a2,a3];</div><div class="line">[N,~]=<span class="built_in">size</span>(U);</div><div class="line">count=<span class="number">0</span>;</div><div class="line">tt=<span class="built_in">zeros</span>(N,<span class="number">2</span>);</div><div class="line">t=<span class="built_in">inf</span>;</div><div class="line">COPULA=<span class="built_in">zeros</span>(N,S);</div><div class="line">list1=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">list2=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">puz=<span class="built_in">zeros</span>(N,S);</div><div class="line">puz1=<span class="built_in">zeros</span>(N,S);</div><div class="line"><span class="keyword">while</span> t&gt;=th&amp;&amp;count&lt;=<span class="number">100</span>;</div><div class="line">    theta_old=theta;</div><div class="line">    omega_old=omega;</div><div class="line">    COPULA(:,<span class="number">1</span>)=copulapdf(<span class="string">'t'</span>,[U(:) V(:)],theta_old(<span class="number">1</span>),nuhat);</div><div class="line">    COPULA(:,<span class="number">2</span>)=copulapdf(<span class="string">'Gumbel'</span>,[U(:) V(:)],theta_old(<span class="number">2</span>));</div><div class="line">    COPULA(:,<span class="number">3</span>)=copulapdf(<span class="string">'Frank'</span>,[U(:) V(:)],theta_old(<span class="number">3</span>));</div><div class="line">    puz(:,<span class="number">1</span>)=COPULA(:,<span class="number">1</span>)*omega_old(<span class="number">1</span>);</div><div class="line">    puz(:,<span class="number">2</span>)=COPULA(:,<span class="number">2</span>)*omega_old(<span class="number">2</span>);</div><div class="line">    puz(:,<span class="number">3</span>)=COPULA(:,<span class="number">3</span>)*omega_old(<span class="number">3</span>);</div><div class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">1</span>)=puz(<span class="built_in">i</span>,<span class="number">1</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">2</span>)=puz(<span class="built_in">i</span>,<span class="number">2</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">3</span>)=puz(<span class="built_in">i</span>,<span class="number">3</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">    <span class="keyword">end</span></div><div class="line">    omega(<span class="number">1</span>)=sum(puz1(:,<span class="number">1</span>))/N;</div><div class="line">    omega(<span class="number">2</span>)=sum(puz1(:,<span class="number">2</span>))/N;</div><div class="line">    omega(<span class="number">3</span>)=sum(puz1(:,<span class="number">3</span>))/N;</div><div class="line">    omega</div><div class="line">    tt(:,<span class="number">1</span>)=tinv(U(:),nuhat);</div><div class="line">    tt(:,<span class="number">2</span>)=tinv(V(:),nuhat);</div><div class="line">    [turntheta,fval,exitflag,output,grad,hessian]=updatetheta(N,U,V,theta_old,puz1,tt,nuhat);</div><div class="line">    theta=turntheta;</div><div class="line">    theta</div><div class="line">    list1(:,count+<span class="number">1</span>)=theta;</div><div class="line">    list2(:,count+<span class="number">1</span>)=omega;</div><div class="line">    t=max([norm(theta_old(:)-theta(:));norm(omega_old(:)-omega(:))])</div><div class="line">    count=count+<span class="number">1</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h1 id="em算法估计混合copula参数">EM算法估计混合Copula参数</h1>
+<h2 id="em主体">EM主体</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">U=GHK;</div><div class="line">V=BDQ;</div><div class="line"><span class="comment">% 初始化</span></div><div class="line">S=<span class="number">3</span>;</div><div class="line">th=<span class="number">0.01</span>;</div><div class="line">omega=[<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>,<span class="number">1</span>/<span class="number">3</span>];</div><div class="line">[a,nuhat]=copulafit(<span class="string">'t'</span>,[U,V]);</div><div class="line">a2=copulafit(<span class="string">'Gumbel'</span>,[U,V]);</div><div class="line">a3=copulafit(<span class="string">'Frank'</span>,[U,V]);</div><div class="line">theta=[a(<span class="number">1</span>,<span class="number">2</span>),a2,a3];</div><div class="line">[N,~]=<span class="built_in">size</span>(U);</div><div class="line">count=<span class="number">0</span>;</div><div class="line">tt=<span class="built_in">zeros</span>(N,<span class="number">2</span>);</div><div class="line">t=<span class="built_in">inf</span>;</div><div class="line">COPULA=<span class="built_in">zeros</span>(N,S);</div><div class="line">list1=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">list2=<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">101</span>);</div><div class="line">puz=<span class="built_in">zeros</span>(N,S);</div><div class="line">puz1=<span class="built_in">zeros</span>(N,S);</div><div class="line"><span class="keyword">while</span> t&gt;=th&amp;&amp;count&lt;=<span class="number">100</span>;</div><div class="line">    theta_old=theta;</div><div class="line">    omega_old=omega;</div><div class="line">    COPULA(:,<span class="number">1</span>)=copulapdf(<span class="string">'t'</span>,[U(:) V(:)],theta_old(<span class="number">1</span>),nuhat);</div><div class="line">    COPULA(:,<span class="number">2</span>)=copulapdf(<span class="string">'Gumbel'</span>,[U(:) V(:)],theta_old(<span class="number">2</span>));</div><div class="line">    COPULA(:,<span class="number">3</span>)=copulapdf(<span class="string">'Frank'</span>,[U(:) V(:)],theta_old(<span class="number">3</span>));</div><div class="line">    puz(:,<span class="number">1</span>)=COPULA(:,<span class="number">1</span>)*omega_old(<span class="number">1</span>);</div><div class="line">    puz(:,<span class="number">2</span>)=COPULA(:,<span class="number">2</span>)*omega_old(<span class="number">2</span>);</div><div class="line">    puz(:,<span class="number">3</span>)=COPULA(:,<span class="number">3</span>)*omega_old(<span class="number">3</span>);</div><div class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">1</span>)=puz(<span class="built_in">i</span>,<span class="number">1</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">2</span>)=puz(<span class="built_in">i</span>,<span class="number">2</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">        puz1(<span class="built_in">i</span>,<span class="number">3</span>)=puz(<span class="built_in">i</span>,<span class="number">3</span>)/sum(puz(<span class="built_in">i</span>,:));</div><div class="line">    <span class="keyword">end</span></div><div class="line">    omega(<span class="number">1</span>)=sum(puz1(:,<span class="number">1</span>))/N;</div><div class="line">    omega(<span class="number">2</span>)=sum(puz1(:,<span class="number">2</span>))/N;</div><div class="line">    omega(<span class="number">3</span>)=sum(puz1(:,<span class="number">3</span>))/N;</div><div class="line">    omega</div><div class="line">    tt(:,<span class="number">1</span>)=tinv(U(:),nuhat);</div><div class="line">    tt(:,<span class="number">2</span>)=tinv(V(:),nuhat);</div><div class="line">    [turntheta,fval,exitflag,output,grad,hessian]=updatetheta(N,U,V,theta_old,puz1,tt,nuhat);</div><div class="line">    theta=turntheta;</div><div class="line">    theta</div><div class="line">    list1(:,count+<span class="number">1</span>)=theta;</div><div class="line">    list2(:,count+<span class="number">1</span>)=omega;</div><div class="line">    t=max([norm(theta_old(:)-theta(:));norm(omega_old(:)-omega(:))])</div><div class="line">    count=count+<span class="number">1</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="参数更新（非线性优化bfgs）"><a href="#参数更新（非线性优化bfgs）" class="headerlink" title="参数更新（非线性优化bfgs）"></a>参数更新（非线性优化bfgs）</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[turntheta,fval,exitflag,output,grad,hessian]</span>=<span class="title">updatetheta</span><span class="params">(N,U,V,theta,puz,t,nuhat)</span></span></div><div class="line">options=optimset(<span class="string">'Display'</span>,<span class="string">'iter-detailed'</span>,<span class="string">'TolFun'</span>,<span class="number">1e-10</span>,<span class="string">'TolX'</span>,<span class="number">1e-10</span>,<span class="string">'LargeScale'</span>,<span class="string">'off'</span>,<span class="string">'FinDiffType'</span>,<span class="string">'central'</span>,<span class="string">'HessUpdate'</span>,<span class="string">'bfgs'</span>);</div><div class="line">[turntheta,fval,exitflag,output,grad,hessian]=fminunc(@utheta,theta,options);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">utheta</span><span class="params">(theta)</span></span></div><div class="line"><span class="keyword">if</span> theta(<span class="number">3</span>)==<span class="number">0</span></div><div class="line">    theta(<span class="number">3</span>)=theta(<span class="number">3</span>)+<span class="number">0.0001</span>;  <span class="comment">%防止出现 Frank  Copula 的相依结构参数为 0</span></div><div class="line"><span class="keyword">end</span></div><div class="line">y=<span class="number">0</span>;</div><div class="line">th=<span class="built_in">eye</span>(<span class="number">2</span>);</div><div class="line">th(<span class="number">1</span>,<span class="number">2</span>)=theta(<span class="number">1</span>);</div><div class="line">th(<span class="number">2</span>,<span class="number">1</span>)=theta(<span class="number">1</span>);</div><div class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:N</div><div class="line"></div><div class="line">    y=y+<span class="built_in">log</span>(((det(th))^(<span class="number">-1</span>/<span class="number">2</span>))*<span class="built_in">gamma</span>((nuhat+<span class="number">2</span>)/<span class="number">2</span>)*<span class="built_in">gamma</span>(nuhat/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,:)*th^(<span class="number">-1</span>)*t(<span class="built_in">j</span>,:)'/nuhat)^(-(nuhat+<span class="number">2</span>)/<span class="number">2</span>)/((<span class="built_in">gamma</span>((nuhat+<span class="number">1</span>)/<span class="number">2</span>))^<span class="number">2</span>*((<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">1</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">2</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">1</span>)+...</div><div class="line">        <span class="built_in">log</span>(<span class="built_in">exp</span>(-((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^theta(<span class="number">2</span>)+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^theta(<span class="number">2</span>))^(<span class="number">1</span>/theta(<span class="number">2</span>)))*(<span class="built_in">log</span>(U(<span class="built_in">j</span>))*<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)<span class="number">-1</span>)*(((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">1</span>/theta(<span class="number">2</span>))+theta(<span class="number">2</span>)<span class="number">-1</span>)/(U(<span class="built_in">j</span>)*V(<span class="built_in">j</span>)*((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">2</span><span class="number">-1</span>/theta(<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">2</span>)+...</div><div class="line">        <span class="built_in">log</span>(theta(<span class="number">3</span>)*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))*<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*(U(<span class="built_in">j</span>)+V(<span class="built_in">j</span>)))/((<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))-(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*U(<span class="built_in">j</span>)))*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*V(<span class="built_in">j</span>))))^<span class="number">2</span>)*puz(<span class="built_in">j</span>,<span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">y=-y;</div><div class="line"><span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><table>
+<h2 id="参数更新非线性优化bfgs">参数更新（非线性优化bfgs）</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[turntheta,fval,exitflag,output,grad,hessian]</span>=<span class="title">updatetheta</span><span class="params">(N,U,V,theta,puz,t,nuhat)</span></span></div><div class="line">options=optimset(<span class="string">'Display'</span>,<span class="string">'iter-detailed'</span>,<span class="string">'TolFun'</span>,<span class="number">1e-10</span>,<span class="string">'TolX'</span>,<span class="number">1e-10</span>,<span class="string">'LargeScale'</span>,<span class="string">'off'</span>,<span class="string">'FinDiffType'</span>,<span class="string">'central'</span>,<span class="string">'HessUpdate'</span>,<span class="string">'bfgs'</span>);</div><div class="line">[turntheta,fval,exitflag,output,grad,hessian]=fminunc(@utheta,theta,options);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">utheta</span><span class="params">(theta)</span></span></div><div class="line"><span class="keyword">if</span> theta(<span class="number">3</span>)==<span class="number">0</span></div><div class="line">    theta(<span class="number">3</span>)=theta(<span class="number">3</span>)+<span class="number">0.0001</span>;  <span class="comment">%防止出现 Frank  Copula 的相依结构参数为 0</span></div><div class="line"><span class="keyword">end</span></div><div class="line">y=<span class="number">0</span>;</div><div class="line">th=<span class="built_in">eye</span>(<span class="number">2</span>);</div><div class="line">th(<span class="number">1</span>,<span class="number">2</span>)=theta(<span class="number">1</span>);</div><div class="line">th(<span class="number">2</span>,<span class="number">1</span>)=theta(<span class="number">1</span>);</div><div class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:N</div><div class="line"></div><div class="line">    y=y+<span class="built_in">log</span>(((det(th))^(<span class="number">-1</span>/<span class="number">2</span>))*<span class="built_in">gamma</span>((nuhat+<span class="number">2</span>)/<span class="number">2</span>)*<span class="built_in">gamma</span>(nuhat/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,:)*th^(<span class="number">-1</span>)*t(<span class="built_in">j</span>,:)'/nuhat)^(-(nuhat+<span class="number">2</span>)/<span class="number">2</span>)/((<span class="built_in">gamma</span>((nuhat+<span class="number">1</span>)/<span class="number">2</span>))^<span class="number">2</span>*((<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">1</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>)*(<span class="number">1</span>+t(<span class="built_in">j</span>,<span class="number">2</span>)^<span class="number">2</span>/nuhat)^(-(nuhat+<span class="number">1</span>)/<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">1</span>)+...</div><div class="line">        <span class="built_in">log</span>(<span class="built_in">exp</span>(-((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^theta(<span class="number">2</span>)+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^theta(<span class="number">2</span>))^(<span class="number">1</span>/theta(<span class="number">2</span>)))*(<span class="built_in">log</span>(U(<span class="built_in">j</span>))*<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)<span class="number">-1</span>)*(((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">1</span>/theta(<span class="number">2</span>))+theta(<span class="number">2</span>)<span class="number">-1</span>)/(U(<span class="built_in">j</span>)*V(<span class="built_in">j</span>)*((-<span class="built_in">log</span>(U(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>))+(-<span class="built_in">log</span>(V(<span class="built_in">j</span>)))^(theta(<span class="number">2</span>)))^(<span class="number">2</span><span class="number">-1</span>/theta(<span class="number">2</span>))))*puz(<span class="built_in">j</span>,<span class="number">2</span>)+...</div><div class="line">        <span class="built_in">log</span>(theta(<span class="number">3</span>)*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))*<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*(U(<span class="built_in">j</span>)+V(<span class="built_in">j</span>)))/((<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)))-(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*U(<span class="built_in">j</span>)))*(<span class="number">1</span>-<span class="built_in">exp</span>(-theta(<span class="number">3</span>)*V(<span class="built_in">j</span>))))^<span class="number">2</span>)*puz(<span class="built_in">j</span>,<span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">y=-y;</div><div class="line"><span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="结果">结果</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>Copula函数</th>
-<th>$\theta$</th>
-<th>$\omega$</th>
-<th>$k$</th>
+<th><span class="math inline">\(\theta\)</span></th>
+<th><span class="math inline">\(\omega\)</span></th>
+<th><span class="math inline">\(k\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>t-Copula</td>
 <td>0.1244</td>
 <td>0.0822</td>
 <td>3</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Gumbel-Copula</td>
 <td>4.1127</td>
 <td>0.7495</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Frank-Copula</td>
 <td>6.5931</td>
 <td>0.1683</td>
@@ -214,22 +224,25 @@ EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242
 </tr>
 </tbody>
 </table>
-<p>即<br>$$C(u,v;a)=0.7495C<em>{Gumbel}(u,v;4.1127)+0.1683C</em>{Frank}(u,v;6.5931)+0.0822C_t(u,v;0.1244,3)$$</p>
-<h1 id="结果评价"><a href="#结果评价" class="headerlink" title="结果评价"></a>结果评价</h1><h2 id="Q-Q图"><a href="#Q-Q图" class="headerlink" title="Q-Q图"></a>Q-Q图</h2><p><img src="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg" alt="mixed-Copula"><br>可以与之前单一Copula的仿真QQ图进行比较<br><img src="http://oag5ozkgs.bkt.clouddn.com/im1.jpg" alt="qq图2"><br><img src="http://oag5ozkgs.bkt.clouddn.com/im2.jpg" alt="qq图3"><br>可以明显的看出拟合优度上混合Copula有很大的优势</p>
-<h2 id="K-S检验"><a href="#K-S检验" class="headerlink" title="K-S检验"></a>K-S检验</h2><table>
+<p>即 <span class="math display">\[C(u,v;a)=0.7495C_{Gumbel}(u,v;4.1127)+0.1683C_{Frank}(u,v;6.5931)+0.0822C_t(u,v;0.1244,3)\]</span></p>
+<h1 id="结果评价">结果评价</h1>
+<h2 id="q-q图">Q-Q图</h2>
+<p><img src="http://oag5ozkgs.bkt.clouddn.com/mcopula.jpg" alt="mixed-Copula"> 可以与之前单一Copula的仿真QQ图进行比较 <img src="http://oag5ozkgs.bkt.clouddn.com/im1.jpg" alt="qq图2"> <img src="http://oag5ozkgs.bkt.clouddn.com/im2.jpg" alt="qq图3"> 可以明显的看出拟合优度上混合Copula有很大的优势</p>
+<h2 id="k-s检验">K-S检验</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>风电场组合</th>
-<th>$k_N$</th>
-<th>$k_t$</th>
-<th>$k_G$</th>
-<th>$k_C$</th>
-<th>$k_F$</th>
-<th>$K_M$</th>
+<th><span class="math inline">\(k_N\)</span></th>
+<th><span class="math inline">\(k_t\)</span></th>
+<th><span class="math inline">\(k_G\)</span></th>
+<th><span class="math inline">\(k_C\)</span></th>
+<th><span class="math inline">\(k_F\)</span></th>
+<th><span class="math inline">\(K_M\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>北大桥，干河口</td>
 <td>0.0395</td>
 <td>0.0343</td>
@@ -241,20 +254,21 @@ EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242
 </tbody>
 </table>
 <p>可以看出就K-S统计值而言混合Copula也小于其他单一Copula</p>
-<h2 id="欧式距离"><a href="#欧式距离" class="headerlink" title="欧式距离"></a>欧式距离</h2><table>
+<h2 id="欧式距离">欧式距离</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>风电场组合</th>
-<th>$d_N$</th>
-<th>$d_t$</th>
-<th>$d_G$</th>
-<th>$d_C$</th>
-<th>$d_F$</th>
-<th>$d_M$</th>
+<th><span class="math inline">\(d_N\)</span></th>
+<th><span class="math inline">\(d_t\)</span></th>
+<th><span class="math inline">\(d_G\)</span></th>
+<th><span class="math inline">\(d_C\)</span></th>
+<th><span class="math inline">\(d_F\)</span></th>
+<th><span class="math inline">\(d_M\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>北大桥，干河口</td>
 <td>3.6952</td>
 <td>2.4590</td>
@@ -310,11 +324,11 @@ EM算法估计混合Copula参数EM主体1234567891011121314151617181920212223242
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">混合Copula</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">EM算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">EM算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">混合Copula</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -590,15 +604,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">EM算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,11 +624,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
+                <a href="javascript:void(0)" class="js-tag color5">EM算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多维Copula</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,10 +649,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机组组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多维Copula</a>
               </li>
             
             <div class="clearfix"></div>
