@@ -140,7 +140,7 @@
 	}
 	.instagram .album div.img-box{
 		margin: 0;
-		width: 90%;
+		width: auto;
 		height: 90%;
 	}
 }
