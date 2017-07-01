@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fatelancer.github.io/photos/data.json</loc>
+    
+    <lastmod>2017-07-01T13:21:10.027Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://fatelancer.github.io/photos/ins.js</loc>
     
     <lastmod>2017-07-01T13:14:44.936Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://fatelancer.github.io/photos/index.html</loc>
     
     <lastmod>2017-07-01T13:09:15.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fatelancer.github.io/photos/data.json</loc>
-    
-    <lastmod>2017-07-01T07:22:09.520Z</lastmod>
     
   </url>
   
