@@ -12,6 +12,7 @@
 <meta property="og:title" content="化天弹指间">
 <meta property="og:url" content="http://fatelancer.github.io/page/2/index.html">
 <meta property="og:site_name" content="化天弹指间">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="化天弹指间">
   
@@ -175,7 +176,7 @@
 <h2 id="代码实现">代码实现</h2>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">%计算网格点上Copula分布函数值画QQ图</span></div><div class="line">Ccdf_n=copulacdf(<span class="string">'Gaussian'</span>,[Udata(:),Vdata(:)],rho_norm);</div><div class="line">Ccdf_t=copulacdf(<span class="string">'t'</span>,[Udata(:),Vdata(:)],rho_t,nuhat);</div><div class="line">Ccdf_G=copulacdf(<span class="string">'Gumbel'</span>,[Udata(:),Vdata(:)],paramhat_G);</div><div class="line">Ccdf_C=copulacdf(<span class="string">'Clayton'</span>,[Udata(:),Vdata(:)],paramhat_C);</div><div class="line">Ccdf_F=copulacdf(<span class="string">'Frank'</span>,[Udata(:),Vdata(:)],paramhat_F);</div><div class="line">figure;</div><div class="line">qqplot(<span class="built_in">reshape</span>(CopulaEmpirical,<span class="built_in">size</span>(Udata)),<span class="built_in">reshape</span>(Ccdf_n,<span class="built_in">size</span>(Udata)),<span class="string">'b'</span>);</div><div class="line">xlabel(<span class="string">'经验Copula'</span>);ylabel([<span class="string">'Normal Copula'</span>,<span class="string">'rho:'</span>,num2str(rho_norm(<span class="number">1</span>,<span class="number">2</span>))]); title([N&#123;n&#125;,<span class="string">'与'</span>,N&#123;m&#125;,<span class="string">'Q-Q图'</span>,<span class="string">'Normal'</span>]);</div><div class="line">figure;</div><div class="line">qqplot(<span class="built_in">reshape</span>(CopulaEmpirical,<span class="built_in">size</span>(Udata)),<span class="built_in">reshape</span>(Ccdf_t,<span class="built_in">size</span>(Udata)),<span class="string">'b'</span>);</div><div class="line">xlabel(<span class="string">'经验Copula'</span>);ylabel([<span class="string">'t-Copula'</span>,<span class="string">'rho:'</span>,num2str(rho_t(<span class="number">1</span>,<span class="number">2</span>)),<span class="string">'k:'</span>,num2str(nuhat)]); title([N&#123;n&#125;,<span class="string">'与'</span>,N&#123;m&#125;,<span class="string">'Q-Q图'</span>,<span class="string">'t'</span>]);</div><div class="line">figure;</div><div class="line">qqplot(<span class="built_in">reshape</span>(CopulaEmpirical,<span class="built_in">size</span>(Udata)),<span class="built_in">reshape</span>(Ccdf_G,<span class="built_in">size</span>(Udata)),<span class="string">'b'</span>);</div><div class="line">xlabel(<span class="string">'经验Copula'</span>);ylabel([<span class="string">'Gumbel-Copula'</span>,<span class="string">'p_G:'</span>,num2str(paramhat_G)]); title([N&#123;n&#125;,<span class="string">'与'</span>,N&#123;m&#125;,<span class="string">'Q-Q图'</span>,<span class="string">'Gumbel'</span>]);</div><div class="line">figure;</div><div class="line">qqplot(<span class="built_in">reshape</span>(CopulaEmpirical,<span class="built_in">size</span>(Udata)),<span class="built_in">reshape</span>(Ccdf_C,<span class="built_in">size</span>(Udata)),<span class="string">'b'</span>);</div><div class="line">xlabel(<span class="string">'经验Copula'</span>);ylabel([<span class="string">'Clayton-Copula'</span>,<span class="string">'p_C'</span>,num2str(paramhat_C)]); title([N&#123;n&#125;,<span class="string">'与'</span>,N&#123;m&#125;,<span class="string">'Q-Q图'</span>,<span class="string">'Clayton'</span>]);</div><div class="line">figure;</div><div class="line">qqplot(<span class="built_in">reshape</span>(CopulaEmpirical,<span class="built_in">size</span>(Udata)),<span class="built_in">reshape</span>(Ccdf_F,<span class="built_in">size</span>(Udata)),<span class="string">'b'</span>);</div><div class="line">xlabel(<span class="string">'经验Copula'</span>);ylabel([<span class="string">'Frank-Copula'</span>,<span class="string">'p_F'</span>,num2str(paramhat_F)]); title([N&#123;n&#125;,<span class="string">'与'</span>,N&#123;m&#125;,<span class="string">'Q-Q图'</span>,<span class="string">'Frank'</span>]);</div></pre></td></tr></table></figure>
 <h2 id="结果">结果</h2>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg" alt="qq图2" /> <img src="http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg" alt="qq图3" /></p>
+<p><img src="http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg" alt="qq图2"> <img src="http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg" alt="qq图3"></p>
         
           <a class="article-more-a" href="/2017/03/02/Copula风速建模相关（4）/#more">more >></a>
         
@@ -343,7 +344,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://xueshu.baidu.com/s?wd=paperuri%3A%28a48beacab57eaa1da8adc7ac58931c9a%29&amp;filter=sc_long_sign&amp;tn=SE_xueshusource_2kduw22v&amp;sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-204143270.html%3Fref%3D360%26ref%3D360%26ref%3D360&amp;ie=utf-8&amp;sc_us=15886197312218780659">1</a></p>
+        <p><a href="http://xueshu.baidu.com/s?wd=paperuri%3A%28a48beacab57eaa1da8adc7ac58931c9a%29&amp;filter=sc_long_sign&amp;tn=SE_xueshusource_2kduw22v&amp;sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-204143270.html%3Fref%3D360%26ref%3D360%26ref%3D360&amp;ie=utf-8&amp;sc_us=15886197312218780659" target="_blank" rel="external">1</a></p>
 <h1 id="二元copula函数的定义以及性质">二元Copula函数的定义以及性质</h1>
 <h2 id="定义"><strong>定义:</strong></h2>
 <blockquote>
@@ -575,67 +576,6 @@
 
 
   
-    <article id="post-javaclass4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/23/javaclass4/">Java第四次课</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/23/javaclass4/" class="archive-article-date">
-  	<time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基础面板搭建">1. 基础面板搭建</h2>
-        
-          <a class="article-more-a" href="/2016/10/23/javaclass4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java/" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/23/javaclass4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-javaclass2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -683,6 +623,67 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/10/23/javaclass2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-javaclass4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/23/javaclass4/">Java第四次课</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/23/javaclass4/" class="archive-article-date">
+  	<time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基础面板搭建">1. 基础面板搭建</h2>
+        
+          <a class="article-more-a" href="/2016/10/23/javaclass4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java/" class="article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/23/javaclass4/">展开全文 >></a>
         </p>
       
 
@@ -778,13 +779,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="notes-of-real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation">Notes of <a href="http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf">Real-time deferrable load control: handling the uncertainties of renewable generation</a></h1>
+        <h1 id="notes-of-real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation">Notes of <a href="http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf" target="_blank" rel="external">Real-time deferrable load control: handling the uncertainties of renewable generation</a></h1>
 <h1 id="简介">简介</h1>
 <ul>
 <li>趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代</li>
 <li>可再生能源的不规律、不可预测性给控制带来了很多麻烦</li>
 <li>需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影响</li>
-<li><a href="http://fatelancer.top/2016/07/05/flexibility/#more">deferrable load</a>：可以推迟一段时间再执行，可以通过推迟负荷时间来与可再生能源的供给匹配</li>
+<li><a href="http://fatelancer.top/2016/07/05/flexibility/#more" target="_blank" rel="external">deferrable load</a>：可以推迟一段时间再执行，可以通过推迟负荷时间来与可再生能源的供给匹配</li>
 <li>要点：分散式直接负荷控制
         
           <a class="article-more-a" href="/2016/07/06/可延迟负荷控制/#more">more >></a>
@@ -1083,23 +1084,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
+                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1115,7 +1104,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
+                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1124,6 +1121,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1136,14 +1137,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机组组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集成电路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数字</a>
               </li>
             
             <div class="clearfix"></div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fatelancer.github.io/"/>
-  <updated>2017-07-13T07:07:02.023Z</updated>
+  <updated>2016-07-05T00:59:47.785Z</updated>
   <id>http://fatelancer.github.io/</id>
   
   <author>
@@ -16,41 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>EE241 L1</title>
-    <link href="http://fatelancer.github.io/2017/07/09/EE241-L1/"/>
-    <id>http://fatelancer.github.io/2017/07/09/EE241-L1/</id>
-    <published>2017-07-09T02:03:51.000Z</published>
-    <updated>2017-07-13T07:07:02.023Z</updated>
+    <title>Hello World</title>
+    <link href="http://fatelancer.github.io/2017/07/30/hello-world/"/>
+    <id>http://fatelancer.github.io/2017/07/30/hello-world/</id>
+    <published>2017-07-30T05:29:49.806Z</published>
+    <updated>2016-07-05T00:59:47.785Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="ee141digital-integrated-circuits-vs.ee241advanced-digital-integrated-circuits">EE141(Digital Integrated Circuits) vs. EE241(Advanced Digital Integrated Circuits)</h1>
-<p>EECS 141:</p>
-<ul>
-<li>Basic transistor and circuit models</li>
-<li>Basic circuit design styles</li>
-<li>First experiences with design – creating a solution given a set of specifications</li>
-</ul>
-<p>EECS 241:</p>
-<ul>
-<li>Transistor models of varying accuracy</li>
-<li>Design under constraints: power-constrained, flexible, robust,…</li>
-<li>Learning more advanced techniques</li>
-<li>Study the challenges facing design in the coming years</li>
-<li>Creating new solutions to challenging design problems</li>
-</ul>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<a id="more"></a>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;ee141digital-integrated-circuits-vs.ee241advanced-digital-integrated-circuits&quot;&gt;EE141(Digital Integrated Circuits) vs. EE241(Advanced
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;quick-start&quot;&gt;Quick Start&lt;/h2&gt;
+&lt;h3 id=&quot;create-a-new-post&quot;&gt;Create a new post&lt;/h3&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="电子工程" scheme="http://fatelancer.github.io/categories/%E7%94%B5%E5%AD%90%E5%B7%A5%E7%A8%8B/"/>
-    
-    
-      <category term="集成电路" scheme="http://fatelancer.github.io/tags/%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF/"/>
-    
-      <category term="数字" scheme="http://fatelancer.github.io/tags/%E6%95%B0%E5%AD%97/"/>
     
   </entry>
   
@@ -162,7 +160,7 @@
     <summary type="html">
     
       &lt;h1 id=&quot;两种copula&quot;&gt;两种Copula&lt;/h1&gt;
-&lt;p&gt;Copula函数主要分为两种，一种为椭圆族Copula，一种为Archimedean-Copula。其中椭圆族Copula直接给出了其多维形式，具体详见&lt;a href=&quot;http://xueshu.baidu.com/s?wd=paperuri%3A%28a48beacab57eaa1da8adc7ac58931c9a%29&amp;amp;filter=sc_long_sign&amp;amp;tn=SE_xueshusource_2kduw22v&amp;amp;sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-204143270.html%3Fref%3D360%26ref%3D360%26ref%3D360&amp;amp;ie=utf-8&amp;amp;sc_us=15886197312218780659&quot;&gt;《MATLAB统计分析与应用：40个案例分析》&lt;/a&gt;P189。而Archimedean-Copula的函数由于各种生成元的不同导致只给出了常用的二元形式。多维形式需要手动推导。&lt;/p&gt;
+&lt;p&gt;Copula函数主要分为两种，一种为椭圆族Copula，一种为Archimedean-Copula。其中椭圆族Copula直接给出了其多维形式，具体详见&lt;a href=&quot;http://xueshu.baidu.com/s?wd=paperuri%3A%28a48beacab57eaa1da8adc7ac58931c9a%29&amp;amp;filter=sc_long_sign&amp;amp;tn=SE_xueshusource_2kduw22v&amp;amp;sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-204143270.html%3Fref%3D360%26ref%3D360%26ref%3D360&amp;amp;ie=utf-8&amp;amp;sc_us=15886197312218780659&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《MATLAB统计分析与应用：40个案例分析》&lt;/a&gt;P189。而Archimedean-Copula的函数由于各种生成元的不同导致只给出了常用的二元形式。多维形式需要手动推导。&lt;/p&gt;
     
     </summary>
     
@@ -675,7 +673,7 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
 &lt;h2 id=&quot;程序验证随机性&quot;&gt;程序验证随机性&lt;/h2&gt;
 &lt;p&gt;通过将风速数据的频数分布图与根据风速数据拟合的威布尔分布概率密度函数曲线进行对比可以发现，使用双参数威布尔分布去拟合风速数据是完全合理的。下图中红色的曲线为威布尔分布概率密度函数曲线，蓝色部分为风速的频率分布直方图。&lt;/p&gt;
 &lt;div class=&quot;figure&quot;&gt;
-&lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg&quot; alt=&quot;图1 风速频数分布直方图&quot; /&gt;
+&lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg&quot; alt=&quot;图1 风速频数分布直方图&quot;&gt;
 &lt;p class=&quot;caption&quot;&gt;图1 风速频数分布直方图&lt;/p&gt;
 &lt;/div&gt;
     
@@ -1094,7 +1092,7 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/images/123.jpg&quot; alt=&quot;1&quot; /&gt;
+      &lt;p&gt;&lt;img src=&quot;/images/123.jpg&quot; alt=&quot;1&quot;&gt;
     
     </summary>
     
@@ -1299,8 +1297,8 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     <summary type="html">
     
       &lt;h1 id=&quot;q-q图分析&quot;&gt;Q-Q图分析&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg&quot; alt=&quot;qq图2&quot; /&gt; &lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg&quot; alt=&quot;qq图3&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;通过&lt;a href=&quot;http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比&quot;&gt;Q-Q图的判定原则&lt;/a&gt;可知，各类Copula函数差别不 很 明 显，其 中Gumbel-Copula，Frank-Copula，t-Copula函数曲线均较为接近45°曲线，拟合效果相对较好。以下采用统计法&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg&quot; alt=&quot;qq图2&quot;&gt; &lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg&quot; alt=&quot;qq图3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;a href=&quot;http://fatelancer.top/2017/02/27/Copula%E9%A3%8E%E9%80%9F%E5%BB%BA%E6%A8%A1%E7%9B%B8%E5%85%B3%EF%BC%881%EF%BC%89/#copula函数的拟合优度校验与经验copula函数对比&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Q-Q图的判定原则&lt;/a&gt;可知，各类Copula函数差别不 很 明 显，其 中Gumbel-Copula，Frank-Copula，t-Copula函数曲线均较为接近45°曲线，拟合效果相对较好。以下采用统计法&lt;/p&gt;
     
     </summary>
     
@@ -1512,7 +1510,7 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
 &lt;h2 id=&quot;代码实现&quot;&gt;代码实现&lt;/h2&gt;
 &lt;figure class=&quot;highlight matlab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%计算网格点上Copula分布函数值画QQ图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Ccdf_n=copulacdf(&lt;span class=&quot;string&quot;&gt;&#39;Gaussian&#39;&lt;/span&gt;,[Udata(:),Vdata(:)],rho_norm);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Ccdf_t=copulacdf(&lt;span class=&quot;string&quot;&gt;&#39;t&#39;&lt;/span&gt;,[Udata(:),Vdata(:)],rho_t,nuhat);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Ccdf_G=copulacdf(&lt;span class=&quot;string&quot;&gt;&#39;Gumbel&#39;&lt;/span&gt;,[Udata(:),Vdata(:)],paramhat_G);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Ccdf_C=copulacdf(&lt;span class=&quot;string&quot;&gt;&#39;Clayton&#39;&lt;/span&gt;,[Udata(:),Vdata(:)],paramhat_C);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Ccdf_F=copulacdf(&lt;span class=&quot;string&quot;&gt;&#39;Frank&#39;&lt;/span&gt;,[Udata(:),Vdata(:)],paramhat_F);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;qqplot(&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(CopulaEmpirical,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(Ccdf_n,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&lt;span class=&quot;string&quot;&gt;&#39;经验Copula&#39;&lt;/span&gt;);ylabel([&lt;span class=&quot;string&quot;&gt;&#39;Normal Copula&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;rho:&#39;&lt;/span&gt;,num2str(rho_norm(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))]); title([N&amp;#123;n&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;与&#39;&lt;/span&gt;,N&amp;#123;m&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;Q-Q图&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;Normal&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;qqplot(&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(CopulaEmpirical,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(Ccdf_t,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&lt;span class=&quot;string&quot;&gt;&#39;经验Copula&#39;&lt;/span&gt;);ylabel([&lt;span class=&quot;string&quot;&gt;&#39;t-Copula&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;rho:&#39;&lt;/span&gt;,num2str(rho_t(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)),&lt;span class=&quot;string&quot;&gt;&#39;k:&#39;&lt;/span&gt;,num2str(nuhat)]); title([N&amp;#123;n&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;与&#39;&lt;/span&gt;,N&amp;#123;m&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;Q-Q图&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;t&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;qqplot(&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(CopulaEmpirical,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(Ccdf_G,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&lt;span class=&quot;string&quot;&gt;&#39;经验Copula&#39;&lt;/span&gt;);ylabel([&lt;span class=&quot;string&quot;&gt;&#39;Gumbel-Copula&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;p_G:&#39;&lt;/span&gt;,num2str(paramhat_G)]); title([N&amp;#123;n&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;与&#39;&lt;/span&gt;,N&amp;#123;m&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;Q-Q图&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;Gumbel&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;qqplot(&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(CopulaEmpirical,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(Ccdf_C,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&lt;span class=&quot;string&quot;&gt;&#39;经验Copula&#39;&lt;/span&gt;);ylabel([&lt;span class=&quot;string&quot;&gt;&#39;Clayton-Copula&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;p_C&#39;&lt;/span&gt;,num2str(paramhat_C)]); title([N&amp;#123;n&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;与&#39;&lt;/span&gt;,N&amp;#123;m&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;Q-Q图&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;Clayton&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;figure;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;qqplot(&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(CopulaEmpirical,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;built_in&quot;&gt;reshape&lt;/span&gt;(Ccdf_F,&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;(Udata)),&lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;xlabel(&lt;span class=&quot;string&quot;&gt;&#39;经验Copula&#39;&lt;/span&gt;);ylabel([&lt;span class=&quot;string&quot;&gt;&#39;Frank-Copula&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;p_F&#39;&lt;/span&gt;,num2str(paramhat_F)]); title([N&amp;#123;n&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;与&#39;&lt;/span&gt;,N&amp;#123;m&amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;Q-Q图&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;Frank&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;结果&quot;&gt;结果&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg&quot; alt=&quot;qq图2&quot; /&gt; &lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg&quot; alt=&quot;qq图3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg&quot; alt=&quot;qq图2&quot;&gt; &lt;img src=&quot;http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg&quot; alt=&quot;qq图3&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1758,7 +1756,7 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://xueshu.baidu.com/s?wd=paperuri%3A%28a48beacab57eaa1da8adc7ac58931c9a%29&amp;amp;filter=sc_long_sign&amp;amp;tn=SE_xueshusource_2kduw22v&amp;amp;sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-204143270.html%3Fref%3D360%26ref%3D360%26ref%3D360&amp;amp;ie=utf-8&amp;amp;sc_us=15886197312218780659&quot;&gt;1&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://xueshu.baidu.com/s?wd=paperuri%3A%28a48beacab57eaa1da8adc7ac58931c9a%29&amp;amp;filter=sc_long_sign&amp;amp;tn=SE_xueshusource_2kduw22v&amp;amp;sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-204143270.html%3Fref%3D360%26ref%3D360%26ref%3D360&amp;amp;ie=utf-8&amp;amp;sc_us=15886197312218780659&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;1&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;二元copula函数的定义以及性质&quot;&gt;二元Copula函数的定义以及性质&lt;/h1&gt;
 &lt;h2 id=&quot;定义&quot;&gt;&lt;strong&gt;定义:&lt;/strong&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -1902,35 +1900,6 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
   </entry>
   
   <entry>
-    <title>Java第四次课</title>
-    <link href="http://fatelancer.github.io/2016/10/23/javaclass4/"/>
-    <id>http://fatelancer.github.io/2016/10/23/javaclass4/</id>
-    <published>2016-10-22T16:00:00.000Z</published>
-    <updated>2017-02-21T02:03:14.208Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="基础面板搭建">1. 基础面板搭建</h2>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> mygame;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.swing.*;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by fatel on 2016/5/28.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartoonApp</span> <span class="keyword">extends</span> <span class="title">JFrame</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CartoonApp</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</div><div class="line">        CartoonApp ca = <span class="keyword">new</span> CartoonApp();</div><div class="line">        ca.setTitle(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">        ca.setBounds(<span class="number">300</span>,<span class="number">200</span>,<span class="number">400</span>,<span class="number">450</span>);</div><div class="line">        ca.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line">        ca.setVisible(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="变量定义">2. 变量定义</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">JPanel [] pnl = &#123;<span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout())&#125;;</div><div class="line">    String [] str = &#123;<span class="string">"North"</span>, <span class="string">"Center"</span>, <span class="string">"South"</span>&#125;;</div><div class="line">    JLabel lblTitle = <span class="keyword">new</span> JLabel(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">    JButton [] btn = &#123;<span class="keyword">new</span> JButton(<span class="string">"start"</span>), <span class="keyword">new</span> JButton(<span class="string">"pause"</span>),</div><div class="line">                        <span class="keyword">new</span> JButton(<span class="string">"resume"</span>), <span class="keyword">new</span> JButton(<span class="string">"exit"</span>)&#125;;</div><div class="line">    <span class="keyword">int</span> x,y,z;</div><div class="line">    Random rnd = <span class="keyword">new</span> Random();</div><div class="line">    Color [] c = &#123;Color.red, Color.green, Color.blue,Color.pink, Color.yellow&#125;;</div><div class="line">    CartoonPaint cp = <span class="keyword">new</span> CartoonPaint();</div></pre></td></tr></table></figure>
-<h2 id="基本图形绘制">3.基本图形绘制</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paintComponent</span><span class="params">(Graphics g)</span></span>&#123;</div><div class="line">            g.setColor(c[<span class="number">0</span>]);</div><div class="line">            g.drawOval(<span class="number">10</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillOval(<span class="number">120</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.drawRect(<span class="number">230</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillRect(<span class="number">340</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            <span class="keyword">int</span> [] x1 = &#123;<span class="number">100</span>, <span class="number">50</span>,<span class="number">150</span>&#125;;</div><div class="line">            <span class="keyword">int</span> [] y1 = &#123;<span class="number">50</span>,<span class="number">150</span>, <span class="number">150</span>&#125;;</div><div class="line">            g.drawPolygon(<span class="keyword">new</span> Polygon(x1,y1,x1.length));</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h2 id="异常">4. 异常</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent ae)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">0</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">1</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">2</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">3</span>])&#123;</div><div class="line">            System.exit(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">        JOptionPane.showMessageDialog(<span class="keyword">null</span>,ex.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;基础面板搭建&quot;&gt;1. 基础面板搭建&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://fatelancer.github.io/categories/Java/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Java 第二次课</title>
     <link href="http://fatelancer.github.io/2016/10/23/javaclass2/"/>
     <id>http://fatelancer.github.io/2016/10/23/javaclass2/</id>
@@ -1981,6 +1950,35 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     <summary type="html">
     
       &lt;h1 id=&quot;封装继承多态&quot;&gt;封装继承多态&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://fatelancer.github.io/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java第四次课</title>
+    <link href="http://fatelancer.github.io/2016/10/23/javaclass4/"/>
+    <id>http://fatelancer.github.io/2016/10/23/javaclass4/</id>
+    <published>2016-10-22T16:00:00.000Z</published>
+    <updated>2017-02-21T02:03:14.208Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基础面板搭建">1. 基础面板搭建</h2>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> mygame;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.swing.*;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by fatel on 2016/5/28.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartoonApp</span> <span class="keyword">extends</span> <span class="title">JFrame</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CartoonApp</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</div><div class="line">        CartoonApp ca = <span class="keyword">new</span> CartoonApp();</div><div class="line">        ca.setTitle(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">        ca.setBounds(<span class="number">300</span>,<span class="number">200</span>,<span class="number">400</span>,<span class="number">450</span>);</div><div class="line">        ca.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line">        ca.setVisible(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="变量定义">2. 变量定义</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">JPanel [] pnl = &#123;<span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout()),</div><div class="line">                    <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout())&#125;;</div><div class="line">    String [] str = &#123;<span class="string">"North"</span>, <span class="string">"Center"</span>, <span class="string">"South"</span>&#125;;</div><div class="line">    JLabel lblTitle = <span class="keyword">new</span> JLabel(<span class="string">"我的第一个动画程序"</span>);</div><div class="line">    JButton [] btn = &#123;<span class="keyword">new</span> JButton(<span class="string">"start"</span>), <span class="keyword">new</span> JButton(<span class="string">"pause"</span>),</div><div class="line">                        <span class="keyword">new</span> JButton(<span class="string">"resume"</span>), <span class="keyword">new</span> JButton(<span class="string">"exit"</span>)&#125;;</div><div class="line">    <span class="keyword">int</span> x,y,z;</div><div class="line">    Random rnd = <span class="keyword">new</span> Random();</div><div class="line">    Color [] c = &#123;Color.red, Color.green, Color.blue,Color.pink, Color.yellow&#125;;</div><div class="line">    CartoonPaint cp = <span class="keyword">new</span> CartoonPaint();</div></pre></td></tr></table></figure>
+<h2 id="基本图形绘制">3.基本图形绘制</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartoonPaint</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paintComponent</span><span class="params">(Graphics g)</span></span>&#123;</div><div class="line">            g.setColor(c[<span class="number">0</span>]);</div><div class="line">            g.drawOval(<span class="number">10</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillOval(<span class="number">120</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.drawRect(<span class="number">230</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            g.fillRect(<span class="number">340</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">            <span class="keyword">int</span> [] x1 = &#123;<span class="number">100</span>, <span class="number">50</span>,<span class="number">150</span>&#125;;</div><div class="line">            <span class="keyword">int</span> [] y1 = &#123;<span class="number">50</span>,<span class="number">150</span>, <span class="number">150</span>&#125;;</div><div class="line">            g.drawPolygon(<span class="keyword">new</span> Polygon(x1,y1,x1.length));</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="异常">4. 异常</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent ae)</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">0</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">1</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">2</span>])&#123;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (ae.getSource()==btn[<span class="number">3</span>])&#123;</div><div class="line">            System.exit(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span>(Exception ex)&#123;</div><div class="line">        JOptionPane.showMessageDialog(<span class="keyword">null</span>,ex.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基础面板搭建&quot;&gt;1. 基础面板搭建&lt;/h2&gt;
     
     </summary>
     
@@ -2056,13 +2054,13 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     <summary type="html">
     
-      &lt;h1 id=&quot;notes-of-real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation&quot;&gt;Notes of &lt;a href=&quot;http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf&quot;&gt;Real-time deferrable load control: handling the uncertainties of renewable generation&lt;/a&gt;&lt;/h1&gt;
+      &lt;h1 id=&quot;notes-of-real-time-deferrable-load-control-handling-the-uncertainties-of-renewable-generation&quot;&gt;Notes of &lt;a href=&quot;http://conferences.sigcomm.org/eenergy/2013/papers/p10.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Real-time deferrable load control: handling the uncertainties of renewable generation&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&quot;简介&quot;&gt;简介&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;趋势：传统的煤炭、核能等发电能源逐渐被可再生能源所取代&lt;/li&gt;
 &lt;li&gt;可再生能源的不规律、不可预测性给控制带来了很多麻烦&lt;/li&gt;
 &lt;li&gt;需求响应：引导用户的动态电力负载需求管理与电力供应情况相匹配，可以弥补可再生能源的不确定性造成的影响&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://fatelancer.top/2016/07/05/flexibility/#more&quot;&gt;deferrable load&lt;/a&gt;：可以推迟一段时间再执行，可以通过推迟负荷时间来与可再生能源的供给匹配&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://fatelancer.top/2016/07/05/flexibility/#more&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;deferrable load&lt;/a&gt;：可以推迟一段时间再执行，可以通过推迟负荷时间来与可再生能源的供给匹配&lt;/li&gt;
 &lt;li&gt;要点：分散式直接负荷控制
     
     </summary>
@@ -2222,24 +2220,24 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
     
     <summary type="html">
     
-      &lt;p&gt;Notes about &lt;a href=&quot;http://ieor.berkeley.edu/~oren/pubs/No113.pdf&quot;&gt;Large-scale integration of deferrable demand and renewable energy sources&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Notes about &lt;a href=&quot;http://ieor.berkeley.edu/~oren/pubs/No113.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Large-scale integration of deferrable demand and renewable energy sources&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;abstract&quot;&gt;ABSTRACT&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://s3.amazonaws.com/academia.edu.documents/42998787/A_Stochastic_Unit-commitment_Model_for_t20160223-1673-5tjopb.pdf?AWSAccessKeyId=AKIAJ56TQJRTWSMTNPEA&amp;amp;Expires=1467280071&amp;amp;Signature=12zFdv9seJSAEfV1OBP2emAFj9I%3D&amp;amp;response-content-disposition=inline%3B%20filename%3DA_stochastic_unit-commitment_model_for_t.pdf&quot;&gt;stochastic unit commitment model&lt;/a&gt; 随机机组组合模型 &lt;strong&gt;？&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://s3.amazonaws.com/academia.edu.documents/42998787/A_Stochastic_Unit-commitment_Model_for_t20160223-1673-5tjopb.pdf?AWSAccessKeyId=AKIAJ56TQJRTWSMTNPEA&amp;amp;Expires=1467280071&amp;amp;Signature=12zFdv9seJSAEfV1OBP2emAFj9I%3D&amp;amp;response-content-disposition=inline%3B%20filename%3DA_stochastic_unit-commitment_model_for_t.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stochastic unit commitment model&lt;/a&gt; 随机机组组合模型 &lt;strong&gt;？&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;[ ]deferrable demand in power system 电力系统中的可暂缓需求&lt;strong&gt;（可调性需求？）&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;[x]reserve requirements 储能需求&lt;/li&gt;
 &lt;li&gt;[ ]the benefits of demand flexibility 需求弹性收益 &lt;strong&gt;？&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;[x]three demand response paradigms 三个需求响应的样例 &amp;gt; - [ ]the centralized co-optimization of generation 发电的集中联合优化 &lt;strong&gt;？&lt;/strong&gt; &amp;gt; - [x]demand by the system operator, demand bids 来自于系统操作人员和订单的需求 &amp;gt; - [ ]the coupling of renewable resources with deferrable loads 可再生能源与可调性负载的耦合 &lt;strong&gt;？&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;[ ]motivate coupling as an alternative for overcoming the drawbacks of the two alternative demand response options 将耦合作为克服另外两个需求响应缺点的替代选项&lt;/li&gt;
 &lt;li&gt;[x]a dynamic programming algorithm for coordinating deferrable demand with renewable supply 一个用于协调可调性需求与可再生能源供给的动态算法&lt;/li&gt;
-&lt;li&gt;[ ]simulation results for a model of the &lt;a href=&quot;https://www.wecc.biz/Pages/home.aspx&quot;&gt;Western Electricity Coordinating Council&lt;/a&gt; 关于&lt;a href=&quot;https://en.wikipedia.org/wiki/Western_Electricity_Coordinating_Council&quot;&gt;西部电力协调理事会&lt;/a&gt;的模型仿真结果&lt;/li&gt;
+&lt;li&gt;[ ]simulation results for a model of the &lt;a href=&quot;https://www.wecc.biz/Pages/home.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Western Electricity Coordinating Council&lt;/a&gt; 关于&lt;a href=&quot;https://en.wikipedia.org/wiki/Western_Electricity_Coordinating_Council&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;西部电力协调理事会&lt;/a&gt;的模型仿真结果&lt;/li&gt;
 &lt;li&gt;[ ]load management 负载管理&lt;/li&gt;
 &lt;li&gt;[ ]power generation scheduling 电力发电规划&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;[ ]wind power generation 风力发电&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;hr /&gt;
+&lt;hr&gt;
     
     </summary>
     
@@ -2253,43 +2251,6 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
       <category term="deferrable" scheme="http://fatelancer.github.io/tags/deferrable/"/>
     
       <category term="机组组合" scheme="http://fatelancer.github.io/tags/%E6%9C%BA%E7%BB%84%E7%BB%84%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://fatelancer.github.io/2016/07/04/hello-world/"/>
-    <id>http://fatelancer.github.io/2016/07/04/hello-world/</id>
-    <published>2016-07-04T15:06:45.503Z</published>
-    <updated>2016-07-05T00:59:47.785Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<a id="more"></a>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;quick-start&quot;&gt;Quick Start&lt;/h2&gt;
-&lt;h3 id=&quot;create-a-new-post&quot;&gt;Create a new post&lt;/h3&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   

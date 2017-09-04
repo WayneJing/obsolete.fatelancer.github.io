@@ -8,40 +8,18 @@
   <link rel="dns-prefetch" href="http://fatelancer.github.io">
   <title>Copula风速建模相关（2）——函数性质以及常用代码 | 化天弹指间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1
-二元Copula函数的定义以及性质
-定义:
-
-二元Copula函数是指满足以下性质的函数\(C(u,v)\):
-
-\(C(u,v)\) 的定义域为[0,1]x[0,1]；
-\(C(u,v)\) 有零基面，并且是二维递增的；
-对任意\(u,v\in [0,1]\)，满足\(C(u,1)=u，C(1,v)=v\)。 所谓的有零基面是：至少存在一个\(u_0\in[0,1]\) 和一">
+  <meta name="description" content="1 二元Copula函数的定义以及性质 定义:  二元Copula函数是指满足以下性质的函数\(C(u,v)\):  \(C(u,v)\) 的定义域为[0,1]x[0,1]； \(C(u,v)\) 有零基面，并且是二维递增的； 对任意\(u,v\in [0,1]\)，满足\(C(u,1)=u，C(1,v)=v\)。 所谓的有零基面是：至少存在一个\(u_0\in[0,1]\) 和一">
+<meta name="keywords" content="Copula,MATLAB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Copula风速建模相关（2）——函数性质以及常用代码">
 <meta property="og:url" content="http://fatelancer.github.io/2017/02/28/Copula风速建模相关（2）/index.html">
 <meta property="og:site_name" content="化天弹指间">
-<meta property="og:description" content="1
-二元Copula函数的定义以及性质
-定义:
-
-二元Copula函数是指满足以下性质的函数\(C(u,v)\):
-
-\(C(u,v)\) 的定义域为[0,1]x[0,1]；
-\(C(u,v)\) 有零基面，并且是二维递增的；
-对任意\(u,v\in [0,1]\)，满足\(C(u,1)=u，C(1,v)=v\)。 所谓的有零基面是：至少存在一个\(u_0\in[0,1]\) 和一">
+<meta property="og:description" content="1 二元Copula函数的定义以及性质 定义:  二元Copula函数是指满足以下性质的函数\(C(u,v)\):  \(C(u,v)\) 的定义域为[0,1]x[0,1]； \(C(u,v)\) 有零基面，并且是二维递增的； 对任意\(u,v\in [0,1]\)，满足\(C(u,1)=u，C(1,v)=v\)。 所谓的有零基面是：至少存在一个\(u_0\in[0,1]\) 和一">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-03-01T08:47:38.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Copula风速建模相关（2）——函数性质以及常用代码">
-<meta name="twitter:description" content="1
-二元Copula函数的定义以及性质
-定义:
-
-二元Copula函数是指满足以下性质的函数\(C(u,v)\):
-
-\(C(u,v)\) 的定义域为[0,1]x[0,1]；
-\(C(u,v)\) 有零基面，并且是二维递增的；
-对任意\(u,v\in [0,1]\)，满足\(C(u,1)=u，C(1,v)=v\)。 所谓的有零基面是：至少存在一个\(u_0\in[0,1]\) 和一">
+<meta name="twitter:description" content="1 二元Copula函数的定义以及性质 定义:  二元Copula函数是指满足以下性质的函数\(C(u,v)\):  \(C(u,v)\) 的定义域为[0,1]x[0,1]； \(C(u,v)\) 有零基面，并且是二维递增的； 对任意\(u,v\in [0,1]\)，满足\(C(u,1)=u，C(1,v)=v\)。 所谓的有零基面是：至少存在一个\(u_0\in[0,1]\) 和一">
   
     <link rel="alternative" href="/atom.xml" title="化天弹指间" type="application/atom+xml">
   
@@ -563,23 +541,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
+                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,7 +561,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
+                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,6 +578,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,14 +594,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机组组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集成电路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数字</a>
               </li>
             
             <div class="clearfix"></div>

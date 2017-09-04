@@ -8,30 +8,20 @@
   <link rel="dns-prefetch" href="http://fatelancer.github.io">
   <title>Copula风速建模相关（3）——代码实现 | 化天弹指间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据来源
-使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据
-数据处理
-读入数据
-123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+  <meta name="description" content="数据来源 使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理 读入数据 123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+<meta name="keywords" content="Copula,MATLAB,风力发电">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Copula风速建模相关（3）——代码实现">
 <meta property="og:url" content="http://fatelancer.github.io/2017/03/01/Copula风速建模相关（3）/index.html">
 <meta property="og:site_name" content="化天弹指间">
-<meta property="og:description" content="数据来源
-使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据
-数据处理
-读入数据
-123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+<meta property="og:description" content="数据来源 使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理 读入数据 123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/6in1.jpg">
 <meta property="og:updated_time" content="2017-03-14T09:50:25.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Copula风速建模相关（3）——代码实现">
-<meta name="twitter:description" content="数据来源
-使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据
-数据处理
-读入数据
-123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+<meta name="twitter:description" content="数据来源 使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理 读入数据 123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
 <meta name="twitter:image" content="http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="化天弹指间" type="application/atom+xml">
@@ -628,23 +618,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
+                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,7 +638,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
+                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,6 +655,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,14 +671,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机组组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集成电路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数字</a>
               </li>
             
             <div class="clearfix"></div>

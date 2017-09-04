@@ -8,24 +8,20 @@
   <link rel="dns-prefetch" href="http://fatelancer.github.io">
   <title>Copula风速建模相关(4)——Copula模型评价 | 化天弹指间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q-Q图
-代码实现
-12345678910111213141516171819202122%计算网格点上Copula分布函数值画QQ图Ccdf_n=copulacdf(&apos;Gaussian&apos;,[Udata(:),Vdata(:)],rho_norm);Ccdf_t=copulacdf(&apos;t&apos;,[Udata(:),Vdata(:)],rho_t,nuhat);Ccdf_G=copulacdf(&apos;G">
+  <meta name="description" content="Q-Q图 代码实现 12345678910111213141516171819202122%计算网格点上Copula分布函数值画QQ图Ccdf_n=copulacdf(&apos;Gaussian&apos;,[Udata(:),Vdata(:)],rho_norm);Ccdf_t=copulacdf(&apos;t&apos;,[Udata(:),Vdata(:)],rho_t,nuhat);Ccdf_G=copulacdf(&apos;G">
+<meta name="keywords" content="Copula,Q-Q图,K-S检验,欧氏距离">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Copula风速建模相关(4)——Copula模型评价">
 <meta property="og:url" content="http://fatelancer.github.io/2017/03/02/Copula风速建模相关（4）/index.html">
 <meta property="og:site_name" content="化天弹指间">
-<meta property="og:description" content="Q-Q图
-代码实现
-12345678910111213141516171819202122%计算网格点上Copula分布函数值画QQ图Ccdf_n=copulacdf(&apos;Gaussian&apos;,[Udata(:),Vdata(:)],rho_norm);Ccdf_t=copulacdf(&apos;t&apos;,[Udata(:),Vdata(:)],rho_t,nuhat);Ccdf_G=copulacdf(&apos;G">
+<meta property="og:description" content="Q-Q图 代码实现 12345678910111213141516171819202122%计算网格点上Copula分布函数值画QQ图Ccdf_n=copulacdf(&apos;Gaussian&apos;,[Udata(:),Vdata(:)],rho_norm);Ccdf_t=copulacdf(&apos;t&apos;,[Udata(:),Vdata(:)],rho_t,nuhat);Ccdf_G=copulacdf(&apos;G">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/3in1_1.jpg">
 <meta property="og:updated_time" content="2017-03-03T07:38:45.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Copula风速建模相关(4)——Copula模型评价">
-<meta name="twitter:description" content="Q-Q图
-代码实现
-12345678910111213141516171819202122%计算网格点上Copula分布函数值画QQ图Ccdf_n=copulacdf(&apos;Gaussian&apos;,[Udata(:),Vdata(:)],rho_norm);Ccdf_t=copulacdf(&apos;t&apos;,[Udata(:),Vdata(:)],rho_t,nuhat);Ccdf_G=copulacdf(&apos;G">
+<meta name="twitter:description" content="Q-Q图 代码实现 12345678910111213141516171819202122%计算网格点上Copula分布函数值画QQ图Ccdf_n=copulacdf(&apos;Gaussian&apos;,[Udata(:),Vdata(:)],rho_norm);Ccdf_t=copulacdf(&apos;t&apos;,[Udata(:),Vdata(:)],rho_t,nuhat);Ccdf_G=copulacdf(&apos;G">
 <meta name="twitter:image" content="http://oag5ozkgs.bkt.clouddn.com/2in1_1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="化天弹指间" type="application/atom+xml">
@@ -681,23 +677,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
+                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,7 +697,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
+                <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">K-S检验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">欧氏距离</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,6 +714,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,14 +730,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机组组合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集成电路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数字</a>
               </li>
             
             <div class="clearfix"></div>
