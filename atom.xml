@@ -1165,9 +1165,9 @@ C(u,v;a)= &amp; 0.1075C_t(u,v;0.9678,2.7192)+0.0613C_N(u,v;0.9250)
     
       <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="混合Copula" scheme="http://fatelancer.github.io/tags/%E6%B7%B7%E5%90%88Copula/"/>
-    
       <category term="EM算法" scheme="http://fatelancer.github.io/tags/EM%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="混合Copula" scheme="http://fatelancer.github.io/tags/%E6%B7%B7%E5%90%88Copula/"/>
     
       <category term="bfgs" scheme="http://fatelancer.github.io/tags/bfgs/"/>
     
