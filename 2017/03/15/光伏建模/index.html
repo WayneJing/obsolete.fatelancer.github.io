@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://fatelancer.github.io">
   <title>光伏建模——核密度估计而非Beta分布 | 化天弹指间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="光伏建模与风速建模的不同  对与风速建模而言，其符合双参数威布尔分布表示其样本数据符合双参数威布尔数据样本的特征 对于光伏建模而言，所谓的使用beta分布拟合光伏实际意义为在短时间内（一天之内）光照强度的曲线可以通过beta分布的概率密度函数去近似拟合  此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数">
+  <meta name="description" content="光伏建模与风速建模的不同 对与风速建模而言，其符合双参数威布尔分布表示其样本数据符合双参数威布尔数据样本的特征 对于光伏建模而言，所谓的使用beta分布拟合光伏实际意义为在短时间内（一天之内）光照强度的曲线可以通过beta分布的概率密度函数去近似拟合  此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数据核密度估计">
 <meta name="keywords" content="核密度估计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="光伏建模——核密度估计而非Beta分布">
 <meta property="og:url" content="http://fatelancer.github.io/2017/03/15/光伏建模/index.html">
 <meta property="og:site_name" content="化天弹指间">
-<meta property="og:description" content="光伏建模与风速建模的不同  对与风速建模而言，其符合双参数威布尔分布表示其样本数据符合双参数威布尔数据样本的特征 对于光伏建模而言，所谓的使用beta分布拟合光伏实际意义为在短时间内（一天之内）光照强度的曲线可以通过beta分布的概率密度函数去近似拟合  此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数">
+<meta property="og:description" content="光伏建模与风速建模的不同 对与风速建模而言，其符合双参数威布尔分布表示其样本数据符合双参数威布尔数据样本的特征 对于光伏建模而言，所谓的使用beta分布拟合光伏实际意义为在短时间内（一天之内）光照强度的曲线可以通过beta分布的概率密度函数去近似拟合  此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数据核密度估计">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-03-17T06:47:48.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="光伏建模——核密度估计而非Beta分布">
-<meta name="twitter:description" content="光伏建模与风速建模的不同  对与风速建模而言，其符合双参数威布尔分布表示其样本数据符合双参数威布尔数据样本的特征 对于光伏建模而言，所谓的使用beta分布拟合光伏实际意义为在短时间内（一天之内）光照强度的曲线可以通过beta分布的概率密度函数去近似拟合  此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数">
+<meta name="twitter:description" content="光伏建模与风速建模的不同 对与风速建模而言，其符合双参数威布尔分布表示其样本数据符合双参数威布尔数据样本的特征 对于光伏建模而言，所谓的使用beta分布拟合光伏实际意义为在短时间内（一天之内）光照强度的曲线可以通过beta分布的概率密度函数去近似拟合  此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数据核密度估计">
   
     <link rel="alternative" href="/atom.xml" title="化天弹指间" type="application/atom+xml">
   
@@ -175,23 +175,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="光伏建模与风速建模的不同">光伏建模与风速建模的不同</h1>
-<ul>
+        <h1 id="光伏建模与风速建模的不同"><a href="#光伏建模与风速建模的不同" class="headerlink" title="光伏建模与风速建模的不同"></a>光伏建模与风速建模的不同</h1><ul>
 <li>对与风速建模而言，其符合双参数威布尔分布表示其样本数据符合双参数威布尔数据样本的特征</li>
 <li>对于光伏建模而言，所谓的使用beta分布拟合光伏实际意义为在短时间内（一天之内）光照强度的曲线可以通过beta分布的概率密度函数去近似拟合</li>
 </ul>
 <p>此二者有本质区别，因此如果仅通过曲线拟合表示光伏建模数据不能称作光伏建模随机性的数学表述，因此在缺乏先验的情况下只能求助于仅基于样本数据核密度估计</p>
 <a id="more"></a>
-<h1 id="非参数核密度估计">非参数核密度估计</h1>
-<dl>
-<dt>定义</dt>
-<dd>设<span class="math inline">\(x_1,x_2,...,x_n\)</span>为随机变量<span class="math inline">\(x\)</span>的样本，令随机变量<span class="math inline">\(x\)</span>的概率密度函数为<span class="math inline">\(f(x)\)</span>，则 <span class="math inline">\(f(x)\)</span> 的核密度估计为：
-</dd>
-</dl>
-<p><span class="math display">\[f_h(x)={1 \over nh}{\displaystyle \sum_{j=1}^n{K({x-x_j \over h})}}={1 \over n}{\displaystyle \sum_{j=1}^n{K_h(x-x_j)}}\]</span></p>
-<p>其中<span class="math inline">\(n\)</span>为样本容量，<span class="math inline">\(h\)</span> 为平滑系数，<span class="math inline">\(K(·)\)</span> 为核函数</p>
-<iframe src="http://www.cnblogs.com/wt869054461/p/5935992.html" width="100%" height="700px" frameborder="0" scrolling="auto">
-</iframe>
+<h1 id="非参数核密度估计"><a href="#非参数核密度估计" class="headerlink" title="非参数核密度估计"></a>非参数核密度估计</h1><p>定义<br>  :   设$x_1,x_2,…,x_n$为随机变量$x$的样本，令随机变量$x$的概率密度函数为$f(x)$，则 $f(x)$ 的核密度估计为： </p>
+<p>  $$f<em>h(x)={1 \over nh}{\displaystyle \sum</em>{j=1}^n{K({x-x<em>j \over h})}}={1 \over n}{\displaystyle \sum</em>{j=1}^n{K_h(x-x_j)}}$$</p>
+<p>  其中$n$为样本容量，$h$ 为平滑系数，$K(·)$ 为核函数</p>
+<iframe src="http://www.cnblogs.com/wt869054461/p/5935992.html" width="100%" height="700px" frameborder="0" scrolling="auto"> </iframe>
 
       
 
@@ -463,18 +456,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">deferrable load</a>
               </li>
              
@@ -487,7 +468,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">real-time</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,14 +496,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
               </li>
              
@@ -523,7 +508,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
+                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,11 +524,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
+                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,6 +541,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机组组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Stochastic Processe</a>
               </li>
             
             <div class="clearfix"></div>

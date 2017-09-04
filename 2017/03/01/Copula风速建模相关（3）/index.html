@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://fatelancer.github.io">
   <title>Copula风速建模相关（3）——代码实现 | 化天弹指间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据来源 使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理 读入数据 123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+  <meta name="description" content="数据来源使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理读入数据123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
 <meta name="keywords" content="Copula,MATLAB,风力发电">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Copula风速建模相关（3）——代码实现">
 <meta property="og:url" content="http://fatelancer.github.io/2017/03/01/Copula风速建模相关（3）/index.html">
 <meta property="og:site_name" content="化天弹指间">
-<meta property="og:description" content="数据来源 使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理 读入数据 123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+<meta property="og:description" content="数据来源使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理读入数据123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/6in1.jpg">
 <meta property="og:updated_time" content="2017-03-14T09:50:25.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Copula风速建模相关（3）——代码实现">
-<meta name="twitter:description" content="数据来源 使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理 读入数据 123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
+<meta name="twitter:description" content="数据来源使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据 数据处理读入数据123456%从文件中读取数据load(&apos;data.mat&apos;);qw=data(:,1);%桥湾bdq=data(:,4);%北大桥ghk=data(:,7);%干河口cm=data(:,10);%昌马">
 <meta name="twitter:image" content="http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="化天弹指间" type="application/atom+xml">
@@ -178,78 +178,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数据来源">数据来源</h1>
-<p><strong>使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据</strong></p>
-<h1 id="数据处理">数据处理</h1>
-<h2 id="读入数据">读入数据</h2>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%从文件中读取数据</span></div><div class="line">load(<span class="string">'data.mat'</span>);</div><div class="line">qw=data(:,<span class="number">1</span>);<span class="comment">%桥湾</span></div><div class="line">bdq=data(:,<span class="number">4</span>);<span class="comment">%北大桥</span></div><div class="line">ghk=data(:,<span class="number">7</span>);<span class="comment">%干河口</span></div><div class="line">cm=data(:,<span class="number">10</span>);<span class="comment">%昌马</span></div></pre></td></tr></table></figure>
+        <h1 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h1><p><strong>使用甘肃桥湾（1），北大桥（2），干河口（3），昌马（4）四处风速数据作为仿真数据</strong></p>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="读入数据"><a href="#读入数据" class="headerlink" title="读入数据"></a>读入数据</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%从文件中读取数据</span></div><div class="line">load(<span class="string">'data.mat'</span>);</div><div class="line">qw=data(:,<span class="number">1</span>);<span class="comment">%桥湾</span></div><div class="line">bdq=data(:,<span class="number">4</span>);<span class="comment">%北大桥</span></div><div class="line">ghk=data(:,<span class="number">7</span>);<span class="comment">%干河口</span></div><div class="line">cm=data(:,<span class="number">10</span>);<span class="comment">%昌马</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="对风速进行双参数威布尔分布化">对风速进行双参数威布尔分布化</h2>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%桥湾</span></div><div class="line">pqw=wblfit(qw);</div><div class="line">QW=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pqw(<span class="number">1</span>),pqw(<span class="number">2</span>));</div><div class="line">QWC=wblcdf(qw,pqw(<span class="number">1</span>),pqw(<span class="number">2</span>));</div><div class="line"><span class="comment">%北大桥</span></div><div class="line">pbdq=wblfit(bdq);</div><div class="line">BDQ=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pbdq(<span class="number">1</span>),pbdq(<span class="number">2</span>));</div><div class="line">BDQC=wblcdf(bdq,pbdq(<span class="number">1</span>),pbdq(<span class="number">2</span>));</div><div class="line"><span class="comment">%干河口</span></div><div class="line">pghk=wblfit(ghk);</div><div class="line">GHK=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pghk(<span class="number">1</span>),pghk(<span class="number">2</span>));</div><div class="line">GHKC=wblcdf(ghk,pghk(<span class="number">1</span>),pghk(<span class="number">2</span>));</div><div class="line"><span class="comment">%昌马</span></div><div class="line">pcm=wblfit(cm);</div><div class="line">CM=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pcm(<span class="number">1</span>),pcm(<span class="number">2</span>));</div><div class="line">CMC=wblcdf(cm,pcm(<span class="number">1</span>),pcm(<span class="number">2</span>));</div><div class="line">d=&#123;qw,bdq,ghk,cm&#125;;</div><div class="line">D=&#123;QW,BDQ,GHK,CM&#125;;</div><div class="line">DD=&#123;QWC,BDQC,GHKC,CMC&#125;;</div><div class="line">N=&#123;<span class="string">'桥湾'</span>,<span class="string">'北大桥'</span>,<span class="string">'干河口'</span>,<span class="string">'昌马'</span>&#125;;</div></pre></td></tr></table></figure>
+<h2 id="对风速进行双参数威布尔分布化"><a href="#对风速进行双参数威布尔分布化" class="headerlink" title="对风速进行双参数威布尔分布化"></a>对风速进行双参数威布尔分布化</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%桥湾</span></div><div class="line">pqw=wblfit(qw);</div><div class="line">QW=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pqw(<span class="number">1</span>),pqw(<span class="number">2</span>));</div><div class="line">QWC=wblcdf(qw,pqw(<span class="number">1</span>),pqw(<span class="number">2</span>));</div><div class="line"><span class="comment">%北大桥</span></div><div class="line">pbdq=wblfit(bdq);</div><div class="line">BDQ=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pbdq(<span class="number">1</span>),pbdq(<span class="number">2</span>));</div><div class="line">BDQC=wblcdf(bdq,pbdq(<span class="number">1</span>),pbdq(<span class="number">2</span>));</div><div class="line"><span class="comment">%干河口</span></div><div class="line">pghk=wblfit(ghk);</div><div class="line">GHK=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pghk(<span class="number">1</span>),pghk(<span class="number">2</span>));</div><div class="line">GHKC=wblcdf(ghk,pghk(<span class="number">1</span>),pghk(<span class="number">2</span>));</div><div class="line"><span class="comment">%昌马</span></div><div class="line">pcm=wblfit(cm);</div><div class="line">CM=wblpdf(<span class="number">1</span>:<span class="number">50</span>,pcm(<span class="number">1</span>),pcm(<span class="number">2</span>));</div><div class="line">CMC=wblcdf(cm,pcm(<span class="number">1</span>),pcm(<span class="number">2</span>));</div><div class="line">d=&#123;qw,bdq,ghk,cm&#125;;</div><div class="line">D=&#123;QW,BDQ,GHK,CM&#125;;</div><div class="line">DD=&#123;QWC,BDQC,GHKC,CMC&#125;;</div><div class="line">N=&#123;<span class="string">'桥湾'</span>,<span class="string">'北大桥'</span>,<span class="string">'干河口'</span>,<span class="string">'昌马'</span>&#125;;</div></pre></td></tr></table></figure>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>风电场</th>
 <th>威布尔参数a</th>
 <th>威布尔参数b</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>桥湾</td>
 <td>8.1343</td>
 <td>1.8773</td>
 </tr>
-<tr class="even">
+<tr>
 <td>北大桥</td>
 <td>8.6619</td>
 <td>1.7378</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>干河口</td>
 <td>8.3685</td>
 <td>1.5731</td>
 </tr>
-<tr class="even">
+<tr>
 <td>昌马</td>
 <td>9.1261</td>
 <td>2.1229</td>
 </tr>
 </tbody>
 </table>
-<h1 id="频率与频数直方图">频率与频数直方图</h1>
-<h2 id="频率分布直方图">频率分布直方图</h2>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%桥湾</span></div><div class="line">[fqw,qwc]=ecdf(qw);</div><div class="line">figure(<span class="number">1</span>);</div><div class="line">ecdfhist(fqw,qwc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(QW,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'桥湾'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div><div class="line"><span class="comment">%北大桥</span></div><div class="line">[fbdq,bdqc]=ecdf(bdq);</div><div class="line">figure(<span class="number">2</span>);</div><div class="line">ecdfhist(fbdq,bdqc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(BDQ,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'北大桥'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div><div class="line"><span class="comment">%干河口</span></div><div class="line">[fghk,ghkc]=ecdf(ghk);</div><div class="line">figure(<span class="number">3</span>);</div><div class="line">ecdfhist(fghk,ghkc,<span class="number">100</span>);</div><div class="line">hold on;</div><div class="line">plot(GHK,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'干河口'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div><div class="line"><span class="comment">%昌马</span></div><div class="line">[fcm,cmc]=ecdf(cm);</div><div class="line">figure(<span class="number">4</span>);</div><div class="line">ecdfhist(fcm,cmc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(CM,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'昌马'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div></pre></td></tr></table></figure>
+<h1 id="频率与频数直方图"><a href="#频率与频数直方图" class="headerlink" title="频率与频数直方图"></a>频率与频数直方图</h1><h2 id="频率分布直方图"><a href="#频率分布直方图" class="headerlink" title="频率分布直方图"></a>频率分布直方图</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%桥湾</span></div><div class="line">[fqw,qwc]=ecdf(qw);</div><div class="line">figure(<span class="number">1</span>);</div><div class="line">ecdfhist(fqw,qwc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(QW,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'桥湾'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div><div class="line"><span class="comment">%北大桥</span></div><div class="line">[fbdq,bdqc]=ecdf(bdq);</div><div class="line">figure(<span class="number">2</span>);</div><div class="line">ecdfhist(fbdq,bdqc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(BDQ,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'北大桥'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div><div class="line"><span class="comment">%干河口</span></div><div class="line">[fghk,ghkc]=ecdf(ghk);</div><div class="line">figure(<span class="number">3</span>);</div><div class="line">ecdfhist(fghk,ghkc,<span class="number">100</span>);</div><div class="line">hold on;</div><div class="line">plot(GHK,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'干河口'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div><div class="line"><span class="comment">%昌马</span></div><div class="line">[fcm,cmc]=ecdf(cm);</div><div class="line">figure(<span class="number">4</span>);</div><div class="line">ecdfhist(fcm,cmc,<span class="number">100</span>);</div><div class="line">hold on</div><div class="line">plot(CM,<span class="string">'-r'</span>);</div><div class="line">title(<span class="string">'昌马'</span>);</div><div class="line">xlabel(<span class="string">'风速'</span>);</div><div class="line">ylabel(<span class="string">'f(x)'</span>);</div><div class="line">hold off</div></pre></td></tr></table></figure>
 <p><strong>结果</strong></p>
-<div class="figure">
-<img src="http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg" alt="频率分布直方图">
-<p class="caption">频率分布直方图</p>
-</div>
-<h2 id="频数分布直方图">频数分布直方图</h2>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">4</span></div><div class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="built_in">i</span>+<span class="number">1</span>:<span class="number">4</span></div><div class="line">        figure;</div><div class="line">        hist3([DD&#123;i&#125;(:) DD&#123;j&#125;(:)],[<span class="number">50</span>,<span class="number">50</span>]);</div><div class="line">        xlabel(N&#123;i&#125;);</div><div class="line">        ylabel(N&#123;j&#125;);</div><div class="line">        zlabel(<span class="string">'频数'</span>);</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p><img src="http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg" alt="频率分布直方图"></p>
+<h2 id="频数分布直方图"><a href="#频数分布直方图" class="headerlink" title="频数分布直方图"></a>频数分布直方图</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">4</span></div><div class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="built_in">i</span>+<span class="number">1</span>:<span class="number">4</span></div><div class="line">        figure;</div><div class="line">        hist3([DD&#123;i&#125;(:) DD&#123;j&#125;(:)],[<span class="number">50</span>,<span class="number">50</span>]);</div><div class="line">        xlabel(N&#123;i&#125;);</div><div class="line">        ylabel(N&#123;j&#125;);</div><div class="line">        zlabel(<span class="string">'频数'</span>);</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <p><strong>结果</strong></p>
-<div class="figure">
-<img src="http://oag5ozkgs.bkt.clouddn.com/6in1.jpg" alt="风电场间频数直方图">
-<p class="caption">风电场间频数直方图</p>
-</div>
-<h1 id="各copula函数">各Copula函数</h1>
-<h2 id="copula函数参数估计">Copula函数参数估计</h2>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">rho_norm = copulafit(<span class="string">'Gaussian'</span>,[U,V]);</div><div class="line">[rho_t,nuhat,nuci]=copulafit(<span class="string">'t'</span>,[U,V]);</div><div class="line">paramhat_G=copulafit(<span class="string">'Gumbel'</span>,[U,V]);</div><div class="line">paramhat_C=copulafit(<span class="string">'Clayton'</span>,[U,V]);</div><div class="line">paramhat_F=copulafit(<span class="string">'Frank'</span>,[U,V]);</div></pre></td></tr></table></figure>
+<p><img src="http://oag5ozkgs.bkt.clouddn.com/6in1.jpg" alt="风电场间频数直方图"></p>
+<h1 id="各Copula函数"><a href="#各Copula函数" class="headerlink" title="各Copula函数"></a>各Copula函数</h1><h2 id="Copula函数参数估计"><a href="#Copula函数参数估计" class="headerlink" title="Copula函数参数估计"></a>Copula函数参数估计</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">rho_norm = copulafit(<span class="string">'Gaussian'</span>,[U,V]);</div><div class="line">[rho_t,nuhat,nuci]=copulafit(<span class="string">'t'</span>,[U,V]);</div><div class="line">paramhat_G=copulafit(<span class="string">'Gumbel'</span>,[U,V]);</div><div class="line">paramhat_C=copulafit(<span class="string">'Clayton'</span>,[U,V]);</div><div class="line">paramhat_F=copulafit(<span class="string">'Frank'</span>,[U,V]);</div></pre></td></tr></table></figure>
 <p><strong>结果</strong></p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>风电场组合</th>
-<th><span class="math inline">\(\rho_{Norm}\)</span></th>
-<th><span class="math inline">\(\rho_t\)</span></th>
-<th><span class="math inline">\(k\)</span></th>
-<th><span class="math inline">\(\theta_G\)</span></th>
-<th><span class="math inline">\(\theta_C\)</span></th>
-<th><span class="math inline">\(\theta_F\)</span></th>
+<th>$\rho_{Norm}$</th>
+<th>$\rho_t$</th>
+<th>$k$</th>
+<th>$\theta_G$</th>
+<th>$\theta_C$</th>
+<th>$\theta_F$</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>桥湾与北大桥</td>
 <td>0.6339</td>
 <td>0.6386</td>
@@ -258,7 +243,7 @@
 <td>0.6913</td>
 <td>5.0402</td>
 </tr>
-<tr class="even">
+<tr>
 <td>桥湾与干河口</td>
 <td>0.5346</td>
 <td>0.5364</td>
@@ -267,7 +252,7 @@
 <td>0.4847</td>
 <td>3.8853</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>桥湾与昌马</td>
 <td>0.6108</td>
 <td>0.6169</td>
@@ -276,7 +261,7 @@
 <td>0.6530</td>
 <td>4.8459</td>
 </tr>
-<tr class="even">
+<tr>
 <td>北大桥与干河口</td>
 <td>0.8092</td>
 <td>0.8479</td>
@@ -285,7 +270,7 @@
 <td>1.4685</td>
 <td>9.8959</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>北大桥与昌马</td>
 <td>0.3639</td>
 <td>0.3630</td>
@@ -294,7 +279,7 @@
 <td>0.3072</td>
 <td>2.3697</td>
 </tr>
-<tr class="even">
+<tr>
 <td>干河口与昌马</td>
 <td>0.3028</td>
 <td>0.3026</td>
@@ -305,8 +290,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="经验copula">经验Copula</h2>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%计算经验分布</span></div><div class="line">[fx,xsort]=ecdf(X);</div><div class="line">[fy,ysort]=ecdf(Y);</div><div class="line"><span class="comment">%调用spine函数利用样条插值计算原始样本点的经验分布函数值</span></div><div class="line">UU=spline(xsort(<span class="number">2</span>:<span class="keyword">end</span>),fx(<span class="number">2</span>:<span class="keyword">end</span>),X);</div><div class="line">VV=spline(ysort(<span class="number">2</span>:<span class="keyword">end</span>),fy(<span class="number">2</span>:<span class="keyword">end</span>),Y);</div><div class="line"><span class="comment">%定义经验Copula函数</span></div><div class="line">C=@(u,v)mean((UU&lt;=u).*(VV&lt;=v));</div><div class="line"></div><div class="line">[Udata,Vdata] = <span class="built_in">meshgrid</span>(<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">31</span>));</div><div class="line"><span class="comment">%循环计算经验Copula函数值</span></div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">numel</span>(Udata)</div><div class="line">    CopulaEmpirical(<span class="built_in">i</span>)=C(Udata(<span class="built_in">i</span>),Vdata(<span class="built_in">i</span>));</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="经验Copula"><a href="#经验Copula" class="headerlink" title="经验Copula"></a>经验Copula</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%计算经验分布</span></div><div class="line">[fx,xsort]=ecdf(X);</div><div class="line">[fy,ysort]=ecdf(Y);</div><div class="line"><span class="comment">%调用spine函数利用样条插值计算原始样本点的经验分布函数值</span></div><div class="line">UU=spline(xsort(<span class="number">2</span>:<span class="keyword">end</span>),fx(<span class="number">2</span>:<span class="keyword">end</span>),X);</div><div class="line">VV=spline(ysort(<span class="number">2</span>:<span class="keyword">end</span>),fy(<span class="number">2</span>:<span class="keyword">end</span>),Y);</div><div class="line"><span class="comment">%定义经验Copula函数</span></div><div class="line">C=@(u,v)mean((UU&lt;=u).*(VV&lt;=v));</div><div class="line"></div><div class="line">[Udata,Vdata] = <span class="built_in">meshgrid</span>(<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">31</span>));</div><div class="line"><span class="comment">%循环计算经验Copula函数值</span></div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">numel</span>(Udata)</div><div class="line">    CopulaEmpirical(<span class="built_in">i</span>)=C(Udata(<span class="built_in">i</span>),Vdata(<span class="built_in">i</span>));</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
       
 
@@ -586,18 +570,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">deferrable load</a>
               </li>
              
@@ -610,7 +582,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">real-time</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,14 +610,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Q-Q图</a>
               </li>
              
@@ -646,7 +622,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
+                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,11 +638,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
+                <a href="javascript:void(0)" class="js-tag color4">混合Copula</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">核密度估计</a>
+                <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,6 +655,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机组组合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Stochastic Processe</a>
               </li>
             
             <div class="clearfix"></div>
