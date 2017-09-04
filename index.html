@@ -185,136 +185,9 @@
 <li>Metropolitan Area Network (MAN)</li>
 <li>Wide Area Network (WAN)</li>
 </ul>
-<h2 id="Communication-Systems-and-Networks"><a href="#Communication-Systems-and-Networks" class="headerlink" title="Communication Systems and Networks"></a>Communication Systems and Networks</h2><h3 id="Protocol-Architectures"><a href="#Protocol-Architectures" class="headerlink" title="Protocol Architectures"></a>Protocol Architectures</h3><ul>
-<li>most networks are designed as a series of layers or levels: each one built upon its predecessor.</li>
-<li>the goal of each layer is to offer certain services to the higher levels, shielding those layers from the details of how the offered services are actually implemented.</li>
-<li>Layer N on one host carries on a conversation with layer N on another host.</li>
-<li>The rules and conventions used in this conversation or session are collectively<br>known as the layer N protocol.</li>
-</ul>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504508669154.png" alt=""></p>
-<h3 id="ISO’s-OSI-Reference-Model"><a href="#ISO’s-OSI-Reference-Model" class="headerlink" title="ISO’s OSI Reference Model"></a>ISO’s OSI Reference Model</h3><p>ISO’s OSI Reference Model consists <strong>7 Layers</strong></p>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504508757572.png" alt=""></p>
-<h4 id="Internet-Protocol-Stack"><a href="#Internet-Protocol-Stack" class="headerlink" title="Internet Protocol Stack"></a>Internet Protocol Stack</h4><ul>
-<li>application: supporting network applications : HTTP, SMTP, FTP, DNS</li>
-<li>transport: process-process data transfer:  TCP, UDP</li>
-<li>network: routing of datagrams from source to destination: IP, routing protocols</li>
-<li>link: data transfer between neighboring network elements: 802.11, Ethernet</li>
-<li>physical: bits “on the wire”</li>
-</ul>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504509033269.png" alt=""></p>
-<ul>
-<li>link layer: bits—&gt;packets—&gt;correct errors</li>
-<li>physical layer: sending bits from A —&gt; B</li>
-<li>network layer: join nodes together</li>
-</ul>
-<h4 id="How-Layer-Works"><a href="#How-Layer-Works" class="headerlink" title="How Layer Works"></a>How Layer Works</h4><ul>
-<li>Each layer adds/strips off its own header (and possibly a trailer)</li>
-<li>Each layer may split up higher-level data</li>
-<li>Each layer multiplexes multiple higher layers</li>
-<li>Each layer is (mostly) transparent to higher layers</li>
-</ul>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504509297663.png" alt=""></p>
-<p><strong>Encapsulation</strong></p>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504509393734.png" alt=""></p>
-<h3 id="Transmission-Protocols"><a href="#Transmission-Protocols" class="headerlink" title="Transmission Protocols"></a>Transmission Protocols</h3><ul>
-<li>Simplex（单工）：Communication flow can <strong>only occur in one direction</strong></li>
-<li>Half Duplex（半双工）：Communication flow can occur <strong>in both directions, but not at the same time</strong></li>
-<li>Full Duplex（全双工）：Communication link can support <strong>simultaneous two-way communications.</strong>（requires twice channels of Simplex or half-duplex）</li>
-</ul>
-<h3 id="Transmission-Systems"><a href="#Transmission-Systems" class="headerlink" title="Transmission Systems"></a>Transmission Systems</h3><p><strong>Analog Communications</strong></p>
-<ul>
-<li>Continuous modulation</li>
-<li>Fidelity is usually defined in terms of SNR</li>
-</ul>
-<p>$$ SNR={P_S \over P_N} $$<br>$$ dB=10log{P_S\over P_N} $$<br>When SNR&gt;10dB====&gt; Good Communications</p>
-<p><strong>Digital Communications</strong></p>
-<ul>
-<li>Signals made up of discrete symbols selected from a finite set</li>
-<li>Fidelity or Accuracy is specified in terms of bit error rate ( BER )</li>
-</ul>
-<p>mobile out: 0.1W<br>mobile in: $10^{-10}W\sim 10^{-13}W$<br>mobile noise: around $10^{-13}W$</p>
-<h4 id="Digital-Communication-Systems"><a href="#Digital-Communication-Systems" class="headerlink" title="Digital Communication Systems"></a>Digital Communication Systems</h4><ul>
-<li>Sampling</li>
-<li>Quantization</li>
-<li>Source Coding</li>
-<li>Encryption</li>
-<li>Channel coding</li>
-<li>Modulation</li>
-</ul>
-<h4 id="Communication-Channels"><a href="#Communication-Channels" class="headerlink" title="Communication Channels"></a>Communication Channels</h4><p><strong>Effects include:</strong></p>
-<ul>
-<li>Attenuation</li>
-<li>Noise</li>
-<li>Filtering</li>
-<li>Fading</li>
-<li>Time Variation</li>
-</ul>
-<p><strong>Good Commnication System</strong></p>
-<ul>
-<li>Small signal power (measured in Watts or dBm)</li>
-<li>Large data rate (measured in bits/sec)</li>
-<li>Small bandwidth (measured in Hertz)</li>
-<li>Low distortion (measured in SNR or bit error rate)</li>
-<li>Low cost - with digital communications, large complexity does not always result in large cost</li>
-</ul>
-<h2 id="Stochastic-Process"><a href="#Stochastic-Process" class="headerlink" title="Stochastic Process"></a>Stochastic Process</h2><h3 id="Statistical-Description-of-Noise"><a href="#Statistical-Description-of-Noise" class="headerlink" title="Statistical Description of Noise"></a>Statistical Description of Noise</h3><ul>
-<li>Generally noise can be modeled as a Gaussian process (by the central limit theorem). In this case, we say that at a particular time, t, the noise signal amplitude will be Gaussian distributed</li>
-<li>If the noise is white noise, then all frequency components appear with equal power (white used in white light for similar reason)</li>
-</ul>
-<p>the band width of white noise is 20 MHz.</p>
-<h3 id="Statistical-Averages"><a href="#Statistical-Averages" class="headerlink" title="Statistical Averages"></a>Statistical Averages</h3><p><strong>discrete: </strong></p>
-<p>  $$\bar {X}=E[X]=\sum_{i=1}^M x_iP_i$$</p>
-<p><strong>continuous: </strong></p>
-<p>  $$\bar {X}=E[X]=\int_{-\infty}^{\infty}xf_X(x)dx$$</p>
-<p><strong>Variance</strong></p>
-<p>  $$\sigma_X^2=E[(X-\bar{X})]=E[X^2]-(E[X])^2$$</p>
-<p>$\sigma_X$= Standard Deviation</p>
-<h3 id="Joint-Distribution"><a href="#Joint-Distribution" class="headerlink" title="Joint Distribution"></a>Joint Distribution</h3><p>  $$F_{XY}=(x,y) \triangleq P(X\le x, Y\le y)$$</p>
-<p>  $$f<em>{XY}(x, y)={\partial^2 F</em>{XY}(x, y)\over {\partial x\partial y}}$$</p>
-<p><strong>If X and Y are said to be independent, </strong></p>
-<p>  $$P(X\le x, Y\le y)=P(X\le x)P(Y\le y)$$</p>
-<h3 id="Key-Distribution"><a href="#Key-Distribution" class="headerlink" title="Key Distribution"></a>Key Distribution</h3><p><strong>Gaussian Distribution</strong></p>
-<p>  $$X\sim N(m_X, \sigma^2_X)$$</p>
-<p>  $$f_X(x)={1\over {\sqrt{2\pi\sigma_X^2}}}exp(-{(x-m_X)^2\over {2\sigma^2_X}})$$</p>
-<p>Zero Mean</p>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504544041296.png" alt=""></p>
-<h3 id="Correlation"><a href="#Correlation" class="headerlink" title="Correlation"></a>Correlation</h3><p>Correlation: the dependency between 2 entities</p>
-<h3 id="Random-Process"><a href="#Random-Process" class="headerlink" title="Random Process"></a><a href="https://en.wikipedia.org/wiki/Stochastic_process" target="_blank" rel="external">Random Process</a></h3><ul>
-<li><strong>A random process is a rule assigning every outcome of an experiment a function X(t)</strong></li>
-<li><strong>A random process can be described as X(t)=x(t,n) where n is a member in the sample space S</strong></li>
-<li>A particular X(t)=x(t,n) is referred to as <strong>a sample function or realization of the random process</strong></li>
-</ul>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504544336973.png" alt=""></p>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504544361678.png" alt="n is fixed"></p>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504544390155.png" alt="t is fixed"></p>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504544415515.png" alt="t and n are fixed"></p>
-<p>A random process is said to be Wide-Sense Stationary (WSS) If and Only If</p>
-<p>  $$E[X(t)]\triangleq \bar{X}(t)=Constant$$</p>
-<p>  $$R_X(t_1, t_2)=E[X(t_1)X(t_2)]=R_X(|t_1-t_2|)\triangleq R_X(\tau)$$</p>
-<p>That is, a WSS process is characterized by a constant mean and a one-dimensional autocorrelation function that depends on only the time difference t</p>
-<p><img src="http://oag5ozkgs.bkt.clouddn.com/1504544501666.png" alt=""></p>
-<h3 id="Autocorrelation"><a href="#Autocorrelation" class="headerlink" title="Autocorrelation"></a>Autocorrelation</h3><ul>
-<li>The autocorrelation of a random process describes the correlation between values of the process at different times</li>
-<li><p>It is a function of the two times for which the values are found</p>
-<p>$$R_X(t_1,t_2)=E[X(t_1)X(t_2)]$$</p>
-</li>
-<li><p>Typically as the difference between the two times gets larger the auto-correlation gets less</p>
-</li>
-</ul>
-<p>for white noise: Autocorrelation = 0</p>
-<h3 id="Time-Averages"><a href="#Time-Averages" class="headerlink" title="Time Averages"></a>Time Averages</h3><p><img src="http://oag5ozkgs.bkt.clouddn.com/1504545092742.png" alt=""></p>
-<p>A r.p. is said to be Ergodic if all time averages and Ensemble averages are equal</p>
-<p>  <img src="http://oag5ozkgs.bkt.clouddn.com/1504549964236.png" alt=""></p>
-<p>Noise Power = $KT\times B$<br>$$dBW=10log(KTB/1W)$$</p>
-<p>$$dB=10log({P_1\over P_2})\<br>dBW=10log({P_1 \over 1W})\<br>dBm=10log({P_1 \over 1mW})$$</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><strong>Noise: </strong></p>
-<ul>
-<li>Gaussian</li>
-<li>Ergodic-&gt;Stationary</li>
-<li>mean-&gt;Zero mean</li>
-<li>PSD-&gt;(FT)Autocorrelation</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2017/09/04/EESM-5650-L1-Introduction/#more">more >></a>
+        
       
 
       
@@ -1052,11 +925,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">EM算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">风速建模</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">风速建模</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">EM算法</a>
         		</li>
       		
 		</ul>
@@ -1209,6 +1082,18 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">deferrable load</a>
               </li>
              
@@ -1221,19 +1106,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">柔性建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">real-time</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">配电网</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1241,11 +1114,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
+                <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
+                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">双参数威布尔函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1261,7 +1138,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">风力发电</a>
+                <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1274,10 +1151,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bfgs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">风速建模</a>
               </li>
              
               <li class="article-tag-list-item">
