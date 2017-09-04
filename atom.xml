@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fatelancer.github.io/"/>
-  <updated>2017-09-04T06:25:47.664Z</updated>
+  <updated>2017-09-04T06:34:04.127Z</updated>
   <id>http://fatelancer.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://fatelancer.github.io/2017/09/04/EESM-5620-L1-Introduction/"/>
     <id>http://fatelancer.github.io/2017/09/04/EESM-5620-L1-Introduction/</id>
     <published>2017-09-04T06:10:39.000Z</published>
-    <updated>2017-09-04T06:25:47.664Z</updated>
+    <updated>2017-09-04T06:34:04.127Z</updated>
     
     <content type="html"><![CDATA[<h1 id="eesm-5620-flat-display">EESM 5620 Flat Display</h1>
 <h1 id="l1-introduction">L1 Introduction</h1>
@@ -65,37 +65,37 @@
 <h2 id="chapter-2-basic-structure-of-lcd">Chapter 2 Basic Structure of LCD</h2>
 <h3 id="basic-structure-and-materials">2.1 Basic Structure AND Materials</h3>
 <div class="figure">
-<img src="/images/1504231634577.png" alt="1">
-<p class="caption">1</p>
+<img src="http://oag5ozkgs.bkt.clouddn.com/1504231634577.png" alt="Basic Structure AND Materials">
+<p class="caption">Basic Structure AND Materials</p>
 </div>
 <h3 id="basic-operating-principles">2.2 Basic operating principles</h3>
 <p>polarization manipulation of light using electrical pulses</p>
 <p>Common model of a TN display:</p>
 <div class="figure">
-<img src="/images/1504231872291.png" alt="2">
-<p class="caption">2</p>
+<img src="http://oag5ozkgs.bkt.clouddn.com/1504231872291.png" alt="Common model">
+<p class="caption">Common model</p>
 </div>
 <h3 id="different-ways-to-view-a-lcd">2.3 Different ways to view a LCD</h3>
 <ul>
 <li>Transmittive（透射）: This is often the case for LCD with backlighting（no reflector）.</li>
 </ul>
 <div class="figure">
-<img src="/images/1504232324260.png" alt="3">
-<p class="caption">3</p>
+<img src="http://oag5ozkgs.bkt.clouddn.com/1504232324260.png" alt="Transmittive">
+<p class="caption">Transmittive</p>
 </div>
 <ul>
-<li><a href="https://baike.baidu.com/item/%E5%8D%8A%E5%8F%8D%E5%8D%8A%E9%80%8F%E5%B1%8F%E5%B9%95" target="_blank" rel="external">ransflective（半透）</a>: The rear reflector is often a diffusive type reflector to eliminate mirror effects.</li>
+<li><a href="https://baike.baidu.com/item/%E5%8D%8A%E5%8F%8D%E5%8D%8A%E9%80%8F%E5%B1%8F%E5%B9%95" target="_blank" rel="external">Transflective（半透）</a>: The rear reflector is often a diffusive type reflector to eliminate mirror effects.</li>
 </ul>
 <div class="figure">
-<img src="/images/1504232646622.png" alt="4">
-<p class="caption">4</p>
+<img src="http://oag5ozkgs.bkt.clouddn.com/1504232646622.png" alt="Transflective">
+<p class="caption">Transflective</p>
 </div>
 <ul>
 <li>Reflective（全反射）: In a truly reflective LCD, there is only one front polarizer.</li>
 </ul>
 <div class="figure">
-<img src="/images/1504233149000.png" alt="5">
-<p class="caption">5</p>
+<img src="http://oag5ozkgs.bkt.clouddn.com/1504233149000.png" alt="Reflective">
+<p class="caption">Reflective</p>
 </div>
 ]]></content>
     
@@ -2161,13 +2161,13 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
       <category term="电气工程" scheme="http://fatelancer.github.io/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="柔性建模" scheme="http://fatelancer.github.io/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
-    
       <category term="deferrable load" scheme="http://fatelancer.github.io/tags/deferrable-load/"/>
     
       <category term="需求响应" scheme="http://fatelancer.github.io/tags/%E9%9C%80%E6%B1%82%E5%93%8D%E5%BA%94/"/>
     
       <category term="可再生能源" scheme="http://fatelancer.github.io/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
+    
+      <category term="柔性建模" scheme="http://fatelancer.github.io/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
     
       <category term="real-time" scheme="http://fatelancer.github.io/tags/real-time/"/>
     
@@ -2337,9 +2337,9 @@ PS：t-检验的假设是检验的数据满足正态分布，否则对于小样�
       <category term="电气工程" scheme="http://fatelancer.github.io/categories/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B/"/>
     
     
-      <category term="柔性建模" scheme="http://fatelancer.github.io/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
-    
       <category term="可再生能源" scheme="http://fatelancer.github.io/tags/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90/"/>
+    
+      <category term="柔性建模" scheme="http://fatelancer.github.io/tags/%E6%9F%94%E6%80%A7%E5%BB%BA%E6%A8%A1/"/>
     
       <category term="deferrable" scheme="http://fatelancer.github.io/tags/deferrable/"/>
     
