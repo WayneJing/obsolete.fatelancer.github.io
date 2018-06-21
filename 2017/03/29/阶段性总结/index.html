@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/1.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/1_2.jpg">
 <meta property="og:image" content="http://oag5ozkgs.bkt.clouddn.com/1_3.jpg">
-<meta property="og:updated_time" content="2017-03-29T09:43:27.114Z">
+<meta property="og:updated_time" content="2018-06-21T03:46:10.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阶段性总结">
 <meta name="twitter:description" content="风速的随机性数学表述通过查阅文献可以得知，可以使用双参数威布尔分布来描述风速的概率分布 双参数威布尔函数$$F_w(x)=1-exp(-({x \over c})^k)$$其概率密度函数为$$P(x)={k \over c} ({k \over c})^{k-1}exp(-({x \over c})^k)$$式中 $k$ 为形状参数，无量纲； $c$ 为尺度参数，反映风电场的平均风速，单位为 $m">
@@ -212,7 +212,6 @@
 <p>双参数威布尔函数<br>$$F_w(x)=1-exp(-({x \over c})^k)$$<br>其概率密度函数为<br>$$P(x)={k \over c} ({k \over c})^{k-1}exp(-({x \over c})^k)$$<br>式中 $k$ 为形状参数，无量纲； $c$ 为尺度参数，反映风电场的平均风速，单位为 $m/s$ 。</p>
 <h2 id="程序验证随机性"><a href="#程序验证随机性" class="headerlink" title="程序验证随机性"></a>程序验证随机性</h2><p>通过将风速数据的频数分布图与根据风速数据拟合的威布尔分布概率密度函数曲线进行对比可以发现，使用双参数威布尔分布去拟合风速数据是完全合理的。下图中红色的曲线为威布尔分布概率密度函数曲线，蓝色部分为风速的频率分布直方图。</p>
 <p><img src="http://oag5ozkgs.bkt.clouddn.com/4in1_1.jpg" alt="图1 风速频数分布直方图"></p>
-<a id="more"></a>
 <h2 id="场间风速的关系"><a href="#场间风速的关系" class="headerlink" title="场间风速的关系"></a>场间风速的关系</h2><p>通过对拟合后的风速数据的分布函数绘制频数分布直方图可以简单的看出场间风速的一些关系。下图为桥湾（1）、北大桥（2）、干河口（3）以及昌马（4）四个风电场两两之间的风速频数分布直方图</p>
 <p><img src="http://oag5ozkgs.bkt.clouddn.com/6in1.jpg" alt="图2 场间风速频数直方图"></p>
 <p>对于以上的关系可以通过地理以及气象等知识进行解释。下图是四个风电场的地理位置关系。<br><img src="http://oag5ozkgs.bkt.clouddn.com/%E5%9C%B0%E7%90%86%E4%BD%8D%E7%BD%AE.jpg" alt="Alt text"></p>
@@ -222,9 +221,10 @@
 <li>桥湾（1）与昌马（4）间地理位置接近南北垂直，但是由于两者间距离较近，所以线性相关性也较为明显，如图2-3</li>
 <li>干河口（3）与北大桥（2）的地理位置接近东西平行的，在东西风向盛行的酒泉地区两者风况有较大的相似。如图2-4可以看出存在较大的线性相关性。</li>
 <li>昌马（4）与北大桥（2）的距离较远，因此线性相关性较差，如图2-5</li>
-<li>干河口（3）与昌马（4）的距离最远，因此线性相关性也最差，如图2-6</li>
+<li>干河口（3）与昌马（4）的距离最远，因此线性相关性也最差，如图2-6<a id="more"></a>
+<h1 id="对场间风速进行建模"><a href="#对场间风速进行建模" class="headerlink" title="对场间风速进行建模"></a>对场间风速进行建模</h1></li>
 </ul>
-<h1 id="对场间风速进行建模"><a href="#对场间风速进行建模" class="headerlink" title="对场间风速进行建模"></a>对场间风速进行建模</h1><h2 id="通过单个copula函数对场间风速进行建模"><a href="#通过单个copula函数对场间风速进行建模" class="headerlink" title="通过单个copula函数对场间风速进行建模"></a>通过单个copula函数对场间风速进行建模</h2><p><strong>参数估计结果</strong></p>
+<h2 id="通过单个copula函数对场间风速进行建模"><a href="#通过单个copula函数对场间风速进行建模" class="headerlink" title="通过单个copula函数对场间风速进行建模"></a>通过单个copula函数对场间风速进行建模</h2><p><strong>参数估计结果</strong></p>
 <table>
 <thead>
 <tr>
@@ -653,8 +653,8 @@ var a = new Donate({
   title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
   btnText: '打赏支持', // 可选参数，打赏按钮文字
   el: document.getElementById('donation_div'),
-  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
-  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+  wechatImage: 'https://raw.githubusercontent.com/fatelancer/fatelancer.github.io/images/wechatpay.png',
+  alipayImage: ''
 });
 </script>
       
