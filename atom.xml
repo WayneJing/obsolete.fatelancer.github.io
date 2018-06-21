@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fatelancer.github.io/"/>
-  <updated>2018-06-21T08:37:28.712Z</updated>
+  <updated>2018-06-21T08:40:06.493Z</updated>
   <id>http://fatelancer.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://fatelancer.github.io/2018/06/21/SikuliX/"/>
     <id>http://fatelancer.github.io/2018/06/21/SikuliX/</id>
     <published>2018-06-21T07:13:13.000Z</published>
-    <updated>2018-06-21T08:37:28.712Z</updated>
+    <updated>2018-06-21T08:40:06.493Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Sikuli-Script"><a href="#Sikuli-Script" class="headerlink" title="Sikuli Script"></a><a href="http://www.sikuli.org/" target="_blank" rel="external">Sikuli Script</a></h1><p>To get debug output, if you use the SikuliX apps or otherwise have no chance to set parameters:<br>before starting add an empty file named SikulixDebug.txt in your home folder.</p>
 <p>This is detected and will internally switch to <code>running with -d 3 -c</code> and redirect all debug output to this file.</p>
@@ -29,6 +29,7 @@
 <li><code>Debug.on(3)</code> — switch debugging on with level 3</li>
 <li><code>Debug.off()</code>— switch debugging off</li>
 </ul>
+<a id="more"></a>
 <h2 id="general-aspect-of-scripting"><a href="#general-aspect-of-scripting" class="headerlink" title="general aspect of scripting"></a>general aspect of scripting</h2><p>Below is an Example of SikuliX script in Python:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>: <span class="comment"># repeat the body forever</span></div><div class="line">    wait(<span class="string">"image1.png"</span>, <span class="number">10</span>) <span class="comment"># wait max 10 seconds for image1 to get visible, otherwise die</span></div><div class="line">    click(<span class="string">"button1.png"</span>) <span class="comment"># click the button given by image button1</span></div><div class="line">    <span class="keyword">if</span> exists(<span class="string">"image2.png"</span>): <span class="comment"># wait max 3 seconds for image2 to get visible, return True or False</span></div><div class="line">       doSomething() <span class="comment"># in case True execute function doSomething (defined somewhere else)</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">       <span class="keyword">break</span> <span class="comment"># in case False get out of the loop, which ends the workflow</span></div><div class="line">    <span class="comment"># start all over with the line after the while</span></div><div class="line"><span class="comment"># the end of the workflow</span></div></pre></td></tr></table></figure>
 <h2 id="Where-and-how-can-a-SikuliX-script-be-stored"><a href="#Where-and-how-can-a-SikuliX-script-be-stored" class="headerlink" title="Where and how can a SikuliX script be stored"></a>Where and how can a SikuliX script be stored</h2><p>A SikuliX script consists of <strong>==one file containing the statements of your scripted workflow==</strong> and zero to many image files, that you have captured, to support your workflow.</p>
@@ -147,7 +148,13 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Sikuli-Script&quot;&gt;&lt;a href=&quot;#Sikuli-Script&quot; class=&quot;headerlink&quot; title=&quot;Sikuli Script&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.sikuli.org/&quot; target=&quot;_blank
+      &lt;h1 id=&quot;Sikuli-Script&quot;&gt;&lt;a href=&quot;#Sikuli-Script&quot; class=&quot;headerlink&quot; title=&quot;Sikuli Script&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.sikuli.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sikuli Script&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;To get debug output, if you use the SikuliX apps or otherwise have no chance to set parameters:&lt;br&gt;before starting add an empty file named SikulixDebug.txt in your home folder.&lt;/p&gt;
+&lt;p&gt;This is detected and will internally switch to &lt;code&gt;running with -d 3 -c&lt;/code&gt; and redirect all debug output to this file.&lt;/p&gt;
+&lt;p&gt;The debug level can also be set inline in scripts and code&lt;br&gt;… and will be used from this point on until switched off or reset to another value&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Debug.on(3)&lt;/code&gt; — switch debugging on with level 3&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Debug.off()&lt;/code&gt;— switch debugging off&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
