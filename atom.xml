@@ -1340,9 +1340,9 @@
     
       <category term="MATLAB" scheme="http://fatelancer.github.io/tags/MATLAB/"/>
     
-      <category term="EM算法" scheme="http://fatelancer.github.io/tags/EM%E7%AE%97%E6%B3%95/"/>
-    
       <category term="混合Copula" scheme="http://fatelancer.github.io/tags/%E6%B7%B7%E5%90%88Copula/"/>
+    
+      <category term="EM算法" scheme="http://fatelancer.github.io/tags/EM%E7%AE%97%E6%B3%95/"/>
     
       <category term="bfgs" scheme="http://fatelancer.github.io/tags/bfgs/"/>
     
